@@ -1,0 +1,20 @@
+#
+# Dailex default project settings
+---
+local_configs:
+  rabbitmq:
+    name: rabbitmq.json
+    type: json
+    load: from_file
+  couchdb:
+    name: couchdb.json
+    type: json
+    load: from_file
+  elasticsearch:
+    load: from_file
+    name: elasticsearch.json
+    type: json
+  swiftmailer:
+    name: swiftmailer.json
+    type: json
+    load: from_file

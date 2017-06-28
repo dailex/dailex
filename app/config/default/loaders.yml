@@ -1,0 +1,5 @@
+#
+# Dailex default loaders
+---
+services:
+  loader: Dailex\Config\ServiceConfigLoader

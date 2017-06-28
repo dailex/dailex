@@ -1,0 +1,53 @@
+{
+    "name": "dailex/dailex",
+    "type": "project",
+    "description": "Daikon CQRS & ES integration with the Silex framework, for CMS building.",
+    "keywords": [ "daikon", "silex", "symfony", "cqrs", "framework", "event sourcing", "cms" ],
+    "homepage": "https://github.com/daikon-cqrs/dailex",
+    "license": "MPL-2.0",
+    "authors": [
+        {
+            "name": "Hasham Ahmad",
+            "email": "mr.hash@gmail.com",
+            "homepage": "https://github.com/MrHash",
+            "role": "Developer"
+        },
+        {
+            "name": "Thorsten Schmitt-Rink",
+            "email": "schmittrink@gmail.com",
+            "homepage": "https://github.com/shrink0r",
+            "role": "Developer"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "daikon/config": "dev-master",
+        "daikon/cqrs": "dev-master",
+        "monolog/monolog": "^1.0",
+        "psr/container": "^1.0",
+        "rdlowrey/auryn": "^1.4.0",
+        "roave/security-advisories": "master@dev",
+        "silex/silex": "^2.0",
+        "symfony/twig-bridge": "^3.0",
+        "symfony/yaml": "^3.0",
+        "twig/twig": "^2.0"
+    },
+    "require-dev": {
+        "silex/web-profiler": "^2.0",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dailex\\": "app/lib/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "code-sniffer": "phpcs --extensions=php --standard=psr2 app",
+        "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 app"
+    }
+}

@@ -1,0 +1,26 @@
+version: "3.2"
+volumes:
+  couchdb:
+  elasticsearch:
+services:
+  nginx:
+    volumes:
+      - ../../:/var/www
+
+  php:
+    volumes:
+      - ../../:/var/www
+
+  couchdb:
+    volumes:
+      - couchdb:/usr/local/var/lib/couchdb
+
+  elasticsearch:
+    volumes:
+      - ./elasticsearch/conf:/usr/share/elasticsearch/config:ro
+      - elasticsearch:/usr/share/elasticsearch/data
+
+  elasticsearch-head:
+    image: mobz/elasticsearch-head:2
+    ports:
+      - "9100:9100"

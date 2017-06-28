@@ -1,0 +1,9 @@
+#
+# Dailex default project settings
+---
+dailex:
+  infrastructure:
+    event_bus:
+      class: Daikon\MessageBus\MessageBus
+      provisioner:
+        class: Dailex\Service\Provisioner\MessageBusProvisioner
