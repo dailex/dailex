@@ -1,9 +1,26 @@
 #
-# Dailex default project settings
+# Dailex default services configuration
 ---
 dailex:
   infrastructure:
-    event_bus:
+    message_bus:
       class: Daikon\MessageBus\MessageBus
       provisioner:
         class: Dailex\Service\Provisioner\MessageBusProvisioner
+
+    template_renderer:
+      class: Dailex\Renderer\Twig\TwigRenderer
+      provisioner:
+        class: Dailex\Service\Provisioner\TwigRendererProvisioner
+        settings:
+          extensions:
+            - Dailex\Renderer\Twig\Extension\ProjectExtension
+            - Dailex\Renderer\Twig\Extension\LocaliseRouteExtension
+
+    url_generator:
+      class: Symfony\Component\Routing\Generator\UrlGenerator
+      provisioner:
+        class: Dailex\Service\Provisioner\SilexServiceProvisioner
+        settings:
+          app_key: url_generator
+          alias: Symfony\Component\Routing\Generator\UrlGeneratorInterface

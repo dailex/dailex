@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block page_title %}{{ page_title|default(config('name')) }}{% endblock %}</title>
+        <meta name="description" content="{{ config('project.name') }} - {{ config('description') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a class="navbar-brand" href="{{ path('home') }}">{{ config('name') }}</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+        {% block content %}{% endblock %}
+        </div>
+        <footer>
+            {% if config('app::config::appDebug') %}
+            <ul>
+                <li>Debug: on</li>
+                <li>Version: {{ config('app::config::appVersion') }}@{{ config('app::config::appEnv') }}</li>
+            </ul>
+            {% endif %}
+        </footer>
+    </body>
+</html>

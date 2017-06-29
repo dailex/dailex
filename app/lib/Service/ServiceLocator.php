@@ -4,37 +4,38 @@ namespace Dailex\Service;
 
 use Auryn\Injector;
 use Dailex\Exception\RuntimeException;
+use Dailex\Util\StringToolkit;
 
 final class ServiceLocator implements ServiceLocatorInterface
 {
     private $injector;
 
-    private $serviceMap;
+    private $serviceDefinitionMap;
 
-    public function __construct(Injector $injector, ServiceDefinitionMap $serviceMap)
+    public function __construct(Injector $injector, ServiceDefinitionMap $serviceDefinitionMap)
     {
         $this->injector = $injector;
-        $this->serviceMap = $serviceMap;
+        $this->serviceDefinitionMap = $serviceDefinitionMap;
     }
 
     public function get($id)
     {
-        if (!$this->serviceMap->hasKey($id)) {
+        if (!$this->serviceDefinitionMap->has($id)) {
             throw new RuntimeException(sprintf('No service found for given service id: "%s".', $id));
         }
-        $serviceDefinition = $this->serviceMap->getItem($id);
+        $serviceDefinition = $this->serviceDefinitionMap->get($id);
         return $this->injector->make($serviceDefinition->getClass());
     }
 
     public function has($id)
     {
-        return $this->serviceMap->hasKey($id);
+        return $this->serviceDefinitionMap->has($id);
     }
 
     public function __call($method, array $args)
     {
         if (preg_match('/^get(\w+)$/', $method, $matches)) {
-            $id = "dailex.infrastructure.".StringToolkit::asSnakeCase($matches[1]);
+            $id = 'dailex.infrastructure.'.StringToolkit::asSnakeCase($matches[1]);
             return $this->get($id);
         }
     }

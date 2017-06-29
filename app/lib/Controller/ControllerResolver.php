@@ -2,7 +2,7 @@
 
 namespace Dailex\Controller;
 
-use Honeybee\ServiceLocatorInterface;
+use Dailex\Service\ServiceLocatorInterface;
 use Silex\CallbackResolver;
 use Silex\ServiceControllerResolver;
 use Symfony\Component\HttpFoundation\Request;

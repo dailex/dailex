@@ -2,7 +2,7 @@
 
 namespace Dailex\Crate;
 
-use Honeybee\Common\Util\StringToolkit;
+use Dailex\Util\StringToolkit;
 use Honeybee\Infrastructure\Config\Settings;
 
 class CrateManifest implements CrateManifestInterface

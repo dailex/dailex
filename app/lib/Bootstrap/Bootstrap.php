@@ -9,7 +9,6 @@ use Daikon\Config\ConfigProviderInterface;
 use Daikon\Config\ConfigProviderParams;
 use Daikon\Config\YamlConfigLoader;
 use Dailex\Config\Loader\RoutingConfigLoader;
-use Dailex\Config\Loader\ServiceConfigLoader;
 use Dailex\Controller\ControllerResolverServiceProvider;
 use Dailex\Service\ServiceProvider;
 use Dailex\Service\ServiceProvisioner;
@@ -82,7 +81,7 @@ class Bootstrap
                 ]
             ],
             'services' => [
-                'loader' => ServiceConfigLoader::class,
+                'loader' => YamlConfigLoader::class,
                 'locations' => [$configDir, $projectConfigDir],
                 'sources' => [
                     'services.yml',
@@ -93,12 +92,12 @@ class Bootstrap
             ]
         ];
 
+        // initialize and share the config provider
         $config = new ConfigProvider(
             ['app' => ['config' => $settings]],
             new ConfigProviderParams($loaders, 'settings::project')
         );
 
-        // load crates and init config-provider
         $injector->share($config)->alias(ConfigProviderInterface::CLASS, get_class($config));
 
         return $config;
@@ -107,6 +106,7 @@ class Bootstrap
     protected function bootstrapLogger(Application $app, ConfigProviderInterface $configProvider, Injector $injector)
     {
         // register logger as first item within the DI chain
+        // @todo log rotation
         $app->register(new MonologServiceProvider, [
             'monolog.logfile' => $configProvider->get('app::config::project.log_dir').'/dailex.log'
         ]);
@@ -124,8 +124,8 @@ class Bootstrap
         $appContext = $this->configProvider->get('app::config::appContext');
         $appEnv = $this->configProvider->get('app::config::appEnv');
 
-        //@todo add host dir
         (new RoutingConfigLoader($app))->load(
+            //@todo add host dir
             [$this->configProvider->get('app::config::project.config_dir')],
             [
                 'routing.php',

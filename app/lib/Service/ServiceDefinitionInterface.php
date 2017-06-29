@@ -11,6 +11,4 @@ interface ServiceDefinitionInterface
     public function getClass();
 
     public function hasClass();
-
-    public function getConfig();
 }

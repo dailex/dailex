@@ -8,7 +8,7 @@ use Dailex\Exception\ConfigException;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
-final class DefaultProvisioner implements ProvisionerInterface
+class SilexServiceProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,
@@ -19,15 +19,14 @@ final class DefaultProvisioner implements ProvisionerInterface
         $service = $serviceDefinition->getClass();
         $provisionerConfig = $serviceDefinition->getProvisioner();
 
-        $injector->define(
-            $service,
-            [ ':settings' => $serviceDefinition->getSettings() ]
-        );
-
-        // there will only be one instance of the service when the "share" setting is true (default)
-        if (!isset($provisionerConfig['settings']['share']) || true === $provisionerConfig['settings']['share']) {
-            $injector->share($service);
+        if (!isset($provisionerConfig['settings']['app_key'])) {
+            throw new ConfigException('Provisioner requires "app_key" setting.');
         }
+
+        $appKey = $provisionerConfig['settings']['app_key'];
+        $injector->delegate($service, function () use ($app, $appKey) {
+            return $app[$appKey];
+        })->share($service);
 
         if (isset($provisionerConfig['settings']['alias'])) {
             $alias = $provisionerConfig['settings']['alias'];

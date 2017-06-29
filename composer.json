@@ -1,8 +1,8 @@
 {
     "name": "dailex/dailex",
     "type": "project",
-    "description": "Daikon CQRS & ES integration with the Silex framework, for CMS building.",
-    "keywords": [ "daikon", "silex", "symfony", "cqrs", "framework", "event sourcing", "cms" ],
+    "description": "Daikon CQRS & ES integration with the Silex framework.",
+    "keywords": [ "daikon", "silex", "symfony", "cqrs", "event-sourcing", "mvc", "framework" ],
     "homepage": "https://github.com/daikon-cqrs/dailex",
     "license": "MPL-2.0",
     "authors": [
@@ -30,6 +30,7 @@
         "rdlowrey/auryn": "^1.4.0",
         "roave/security-advisories": "master@dev",
         "silex/silex": "^2.0",
+        "symfony/asset": "^3.0",
         "symfony/twig-bridge": "^3.0",
         "symfony/yaml": "^3.0",
         "twig/twig": "^2.0"

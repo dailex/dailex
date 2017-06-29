@@ -1,0 +1,92 @@
+<?php
+
+namespace Dailex\Service\Provisioner;
+
+use Auryn\Injector;
+use Daikon\Config\ConfigProviderInterface;
+use Dailex\Renderer\TemplateRendererInterface;
+use Dailex\Service\ServiceDefinitionInterface;
+use Pimple\Container;
+use Silex\Provider\TwigServiceProvider;
+use Symfony\Component\Filesystem\Filesystem;
+
+final class TwigRendererProvisioner implements ProvisionerInterface
+{
+    public function provision(
+        Container $app,
+        Injector $injector,
+        ConfigProviderInterface $configProvider,
+        ServiceDefinitionInterface $serviceDefinition
+    ) {
+        $service = $serviceDefinition->getClass();
+
+        $this->registerTwig($app, $injector, $configProvider);
+
+        $injector
+            ->share($service)
+            ->alias(TemplateRendererInterface::CLASS, $service)
+            ->delegate(
+                $service,
+                function (Filesystem $filesystem) use ($service, $app) {
+                    return new $service($app['twig'], $filesystem);
+                }
+            );
+    }
+
+    private function registerTwig(Container $app, Injector $injector, ConfigProviderInterface $configProvider)
+    {
+        $projectDir = $configProvider->get('app::config::project.dir');
+        $coreDir = $configProvider->get('app::config::core.dir');
+
+        $app->register(new TwigServiceProvider);
+
+        $namespacedPaths = $this->getCrateTemplatesPaths($configProvider);
+        $projectTemplates = $projectDir.'/app/templates';
+        $namespacedPaths['dailex'][] = $coreDir.'/app/templates';
+        $namespacedPaths['project'][] = $projectTemplates;
+//         if ($hostPrefix = $configProvider->getHostPrefix()) {
+//             $projectHostTemplates = $projectTemplates.'/'.$hostPrefix;
+//             if (is_readable($projectHostTemplates)) {
+//                 $namespacedPaths['project'][] = $projectHostTemplates;
+//             }
+//         }
+
+        $app['twig.form.templates'] = [ 'bootstrap_3_layout.html.twig' ];
+        $app['twig.options'] = [ 'cache' => $projectDir.'/var/cache/twig' ];
+        $app['twig.loader.filesystem'] = function () use ($namespacedPaths, $projectTemplates) {
+            $filesystem = new \Twig_Loader_Filesystem($projectTemplates);
+            foreach ($namespacedPaths as $namespace => $path) {
+                $filesystem->setPaths($path, $namespace);
+            }
+            return $filesystem;
+        };
+
+        $settings = $configProvider->get('services::dailex::infrastructure.template_renderer.provisioner.settings');
+        $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $settings) {
+            foreach ($settings['extensions'] ?? [] as $extension) {
+                $twig->addExtension($injector->make($extension));
+            }
+            return $twig;
+        });
+    }
+
+    protected function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)
+    {
+        $projectDir = $configProvider->get('app::config::project.dir').'/app/templates';
+
+        $paths = [];
+//         foreach ($configProvider->getCrateMap() as $crate) {
+//             $cratePrefix = $crate->getPrefix('-');
+//             $projectCratePath = $projectDir.'/'.$cratePrefix;
+//             if (is_readable($projectCratePath)) {
+//                 $paths[$cratePrefix][] = $projectDir.'/'.$cratePrefix;
+//             }
+//             $templatesPath = $crate->getRootDir().'/templates';
+//             if (is_readable($templatesPath)) {
+//                 $paths[$cratePrefix][] = $templatesPath;
+//             }
+//         }
+
+        return $paths;
+    }
+}

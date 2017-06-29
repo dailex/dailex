@@ -4,6 +4,8 @@ namespace Dailex\Service;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
+use Daikon\Entity\EntityType\EntityTypeMap;
+use Dailex\Exception\ConfigException;
 use Dailex\Service\ServiceLocator;
 use Dailex\Service\ServiceLocatorInterface;
 use Dailex\Service\Provisioner\DefaultProvisioner;
@@ -12,20 +14,16 @@ use Pimple\Container;
 use Silex\Api\EventListenerProviderInterface;
 use SplFileInfo;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Trellis\CodeGen\Parser\Config\ConfigIniParser;
-use Trellis\CodeGen\Parser\Schema\EntityTypeSchemaXmlParser;
 
-class ServiceProvisioner implements ServiceProvisionerInterface
+final class ServiceProvisioner implements ServiceProvisionerInterface
 {
-    protected static $defaultProvisionerClass = DefaultProvisioner::class;
+    private static $defaultProvisionerClass = DefaultProvisioner::class;
 
-    protected $app;
+    private $app;
 
-    protected $configProvider;
+    private $configProvider;
 
-    protected $injector;
-
-    private $serviceDefinitions;
+    private $injector;
 
     public function __construct(
         Container $app,
@@ -33,19 +31,19 @@ class ServiceProvisioner implements ServiceProvisionerInterface
         Injector $injector
     ) {
         $this->app = $app;
-        $this->injector = $injector;
         $this->configProvider = $configProvider;
+        $this->injector = $injector;
     }
 
     public function provision()
     {
-        $serviceDefinitions = $this->configProvider->get('services::*::*');
-//         $this->registerEntityTypeMaps($serviceDefinitions);
-//         $this->evaluateServiceDefinitions($serviceDefinitions);
+        $serviceDefinitionMap = $this->getServiceDefinitionMap();
+//         $this->registerEntityTypeMaps();
+        $this->evaluateServiceDefinitions($serviceDefinitionMap);
 
         $serviceLocatorState = [
-            ':service_definition_map' => $serviceDefinitions,
-            ':injector' => $this->injector
+            ':injector' => $this->injector,
+            ':serviceDefinitionMap' => $serviceDefinitionMap
         ];
 
         return $this->injector
@@ -56,8 +54,8 @@ class ServiceProvisioner implements ServiceProvisionerInterface
 
     public function subscribe(Container $app, EventDispatcherInterface $dispatcher)
     {
-        $serviceDefinitions = $this->configProvider->get('services::*::*');
-        foreach ($serviceDefinitions as $key => $serviceDefinition) {
+        $serviceDefinitionMap = $this->getServiceDefinitionMap();
+        foreach ($serviceDefinitionMap as $serviceDefinition) {
             if ($serviceDefinition->hasProvisioner()) {
                 $provisionerConfig = $serviceDefinition->getProvisioner();
                 $provisioner = $this->injector->make($provisionerConfig['class']);
@@ -68,38 +66,33 @@ class ServiceProvisioner implements ServiceProvisionerInterface
         }
     }
 
-    protected function registerEntityTypeMaps(ServiceDefinitionMap $serviceDefinitions)
+    private function getServiceDefinitionMap(): ServiceDefinitionMap
     {
-        $aggregateRootTypes = [];
-        $projectionTypes = [];
+        $serviceConfigs = $this->configProvider->get('services::*::*');
+        $serviceDefinitions = [];
 
-        foreach ($this->configProvider->getCrateMap() as $crate) {
-            foreach (glob($crate->getConfigDir().'/*/entity_schema/aggregate_root.xml') as $schemaFile) {
-                $aggregateRootType = $this->loadEntityType($crate->getConfigDir(), $schemaFile);
-                $aggregateRootTypes[$aggregateRootType->getPrefix()] = $aggregateRootType;
+        foreach ($serviceConfigs as $namespace => $namespaceDefinitions) {
+            foreach ($namespaceDefinitions as $rootPath => $rootDefinitions) {
+                foreach ($rootDefinitions as $serviceName => $serviceDefinition) {
+                    $serviceKey = sprintf('%s.%s.%s', $namespace, $rootPath, $serviceName);
+                    $serviceDefinition['name'] = $serviceKey;
+                    if (isset($serviceDefinition['provisioner'])) {
+                        if (!isset($serviceDefinition['provisioner']['class'])) {
+                            $serviceDefinition['provisioner']['class'] = DefaultProvisioner::class;
+                        }
+                    }
+                    $serviceDefinitions[$serviceKey] = new ServiceDefinition($serviceDefinition);
+                }
             }
-            foreach (glob($crate->getConfigDir().'/*/entity_schema/projection/*.xml') as $schemaFile) {
-                $projectionType = $this->loadEntityType($crate->getConfigDir(), $schemaFile);
-                $projectionTypes[$projectionType->getVariantPrefix()] = $projectionType;
-            }
         }
 
-        $this->injector->share(new AggregateRootTypeMap($aggregateRootTypes));
-        $this->injector->share(new ProjectionTypeMap($projectionTypes));
-
-        foreach ($aggregateRootTypes as $aggregateRootType) {
-            $this->injector->share($aggregateRootType);
-        }
-
-        foreach ($projectionTypes as $projectionType) {
-            $this->injector->share($projectionType);
-        }
+        return new ServiceDefinitionMap($serviceDefinitions);
     }
 
-    protected function evaluateServiceDefinitions(ServiceDefinitionMap $serviceDefinitions)
+    private function evaluateServiceDefinitions(ServiceDefinitionMap $serviceDefinitions)
     {
         $defaultProvisioner = $this->injector->make(static::$defaultProvisionerClass);
-        foreach ($serviceDefinitions as $serviceKey => $serviceDefinition) {
+        foreach ($serviceDefinitions->getIterator() as $serviceKey => $serviceDefinition) {
             if ($serviceDefinition->hasProvisioner()) {
                 $this->runServiceProvisioner($serviceDefinition);
             } else {
@@ -107,54 +100,55 @@ class ServiceProvisioner implements ServiceProvisionerInterface
                     $this->app,
                     $this->injector,
                     $this->configProvider,
-                    $serviceDefinition,
-                    new Settings([])
+                    $serviceDefinition
                 );
             }
         }
     }
 
-    protected function runServiceProvisioner(ServiceDefinitionInterface $serviceDefinition, array $settings = [])
+    private function runServiceProvisioner(ServiceDefinitionInterface $serviceDefinition, array $settings = [])
     {
         $provisionerConfig = $serviceDefinition->getProvisioner();
-        if (!$provisionerConfig) {
-            throw new ConfigError(
-                'Missing provisioner meta-data (at least "class" plus optional a "method" and some "settings").'
-            );
-        }
-        if (!class_exists($provisionerConfig['class'])) {
-            throw new ConfigError('Unable to load provisioner class: ' . $provisionerConfig['class']);
+        $provisionerClass = $provisionerConfig['class'];
+
+        if (!class_exists($provisionerClass)) {
+            throw new ConfigException('Unable to load provisioner class: ' . $provisionerClass);
         }
 
-        $provisioner = $this->injector->make($provisionerConfig['class']);
-        $provisionerMethod = $provisionerConfig['method'];
-        $provisionerCallable = [ $provisioner, $provisionerMethod ];
-        if (isset($provisionerConfig['settings']) && is_array($provisionerConfig['settings'])) {
-            $settings = array_merge($provisionerConfig['settings'], $settings);
-        }
-        $provisionerSettings = new Settings($settings);
-
-        if (!empty($provisionerMethod) && is_callable($provisionerCallable)) {
-            $provisioner->$provisionerMethod($serviceDefinition, $provisionerSettings);
-        } elseif ($provisioner instanceof ProvisionerInterface) {
+        $provisioner = $this->injector->make($provisionerClass);
+        if ($provisioner instanceof ProvisionerInterface) {
             $provisioner->provision(
                 $this->app,
                 $this->injector,
                 $this->configProvider,
-                $serviceDefinition,
-                $provisionerSettings
+                $serviceDefinition
             );
         } else {
-            throw new ConfigError(
-                sprintf(
-                    "Provisioner needs <method> configuration or must implement %s",
-                    ProvisionerInterface::CLASS
-                )
+            throw new ConfigException(
+                sprintf('Provisioner %s must implement %s', $provisionerClass, ProvisionerInterface::CLASS)
             );
         }
     }
 
-    protected function loadEntityType($crateConfigDir, $schemaFile)
+    private function registerEntityTypeMaps()
+    {
+        $aggregateRootTypes = [];
+
+        foreach ($this->configProvider->getCrateMap() as $crate) {
+            foreach (glob($crate->getConfigDir().'/*/entity_schema/aggregate_root.xml') as $schemaFile) {
+                $aggregateRootType = $this->loadEntityType($crate->getConfigDir(), $schemaFile);
+                $aggregateRootTypes[$aggregateRootType->getPrefix()] = $aggregateRootType;
+            }
+        }
+
+        $this->injector->share(new EntityTypeMap($aggregateRootTypes));
+
+        foreach ($aggregateRootTypes as $aggregateRootType) {
+            $this->injector->share($aggregateRootType);
+        }
+    }
+
+    private function loadEntityType($crateConfigDir, $schemaFile)
     {
         $schemaFile = new SplFileInfo($schemaFile);
         $iniParser = new ConfigIniParser;
