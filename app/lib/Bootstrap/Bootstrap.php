@@ -41,9 +41,7 @@ class Bootstrap
         $app['version'] = $this->configProvider->get('app::config::appVersion');
         $app['debug'] = $this->configProvider->get('app::config::appDebug');
 
-        $this->bootstrapLogger($app, $this->injector, $this->configProvider);
-
-        // then kick off service provisioning and register some standard service providers.
+        // kick off service provisioning and register some standard service providers.
         $serviceProvisioner = new ServiceProvisioner($app, $this->injector, $this->configProvider);
         $app->register(new ServiceProvider($serviceProvisioner));
         $app->register(new ControllerResolverServiceProvider);
@@ -101,21 +99,6 @@ class Bootstrap
         $injector->share($config)->alias(ConfigProviderInterface::CLASS, get_class($config));
 
         return $config;
-    }
-
-    protected function bootstrapLogger(Application $app, Injector $injector, ConfigProviderInterface $configProvider)
-    {
-        // register logger as first item within the DI chain
-        // @todo log rotation
-        $app->register(new MonologServiceProvider, [
-            'monolog.logfile' => $configProvider->get('app::config::project.log_dir').'/dailex.log'
-        ]);
-
-        $logger = $app['logger'];
-
-        $injector->share($logger)->alias(LoggerInterface::class, get_class($logger));
-
-        return $logger;
     }
 
     protected function bootstrapRouting(Application $app, ConfigProviderInterface $configProvider)

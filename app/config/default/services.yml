@@ -3,6 +3,14 @@
 ---
 dailex:
   infrastructure:
+    logger:
+      class: Monolog\Logger
+      provisioner:
+        class: Dailex\Service\Provisioner\MonologServiceProvisioner
+        settings:
+          location: ${app::config::project.dir}/var/logs/dailex.log
+          alias: Psr\Log\LoggerInterface
+
     message_bus:
       class: Daikon\MessageBus\MessageBus
       provisioner:
