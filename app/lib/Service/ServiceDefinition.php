@@ -2,35 +2,38 @@
 
 namespace Dailex\Service;
 
+use Dailex\Service\Provisioner\DefaultProvisioner;
+
 final class ServiceDefinition implements ServiceDefinitionInterface
 {
-    private $provisioner;
+    private $serviceClass;
 
-    private $class;
+    private $provisionerClass;
 
-    public function __construct(array $config)
-    {
-        $this->provisioner = $config['provisioner'] ?? null;
-        $this->class = $config['class']; //@todo required?
+    private $provisionerSettings;
+
+    public function __construct(
+        string $serviceClass,
+        string $provisionerClass = DefaultProvisioner::class,
+        array $provisionerSettings = []
+    ) {
+        $this->serviceClass = $serviceClass;
+        $this->provisionerClass = $provisionerClass;
+        $this->provisionerSettings = $provisionerSettings;
     }
 
-    public function getProvisioner()
+    public function getServiceClass(): string
     {
-        return $this->provisioner;
+        return $this->serviceClass;
     }
 
-    public function hasProvisioner()
+    public function getProvisionerClass(): string
     {
-        return isset($this->provisioner);
+        return $this->provisionerClass;
     }
 
-    public function getClass()
+    public function getProvisionerSettings(): array
     {
-        return $this->class;
-    }
-
-    public function hasClass()
-    {
-        return isset($this->class);
+        return $this->provisionerSettings;
     }
 }

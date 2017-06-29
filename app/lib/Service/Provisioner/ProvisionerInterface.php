@@ -14,5 +14,5 @@ interface ProvisionerInterface
         Injector $injector,
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
-    );
+    ): void;
 }

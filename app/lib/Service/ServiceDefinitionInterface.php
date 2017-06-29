@@ -4,11 +4,9 @@ namespace Dailex\Service;
 
 interface ServiceDefinitionInterface
 {
-    public function getProvisioner();
+    public function getServiceClass(): string;
 
-    public function hasProvisioner();
+    public function getProvisionerClass(): string;
 
-    public function getClass();
-
-    public function hasClass();
+    public function getProvisionerSettings(): array;
 }

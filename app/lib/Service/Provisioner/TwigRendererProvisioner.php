@@ -17,18 +17,18 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         Injector $injector,
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
-    ) {
-        $service = $serviceDefinition->getClass();
+    ): void {
+        $serviceClass = $serviceDefinition->getServiceClass();
 
         $this->registerTwig($app, $injector, $configProvider);
 
         $injector
-            ->share($service)
-            ->alias(TemplateRendererInterface::CLASS, $service)
+            ->share($serviceClass)
+            ->alias(TemplateRendererInterface::CLASS, $serviceClass)
             ->delegate(
-                $service,
-                function (Filesystem $filesystem) use ($service, $app) {
-                    return new $service($app['twig'], $filesystem);
+                $serviceClass,
+                function (Filesystem $filesystem) use ($serviceClass, $app) {
+                    return new $serviceClass($app['twig'], $filesystem);
                 }
             );
     }

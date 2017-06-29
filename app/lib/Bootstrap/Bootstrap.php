@@ -41,10 +41,10 @@ class Bootstrap
         $app['version'] = $this->configProvider->get('app::config::appVersion');
         $app['debug'] = $this->configProvider->get('app::config::appDebug');
 
-        $this->bootstrapLogger($app, $this->configProvider, $this->injector);
+        $this->bootstrapLogger($app, $this->injector, $this->configProvider);
 
         // then kick off service provisioning and register some standard service providers.
-        $serviceProvisioner = new ServiceProvisioner($app, $this->configProvider, $this->injector);
+        $serviceProvisioner = new ServiceProvisioner($app, $this->injector, $this->configProvider);
         $app->register(new ServiceProvider($serviceProvisioner));
         $app->register(new ControllerResolverServiceProvider);
         $app->register(new AssetServiceProvider);
@@ -103,7 +103,7 @@ class Bootstrap
         return $config;
     }
 
-    protected function bootstrapLogger(Application $app, ConfigProviderInterface $configProvider, Injector $injector)
+    protected function bootstrapLogger(Application $app, Injector $injector, ConfigProviderInterface $configProvider)
     {
         // register logger as first item within the DI chain
         // @todo log rotation
