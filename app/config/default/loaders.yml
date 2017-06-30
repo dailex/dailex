@@ -1,5 +1,25 @@
 #
 # Dailex default loaders
 ---
-services:
-  loader: Dailex\Config\ServiceConfigLoader
+loaders:
+  settings:
+    loader: Daikon\Config\YamlConfigLoader
+    locations:
+      - ${app::config::core.config_dir}
+      - ${app::config::project.config_dir}
+    sources:
+      - settings.yml
+      - settings.${app::config::appContext}.yml
+      - settings.${app::config::appEnv}.yml
+      - settings.${app::config::appContext}.${app::config::appEnv}.yml
+
+  services:
+    loader: Daikon\Config\YamlConfigLoader
+    locations:
+      - ${app::config::core.config_dir}
+      - ${app::config::project.config_dir}
+    sources:
+      - services.yml
+      - services.${app::config::appContext}.yml
+      - services.${app::config::appEnv}.yml
+      - services.${app::config::appContext}.${app::config::appEnv}.yml

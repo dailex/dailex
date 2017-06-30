@@ -4,6 +4,7 @@ namespace Dailex\Bootstrap;
 
 use Auryn\Injector;
 use Auryn\StandardReflector;
+use Daikon\Config\ArrayConfigLoader;
 use Daikon\Config\ConfigProvider;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Config\ConfigProviderParams;
@@ -18,7 +19,6 @@ use Silex\Provider\FormServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
 
 abstract class Bootstrap
@@ -47,42 +47,41 @@ abstract class Bootstrap
 
     protected function bootstrapConfig(Application $app): void
     {
-        $hostPrefix = $app['settings']['hostPrefix'];
-        $appContext = $app['settings']['appContext'];
-        $appEnv = $app['settings']['appEnv'];
         $configDir = $app['settings']['core']['config_dir'];
         $projectConfigDir = $app['settings']['project']['config_dir'];
 
-        // @todo determine enabled crate config locations
-
-        $loaders = [
-            'settings' => [
-                'loader' => YamlConfigLoader::class,
-                //@todo add host dir
-                'locations' => [$configDir, $projectConfigDir],
-                'sources' => [
-                    'settings.yml',
-                    "settings.$appContext.yml",
-                    "settings.$appEnv.yml",
-                    "settings.$appContext.$appEnv.yml"
-                ]
-            ],
-            'services' => [
-                'loader' => YamlConfigLoader::class,
-                'locations' => [$configDir, $projectConfigDir],
-                'sources' => [
-                    'services.yml',
-                    "services.$appContext.yml",
-                    "services.$appEnv.yml",
-                    "services.$appContext.$appEnv.yml"
-                ]
+        $appLoaderConfig = [
+            'app' => [
+                'loader' => ArrayConfigLoader::class,
+                'sources' => ['config' => $app['settings']]
             ]
         ];
 
+        $loaderConfigProvider = new ConfigProvider(
+            new ConfigProviderParams(
+                array_merge(
+                    $appLoaderConfig,
+                    [
+                        'loaders' => [
+                            'loader' => YamlConfigLoader::class,
+                            'locations' => [$configDir, $projectConfigDir],
+                            'sources' => ['loaders.yml']
+                        ]
+                    ]
+                ),
+                'loaders::'
+            )
+        );
+
         // initialize and share the config provider
         $this->configProvider = new ConfigProvider(
-            ['app' => ['config' => $app['settings']]],
-            new ConfigProviderParams($loaders, 'settings::project')
+            new ConfigProviderParams(
+                array_merge(
+                    $appLoaderConfig,
+                    $loaderConfigProvider->get('loaders::*::*')['loaders']
+                ),
+                'settings::project'
+            )
         );
 
         $this->injector

@@ -1,5 +1,7 @@
 <?php
 ini_set('display_errors', true);
+ini_set('xdebug.default_enable', true);
+
 $appContext = 'web';
 
 $appVersion = getEnv('APP_VERSION') ?: 'master';

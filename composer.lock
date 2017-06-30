@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "618e48815700c43ad803a30c37d3c2427ce06df9"
+                "reference": "832ae301fa03d784db9c845e85e8948af64352e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/618e48815700c43ad803a30c37d3c2427ce06df9",
-                "reference": "618e48815700c43ad803a30c37d3c2427ce06df9",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/832ae301fa03d784db9c845e85e8948af64352e9",
+                "reference": "832ae301fa03d784db9c845e85e8948af64352e9",
                 "shasum": ""
             },
             "require": {
@@ -102,7 +102,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-06-27 16:39:24"
+            "time": "2017-06-30 20:11:42"
         },
         {
             "name": "daikon/cqrs",
@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "5d1f328fefe19700599f97dd3be4712f1d83d003"
+                "reference": "30a6dcd0be5162e9849f9678f18ad71b224c313e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/5d1f328fefe19700599f97dd3be4712f1d83d003",
-                "reference": "5d1f328fefe19700599f97dd3be4712f1d83d003",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/30a6dcd0be5162e9849f9678f18ad71b224c313e",
+                "reference": "30a6dcd0be5162e9849f9678f18ad71b224c313e",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "cqrs",
                 "event-sourcing"
             ],
-            "time": "2017-06-27 16:46:18"
+            "time": "2017-06-30 16:15:53"
         },
         {
             "name": "daikon/data-structures",
@@ -195,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "e6520eca52a00182fc6e78cd8fb0012e5b0f7457"
+                "reference": "fc875da0b29e3d2685d87ce392909666ccce29ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/e6520eca52a00182fc6e78cd8fb0012e5b0f7457",
-                "reference": "e6520eca52a00182fc6e78cd8fb0012e5b0f7457",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/fc875da0b29e3d2685d87ce392909666ccce29ee",
+                "reference": "fc875da0b29e3d2685d87ce392909666ccce29ee",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
                 "generic",
                 "value-object"
             ],
-            "time": "2017-06-27 16:42:14"
+            "time": "2017-06-30 16:16:34"
         },
         {
             "name": "daikon/message-bus",
@@ -240,12 +240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "1b00efd87488e770cf4e4cf99b17e7c4c05d756d"
+                "reference": "b60677e9c436e454f14dde405a2fb9acca3552b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/1b00efd87488e770cf4e4cf99b17e7c4c05d756d",
-                "reference": "1b00efd87488e770cf4e4cf99b17e7c4c05d756d",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b60677e9c436e454f14dde405a2fb9acca3552b3",
+                "reference": "b60677e9c436e454f14dde405a2fb9acca3552b3",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +274,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-06-27 16:44:07"
+            "time": "2017-06-30 16:17:52"
         },
         {
             "name": "jms/parser-lib",
