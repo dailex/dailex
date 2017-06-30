@@ -30,7 +30,7 @@ final class Article extends AggregateRoot
      */
     public static function create(CreateArticle $createArticle, ArticleEntityType $articleType): self
     {
-        return (new self($articleType))
+        return (new self($createArticle->getAggregateId(), $articleType))
             ->reflectThat(ArticleWasCreated::viaCommand($createArticle));
     }
 
@@ -49,9 +49,9 @@ final class Article extends AggregateRoot
     /**
      * @param ArticleEntityType $articleType
      */
-    protected function __construct(ArticleEntityType $articleType)
+    protected function __construct(AggregateIdInterface $aggregateId, ArticleEntityType $articleType)
     {
-        parent::__construct();
-        $this->articleState = $articleType->makeEntity();
+        parent::__construct($aggregateId);
+        $this->articleState = $articleType->makeEntity([ "identity" => $aggregateId ]);
     }
 }

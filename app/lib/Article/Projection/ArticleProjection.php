@@ -4,10 +4,10 @@ namespace Dailex\Article\Projection;
 
 use Daikon\Cqrs\Projection\ProjectionInterface;
 use Daikon\Cqrs\Projection\ProjectionTrait;
-use Dailex\Article\Domain\Entity\ArticleEntity;
+use Daikon\Entity\Entity\Entity;
 use Dailex\Article\Domain\Event\ArticleWasCreated;
 
-final class ArticleProjection extends ArticleEntity implements ProjectionInterface
+final class ArticleProjection extends Entity implements ProjectionInterface
 {
     use ProjectionTrait;
 
@@ -18,8 +18,8 @@ final class ArticleProjection extends ArticleEntity implements ProjectionInterfa
     protected function whenArticleWasCreated(ArticleWasCreated $articleWasCreated): self
     {
         return $this
-            ->withId($articleWasCreated->getAggregateId())
-            ->withTitle($articleWasCreated->getTitle())
-            ->withContent($articleWasCreated->getContent());
+            ->withValue("id", $articleWasCreated->getAggregateId())
+            ->withValue("title", $articleWasCreated->getTitle())
+            ->with("content", $articleWasCreated->getContent());
     }
 }

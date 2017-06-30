@@ -14,24 +14,16 @@ class ArticleEntity extends Entity
      */
     public function getIdentity(): ValueObjectInterface
     {
-        return $this->getId();
-    }
-
-    /**
-     * @return AggregateId
-     */
-    public function getId(): AggregateId
-    {
-        return $this->get("id");
+        return $this->get("identity");
     }
 
     /**
      * @param AggregateId $aggregateId
      * @return self
      */
-    public function withId(AggregateId $aggregateId): self
+    public function withIdentity(AggregateId $aggregateId): self
     {
-        return $this->withValue("id", $aggregateId);
+        return $this->withValue("identity", $aggregateId);
     }
 
     /**

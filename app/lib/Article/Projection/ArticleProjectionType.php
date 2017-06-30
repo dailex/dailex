@@ -2,14 +2,22 @@
 
 namespace Dailex\Article\Projection;
 
+use Daikon\Cqrs\Aggregate\AggregateId;
+use Daikon\Entity\EntityType\Attribute;
+use Daikon\Entity\EntityType\EntityType;
 use Daikon\Entity\Entity\TypedEntityInterface;
-use Dailex\Article\Domain\Entity\ArticleEntityType;
+use Daikon\Entity\ValueObject\Text;
 
-final class ArticleProjectionType extends ArticleEntityType
+final class ArticleProjectionType extends EntityType
 {
     public function __construct()
     {
-        parent::__construct("ArticleProjection");
+        parent::__construct("ArticleProjection", [
+            Attribute::define("id", AggregateId::class, $this),
+            Attribute::define("revision", Revision::class, $this),
+            Attribute::define("title", Text::class, $this),
+            Attribute::define("content", Text::class, $this),
+        ]);
     }
 
     /**

@@ -11,10 +11,10 @@ use Daikon\Entity\ValueObject\Text;
 
 class ArticleEntityType extends EntityType
 {
-    public function __construct(string $entityName = "Article")
+    public function __construct()
     {
-        parent::__construct($entityName, [
-            Attribute::define("id", AggregateId::class, $this),
+        parent::__construct("Article", [
+            Attribute::define("identity", AggregateId::class, $this),
             Attribute::define("revision", Revision::class, $this),
             Attribute::define("title", Text::class, $this),
             Attribute::define("content", Text::class, $this),
