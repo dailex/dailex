@@ -41,7 +41,7 @@ final class Article extends AggregateRoot
     protected function whenArticleWasCreated(ArticleWasCreated $articleWasCreated)
     {
         $this->articleState = $this->articleState
-            ->withId($articleWasCreated->getAggregateId())
+            ->withIdentity($articleWasCreated->getAggregateId())
             ->withTitle($articleWasCreated->getTitle())
             ->withContent($articleWasCreated->getContent());
     }

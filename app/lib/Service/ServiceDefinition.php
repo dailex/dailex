@@ -12,14 +12,18 @@ final class ServiceDefinition implements ServiceDefinitionInterface
 
     private $provisionerSettings;
 
+    private $subscriptions;
+
     public function __construct(
         string $serviceClass,
-        string $provisionerClass = DefaultProvisioner::class,
-        array $provisionerSettings = []
+        string $provisionerClass = null,
+        array $provisionerSettings = [],
+        array $subscriptions = []
     ) {
         $this->serviceClass = $serviceClass;
-        $this->provisionerClass = $provisionerClass;
+        $this->provisionerClass = $provisionerClass ?? DefaultProvisioner::class;
         $this->provisionerSettings = $provisionerSettings;
+        $this->subscriptions = $subscriptions;
     }
 
     public function getServiceClass(): string
@@ -35,5 +39,10 @@ final class ServiceDefinition implements ServiceDefinitionInterface
     public function getProvisionerSettings(): array
     {
         return $this->provisionerSettings;
+    }
+
+    public function getSubscriptions(): array
+    {
+        return $this->subscriptions;
     }
 }

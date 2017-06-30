@@ -8,22 +8,20 @@ use Daikon\Config\ConfigProvider;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Config\ConfigProviderParams;
 use Daikon\Config\YamlConfigLoader;
-use Dailex\Config\Loader\RoutingConfigLoader;
+use Dailex\Config\RoutingConfigLoader;
 use Dailex\Controller\ControllerResolverServiceProvider;
 use Dailex\Service\ServiceProvider;
 use Dailex\Service\ServiceProvisioner;
-use Psr\Log\LoggerInterface;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
-use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
 
-class Bootstrap
+abstract class Bootstrap
 {
     protected $injector;
 
@@ -34,35 +32,26 @@ class Bootstrap
         $this->injector = new Injector(new StandardReflector);
     }
 
-    public function __invoke(Application $app, array $settings)
+    public function __invoke(Application $app, array $settings): Application
     {
-        $this->configProvider = $this->bootstrapConfig($app, $this->injector, $settings);
+        $app['settings'] = $settings;
+        $app['version'] = $settings['appVersion'];
+        $app['debug'] = $settings['appDebug'];
 
-        $app['version'] = $this->configProvider->get('app::config::appVersion');
-        $app['debug'] = $this->configProvider->get('app::config::appDebug');
-
-        // kick off service provisioning and register some standard service providers.
-        $serviceProvisioner = new ServiceProvisioner($app, $this->injector, $this->configProvider);
-        $app->register(new ServiceProvider($serviceProvisioner));
-        $app->register(new ControllerResolverServiceProvider);
-        $app->register(new AssetServiceProvider);
-        $app->register(new HttpFragmentServiceProvider);
-        $app->register(new FormServiceProvider);
-        $app->register(new ValidatorServiceProvider);
-
-        $this->bootstrapRouting($app, $this->configProvider);
+        $this->bootstrapConfig($app);
+        $this->boostrapServices($app);
+        $this->bootstrapRouting($app);
 
         return $app;
     }
 
-    protected function bootstrapConfig(Application $app, Injector $injector, array $settings)
+    protected function bootstrapConfig(Application $app): void
     {
-        $app['settings'] = $settings;
-        $hostPrefix = $settings['hostPrefix'];
-        $appContext = $settings['appContext'];
-        $appEnv = $settings['appEnv'];
-        $configDir = $settings['core']['config_dir'].DIRECTORY_SEPARATOR;
-        $projectConfigDir = $settings['project']['config_dir'].DIRECTORY_SEPARATOR;
+        $hostPrefix = $app['settings']['hostPrefix'];
+        $appContext = $app['settings']['appContext'];
+        $appEnv = $app['settings']['appEnv'];
+        $configDir = $app['settings']['core']['config_dir'];
+        $projectConfigDir = $app['settings']['project']['config_dir'];
 
         // @todo determine enabled crate config locations
 
@@ -91,17 +80,28 @@ class Bootstrap
         ];
 
         // initialize and share the config provider
-        $config = new ConfigProvider(
-            ['app' => ['config' => $settings]],
+        $this->configProvider = new ConfigProvider(
+            ['app' => ['config' => $app['settings']]],
             new ConfigProviderParams($loaders, 'settings::project')
         );
 
-        $injector->share($config)->alias(ConfigProviderInterface::CLASS, get_class($config));
-
-        return $config;
+        $this->injector
+            ->share($this->configProvider)
+            ->alias(ConfigProviderInterface::CLASS, ConfigProvider::class);
     }
 
-    protected function bootstrapRouting(Application $app, ConfigProviderInterface $configProvider)
+    protected function boostrapServices(Application $app): void
+    {
+        $serviceProvisioner = new ServiceProvisioner($app, $this->injector, $this->configProvider);
+        $app->register(new ServiceProvider($serviceProvisioner));
+        $app->register(new ControllerResolverServiceProvider);
+        $app->register(new AssetServiceProvider);
+        $app->register(new HttpFragmentServiceProvider);
+        $app->register(new FormServiceProvider);
+        $app->register(new ValidatorServiceProvider);
+    }
+
+    protected function bootstrapRouting(Application $app): void
     {
         $hostPrefix = $this->configProvider->get('app::config::hostPrefix');
         $appContext = $this->configProvider->get('app::config::appContext');
@@ -119,9 +119,8 @@ class Bootstrap
         );
     }
 
-    protected function bootstrapSession(Application $app)
+    protected function bootstrapSession(Application $app): void
     {
-        // sessions are started explicitly when required
         $app->register(new SessionServiceProvider);
 
         $app->before(function (Request $request) {
@@ -129,7 +128,7 @@ class Bootstrap
         });
     }
 
-    protected function registerTrustedProxies(Application $app, array $trustedProxies)
+    protected function registerTrustedProxies(Application $app, array $trustedProxies): void
     {
         Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
         Request::setTrustedProxies($trustedProxies);

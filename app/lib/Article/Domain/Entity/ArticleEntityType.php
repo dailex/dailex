@@ -3,7 +3,7 @@
 namespace Dailex\Article\Domain\Entity;
 
 use Daikon\Cqrs\Aggregate\AggregateId;
-use Daikon\Cqrs\Aggregate\Revision;
+use Daikon\Cqrs\Aggregate\AggregateRevision;
 use Daikon\Entity\EntityType\Attribute;
 use Daikon\Entity\EntityType\EntityType;
 use Daikon\Entity\Entity\TypedEntityInterface;
@@ -15,7 +15,7 @@ class ArticleEntityType extends EntityType
     {
         parent::__construct("Article", [
             Attribute::define("identity", AggregateId::class, $this),
-            Attribute::define("revision", Revision::class, $this),
+            Attribute::define("revision", AggregateRevision::class, $this),
             Attribute::define("title", Text::class, $this),
             Attribute::define("content", Text::class, $this),
         ]);

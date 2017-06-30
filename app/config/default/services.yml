@@ -16,13 +16,16 @@ dailex:
       provisioner:
         class: Dailex\Service\Provisioner\MessageBusProvisioner
         settings:
-          channels:
-            - commands
-            - commits
-            - events
           transports:
             inproc:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
+
+    command_router:
+      class: Dailex\MessageBus\CommandRouter
+      subscriptions:
+        command_sub:
+          channel: commands
+          transport: inproc
 
     template_renderer:
       class: Dailex\Renderer\Twig\TwigRenderer

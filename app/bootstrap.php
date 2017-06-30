@@ -4,7 +4,7 @@ use Silex\Application;
 
 $projectConfigDir = __DIR__.'/config';
 $application = new Application;
-$configuration = [
+$settings = [
     'appVersion' => $appVersion,
     'appContext' => $appContext,
     'appEnv' => $appEnv,
@@ -31,6 +31,4 @@ if (is_readable($customContextBootstrap)) {
 // default bootstrap attempt
 $bootstrapClass = 'Dailex\\Bootstrap\\'.ucfirst($appContext).'Bootstrap';
 $bootstrap = new $bootstrapClass;
-$app = $bootstrap($application, $configuration);
-
-return $app;
+$app = $bootstrap($application, $settings);

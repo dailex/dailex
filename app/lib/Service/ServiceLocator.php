@@ -24,7 +24,7 @@ final class ServiceLocator implements ServiceLocatorInterface
             throw new RuntimeException(sprintf('No service found for given service id: "%s".', $id));
         }
         $serviceDefinition = $this->serviceDefinitionMap->get($id);
-        return $this->injector->make($serviceDefinition->getClass());
+        return $this->injector->make($serviceDefinition->getServiceClass());
     }
 
     public function has($id)
@@ -43,5 +43,10 @@ final class ServiceLocator implements ServiceLocatorInterface
     public function make($implementor, array $state = [])
     {
         return $this->injector->make($implementor, $state);
+    }
+
+    public function getServiceDefinitionMap(): ServiceDefinitionMap
+    {
+        return $this->serviceDefinitionMap;
     }
 }

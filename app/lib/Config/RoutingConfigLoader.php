@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Config\Loader;
+namespace Dailex\Config;
 
 use Daikon\Config\ConfigLoaderInterface;
 use Silex\Application;

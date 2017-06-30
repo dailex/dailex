@@ -9,9 +9,9 @@ use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class WebBootstrap extends Bootstrap
+final class WebBootstrap extends Bootstrap
 {
-    public function __invoke(Application $app, array $settings)
+    public function __invoke(Application $app, array $settings): Application
     {
         // start Symfony debug early for web context
         if ($settings['appDebug']) {
@@ -42,7 +42,7 @@ class WebBootstrap extends Bootstrap
         return $app;
     }
 
-    protected function registerErrorHandler(Application $app, Injector $injector)
+    private function registerErrorHandler(Application $app, Injector $injector): void
     {
         $app->error(function (\Exception $e, Request $request, $code) use ($app) {
             $message = $e->getMessage();
@@ -67,7 +67,7 @@ class WebBootstrap extends Bootstrap
         });
     }
 
-    protected function registerViewHandler(Application $app, Injector $injector)
+    private function registerViewHandler(Application $app, Injector $injector): void
     {
         $app->view(function (array $controllerResult, Request $request) use ($app, $injector) {
             $view = $injector->make($controllerResult[0]);

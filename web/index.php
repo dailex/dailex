@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', true);
 $appContext = 'web';
 
 $appVersion = getEnv('APP_VERSION') ?: 'master';
@@ -9,6 +9,6 @@ $hostPrefix = getenv('HOST_PREFIX');
 $localConfigDir = getenv('LOCAL_CONFIG_DIR') ?: '/usr/local/env';
 
 require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../app/bootstrap.php';
 
-$app = require __DIR__.'/../app/bootstrap.php';
 $app->run();

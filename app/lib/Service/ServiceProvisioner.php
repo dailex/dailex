@@ -68,7 +68,8 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
                     $serviceDefinitions[$serviceKey] = new ServiceDefinition(
                         $serviceDefinition['class'],
                         $serviceDefinition['provisioner']['class'] ?? null,
-                        $serviceDefinition['provisioner']['settings'] ?? []
+                        $serviceDefinition['provisioner']['settings'] ?? [],
+                        $serviceDefinition['subscriptions'] ?? []
                     );
                 }
             }
