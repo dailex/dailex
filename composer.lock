@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "832ae301fa03d784db9c845e85e8948af64352e9"
+                "reference": "01d1c138aa3cba9f7512d953a46bdaf02da7b7b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/832ae301fa03d784db9c845e85e8948af64352e9",
-                "reference": "832ae301fa03d784db9c845e85e8948af64352e9",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/01d1c138aa3cba9f7512d953a46bdaf02da7b7b5",
+                "reference": "01d1c138aa3cba9f7512d953a46bdaf02da7b7b5",
                 "shasum": ""
             },
             "require": {
@@ -102,7 +102,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-06-30 20:11:42"
+            "time": "2017-06-30 22:49:18"
         },
         {
             "name": "daikon/cqrs",

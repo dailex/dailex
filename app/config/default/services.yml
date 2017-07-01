@@ -8,7 +8,7 @@ dailex:
       provisioner:
         class: Dailex\Service\Provisioner\MonologServiceProvisioner
         settings:
-          location: ${app::config::project.dir}/var/logs/dailex.log
+          location: ${app.log_dir}/dailex.log
           alias: Psr\Log\LoggerInterface
 
     message_bus:

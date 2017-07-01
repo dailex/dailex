@@ -58,7 +58,7 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
 
     private function getServiceDefinitionMap(): ServiceDefinitionMap
     {
-        $serviceConfigs = $this->configProvider->get('services::*::*');
+        $serviceConfigs = $this->configProvider->get('services');
 
         $serviceDefinitions = [];
         foreach ($serviceConfigs as $namespace => $namespaceDefinitions) {

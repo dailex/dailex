@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Article\Domain\Command;
+namespace Testing\Blog\Article\Domain\Command;
 
 use Daikon\Cqrs\Aggregate\CommandHandler;
 use Daikon\Cqrs\EventStore\UnitOfWorkInterface;

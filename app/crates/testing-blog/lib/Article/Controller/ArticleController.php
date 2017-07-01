@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Article\Controller;
+namespace Testing\Blog\Article\Controller;
 
 use Daikon\MessageBus\MessageBusInterface;
 use Dailex\Article\Domain\Command\CreateArticle;

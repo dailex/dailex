@@ -1,21 +1,24 @@
 <?php
 
-namespace Dailex\Article\Domain\Command;
+namespace Testing\Blog\Article\Domain\Event;
 
 use Daikon\Cqrs\Aggregate\AggregateId;
-use Daikon\Cqrs\Aggregate\Command;
+use Daikon\Cqrs\Aggregate\DomainEvent;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
+use Dailex\Article\Domain\Command\CreateArticle;
 
-final class CreateArticle extends Command
+final class ArticleWasCreated extends DomainEvent
 {
     /**
-     * @var Text $title
+     * @var \Daikon\Entity\ValueObject\Text
+     * @buzz::fromArray->fromNative
      */
     private $title;
 
     /**
-     * @var Text $content
+     * @var \Daikon\Entity\ValueObject\Text
+     * @buzz::fromArray->fromNative
      */
     private $content;
 
@@ -29,6 +32,19 @@ final class CreateArticle extends Command
             AggregateId::fromNative($nativeValues['aggregateId']),
             Text::fromNative($nativeValues['title']),
             Text::fromNative($nativeValues['content'])
+        );
+    }
+
+    /**
+     * @param  CreateArticle $createArticle
+     * @return self
+     */
+    public static function viaCommand(CreateArticle $createArticle): self
+    {
+        return new self(
+            $createArticle->getAggregateId(),
+            $createArticle->getTitle(),
+            $createArticle->getContent()
         );
     }
 
@@ -60,6 +76,7 @@ final class CreateArticle extends Command
     }
 
     /**
+     * @param AggregateId $aggregateId
      * @param Text $title
      * @param Text $content
      */

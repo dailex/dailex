@@ -41,7 +41,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Dailex\\": "app/lib/"
+            "Dailex\\": "app/lib/",
+            "Testing\\Blog\\": "app/crates/testing-blog/lib/"
         }
     },
     "config": {

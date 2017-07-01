@@ -1,0 +1,9 @@
+#
+# Project crates configuration
+---
+testing.blog:
+  routing_prefix: /
+  recaptcha:
+    enabled: false
+    site_key: ${recaptcha.site_key}
+    secret_key: ${recaptcha.secret_key}

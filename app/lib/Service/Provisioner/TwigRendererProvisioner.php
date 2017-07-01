@@ -35,14 +35,14 @@ final class TwigRendererProvisioner implements ProvisionerInterface
 
     private function registerTwig(Container $app, Injector $injector, ConfigProviderInterface $configProvider)
     {
-        $projectDir = $configProvider->get('app::config::project.dir');
-        $coreDir = $configProvider->get('app::config::core.dir');
+        $dailexDir = $configProvider->get('app.dailex.dir');
+        $appDir = $configProvider->get('app.dir');
 
         $app->register(new TwigServiceProvider);
 
         $namespacedPaths = $this->getCrateTemplatesPaths($configProvider);
-        $projectTemplates = $projectDir.'/app/templates';
-        $namespacedPaths['dailex'][] = $coreDir.'/app/templates';
+        $projectTemplates = $appDir.'/app/templates';
+        $namespacedPaths['dailex'][] = $dailexDir.'/app/templates';
         $namespacedPaths['project'][] = $projectTemplates;
 //         if ($hostPrefix = $configProvider->getHostPrefix()) {
 //             $projectHostTemplates = $projectTemplates.'/'.$hostPrefix;
@@ -52,7 +52,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
 //         }
 
         $app['twig.form.templates'] = [ 'bootstrap_3_layout.html.twig' ];
-        $app['twig.options'] = [ 'cache' => $projectDir.'/var/cache/twig' ];
+        $app['twig.options'] = [ 'cache' => $configProvider->get('app.cache_dir').'/twig' ];
         $app['twig.loader.filesystem'] = function () use ($namespacedPaths, $projectTemplates) {
             $filesystem = new \Twig_Loader_Filesystem($projectTemplates);
             foreach ($namespacedPaths as $namespace => $path) {
@@ -61,7 +61,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
             return $filesystem;
         };
 
-        $settings = $configProvider->get('services::dailex::infrastructure.template_renderer.provisioner.settings');
+        $settings = $configProvider->get('services.dailex.infrastructure.template_renderer.provisioner.settings');
         $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $settings) {
             foreach ($settings['extensions'] ?? [] as $extension) {
                 $twig->addExtension($injector->make($extension));
@@ -72,7 +72,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
 
     protected function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)
     {
-        $projectDir = $configProvider->get('app::config::project.dir').'/app/templates';
+        $appDir = $configProvider->get('app.dir').'/app/templates';
 
         $paths = [];
 //         foreach ($configProvider->getCrateMap() as $crate) {

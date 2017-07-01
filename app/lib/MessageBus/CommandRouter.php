@@ -24,7 +24,7 @@ final class CommandRouter implements MessageHandlerInterface
             new \Dailex\Article\Domain\Entity\ArticleEntityType,
             new \Daikon\Cqrs\EventStore\UnitOfWork(
                 \Dailex\Article\Domain\ArticleEntityType::class,
-                new \Dailex\Article\EchoPersistenceAdapter,
+                new \Dailex\Util\EchoPersistenceAdapter,
                 new \Daikon\Cqrs\EventStore\NoopStreamProcessor
             ),
             $this->injector->make(\Daikon\MessageBus\MessageBus::class)

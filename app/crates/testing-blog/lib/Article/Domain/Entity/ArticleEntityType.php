@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Article\Domain\Entity;
+namespace Testing\Blog\Article\Domain\Entity;
 
 use Daikon\Cqrs\Aggregate\AggregateId;
 use Daikon\Cqrs\Aggregate\AggregateRevision;

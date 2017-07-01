@@ -51,7 +51,7 @@ services:
       - APP_DEBUG
       - HOST_SCHEME
       - HOST_NAME
-      - LOCAL_CONFIG_DIR
+      - SECRETS_DIR
       - PHP_INI_SCAN_DIR=var/docker/php/conf/conf.d
 
   couchdb:

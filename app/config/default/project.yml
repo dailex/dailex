@@ -1,7 +1,7 @@
 #
 # Dailex default project settings
 ---
-local_configs:
+secrets:
   rabbitmq:
     name: rabbitmq.json
     type: json

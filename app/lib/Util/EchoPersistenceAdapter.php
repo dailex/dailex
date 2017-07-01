@@ -1,5 +1,5 @@
 <?php
-namespace Dailex\Article;
+namespace Dailex\Util;
 
 use Daikon\Cqrs\EventStore\PersistenceAdapterInterface;
 use Daikon\Cqrs\EventStore\CommitStream;

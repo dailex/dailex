@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Article\Projection;
+namespace Testing\Blog\Article\Projection;
 
 use Daikon\Cqrs\Projection\ProjectionInterface;
 use Daikon\Cqrs\Projection\ProjectionTrait;

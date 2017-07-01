@@ -1,6 +1,6 @@
 <?php
 
-namespace Dailex\Article\Domain;
+namespace Testing\Blog\Article\Domain;
 
 use Daikon\Cqrs\Aggregate\AggregateIdInterface;
 use Daikon\Cqrs\Aggregate\AggregateRoot;
