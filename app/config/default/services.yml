@@ -11,6 +11,11 @@ dailex:
           location: ${app.log_dir}/dailex.log
           alias: Psr\Log\LoggerInterface
 
+    controllers:
+      class: Silex\ControllerCollection
+      provisioner:
+        class: Dailex\Service\Provisioner\ControllerProvisioner
+
     message_bus:
       class: Daikon\MessageBus\MessageBus
       provisioner:

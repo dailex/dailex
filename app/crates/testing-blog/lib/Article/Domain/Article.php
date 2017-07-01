@@ -4,9 +4,9 @@ namespace Testing\Blog\Article\Domain;
 
 use Daikon\Cqrs\Aggregate\AggregateIdInterface;
 use Daikon\Cqrs\Aggregate\AggregateRoot;
-use Dailex\Article\Domain\Command\CreateArticle;
-use Dailex\Article\Domain\Entity\ArticleEntityType;
-use Dailex\Article\Domain\Event\ArticleWasCreated;
+use Testing\Blog\Article\Domain\Command\CreateArticle;
+use Testing\Blog\Article\Domain\Entity\ArticleEntityType;
+use Testing\Blog\Article\Domain\Event\ArticleWasCreated;
 
 final class Article extends AggregateRoot
 {

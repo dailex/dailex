@@ -41,7 +41,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         $app->register(new TwigServiceProvider);
 
         $namespacedPaths = $this->getCrateTemplatesPaths($configProvider);
-        $projectTemplates = $appDir.'/app/templates';
+        $projectTemplates = $appDir.'/templates';
         $namespacedPaths['dailex'][] = $dailexDir.'/app/templates';
         $namespacedPaths['project'][] = $projectTemplates;
 //         if ($hostPrefix = $configProvider->getHostPrefix()) {
@@ -72,7 +72,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
 
     protected function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)
     {
-        $appDir = $configProvider->get('app.dir').'/app/templates';
+        $appDir = $configProvider->get('app.dir').'/templates';
 
         $paths = [];
 //         foreach ($configProvider->getCrateMap() as $crate) {

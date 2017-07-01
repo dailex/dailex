@@ -9,8 +9,6 @@ use Daikon\Config\ConfigProvider;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Config\ConfigProviderParams;
 use Daikon\Config\YamlConfigLoader;
-use Dailex\Config\RoutingConfigLoader;
-use Dailex\Controller\ControllerResolverServiceProvider;
 use Dailex\Service\ServiceProvider;
 use Dailex\Service\ServiceProvisioner;
 use Silex\Application;
@@ -44,7 +42,6 @@ final class WebBootstrap implements BootstrapInterface
 
         $this->bootstrapConfig($app);
         $this->boostrapServices($app);
-        $this->bootstrapRouting($app);
         $this->bootstrapSession($app);
 
         $this->registerTrustedProxies($app);
@@ -98,7 +95,6 @@ final class WebBootstrap implements BootstrapInterface
     {
         $serviceProvisioner = new ServiceProvisioner($app, $this->injector, $this->configProvider);
         $app->register(new ServiceProvider($serviceProvisioner));
-        $app->register(new ControllerResolverServiceProvider);
         $app->register(new AssetServiceProvider);
         $app->register(new HttpFragmentServiceProvider);
         $app->register(new FormServiceProvider);
@@ -110,22 +106,6 @@ final class WebBootstrap implements BootstrapInterface
                 ['profiler.cache_dir' => $this->configProvider->get('app.cache_dir').'/profiler']
             );
         }
-    }
-
-    private function bootstrapRouting(Application $app): void
-    {
-        $appContext = $this->configProvider->get('app.context');
-        $appEnv = $this->configProvider->get('app.env');
-
-        (new RoutingConfigLoader($app))->load(
-            [$this->configProvider->get('app.config_dir')],
-            [
-                'routing.php',
-                "routing.$appContext.php",
-                "routing.$appEnv.php",
-                "routing.$appContext.$appEnv.php"
-            ]
-        );
     }
 
     private function bootstrapSession(Application $app): void

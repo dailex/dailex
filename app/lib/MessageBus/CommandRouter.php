@@ -21,9 +21,9 @@ final class CommandRouter implements MessageHandlerInterface
 //         $commandHandler = $this->injector->make($commandHandlerClass);
 
         $commandHandler = new $commandHandlerClass(
-            new \Dailex\Article\Domain\Entity\ArticleEntityType,
+            new \Testing\Blog\Article\Domain\Entity\ArticleEntityType,
             new \Daikon\Cqrs\EventStore\UnitOfWork(
-                \Dailex\Article\Domain\ArticleEntityType::class,
+                \Testing\Blog\Article\Domain\ArticleEntityType::class,
                 new \Dailex\Util\EchoPersistenceAdapter,
                 new \Daikon\Cqrs\EventStore\NoopStreamProcessor
             ),

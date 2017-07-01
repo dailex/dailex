@@ -6,7 +6,7 @@ use Daikon\Cqrs\Aggregate\AggregateId;
 use Daikon\Cqrs\Aggregate\DomainEvent;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
-use Dailex\Article\Domain\Command\CreateArticle;
+use Testing\Blog\Article\Domain\Command\CreateArticle;
 
 final class ArticleWasCreated extends DomainEvent
 {

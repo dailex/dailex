@@ -6,9 +6,9 @@ use Daikon\Cqrs\Aggregate\CommandHandler;
 use Daikon\Cqrs\EventStore\UnitOfWorkInterface;
 use Daikon\MessageBus\MessageBusInterface;
 use Daikon\MessageBus\Metadata\Metadata;
-use Dailex\Article\Domain\Article;
-use Dailex\Article\Domain\Command\CreateArticle;
-use Dailex\Article\Domain\Entity\ArticleEntityType;
+use Testing\Blog\Article\Domain\Article;
+use Testing\Blog\Article\Domain\Command\CreateArticle;
+use Testing\Blog\Article\Domain\Entity\ArticleEntityType;
 
 final class CreateArticleHandler extends CommandHandler
 {

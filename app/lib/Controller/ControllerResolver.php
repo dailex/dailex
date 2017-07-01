@@ -8,9 +8,9 @@ use Silex\ServiceControllerResolver;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 
-class ControllerResolver extends ServiceControllerResolver
+final class ControllerResolver extends ServiceControllerResolver
 {
-    protected $serviceLocator;
+    private $serviceLocator;
 
     public function __construct(
         ControllerResolverInterface $controllerResolver,
@@ -39,7 +39,7 @@ class ControllerResolver extends ServiceControllerResolver
         return $callable;
     }
 
-    protected function makeController($controller)
+    private function makeController($controller)
     {
         if (is_string($controller)) {
             if (false === strpos($controller, '::')) {
@@ -56,6 +56,6 @@ class ControllerResolver extends ServiceControllerResolver
             return false;
         }
 
-        return [ $this->serviceLocator->make($controllerClass), $controllerMethod ];
+        return [$this->serviceLocator->make($controllerClass), $controllerMethod];
     }
 }

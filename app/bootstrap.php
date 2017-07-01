@@ -2,7 +2,6 @@
 
 use Silex\Application;
 
-$projectConfigDir = __DIR__.'/config';
 $app = new Application;
 $app['version'] = $appVersion;
 $app['debug'] = filter_var($appDebug, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
@@ -12,14 +11,16 @@ $app['config'] = [
     'env' => $appEnv,
     'debug' => $app['debug'],
     'prefix' => $hostPrefix,
-    'dir' => dirname(__DIR__),
-    'config_dir' => $projectConfigDir,
+    'base_dir' => dirname(__DIR__),
+    'dir' => __DIR__,
+    'crate_dir' => __DIR__.'/crates',
+    'config_dir' => __DIR__.'/config',
     'secrets_dir' => $secretsDir,
     'log_dir' => dirname(__DIR__).'/var/logs',
     'cache_dir' => dirname(__DIR__).'/var/cache',
     'dailex' => [
-        'config_dir' => __DIR__.'/config/default',
-        'dir' => dirname(__DIR__)
+        'dir' => dirname(__DIR__),
+        'config_dir' => __DIR__.'/config/default'
     ]
 ];
 

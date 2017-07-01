@@ -3,9 +3,9 @@
 namespace Testing\Blog\Article\Controller;
 
 use Daikon\MessageBus\MessageBusInterface;
-use Dailex\Article\Domain\Command\CreateArticle;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Testing\Blog\Article\Domain\Command\CreateArticle;
 
 class ArticleController
 {
