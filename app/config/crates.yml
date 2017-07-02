@@ -1,9 +1,9 @@
 #
 # Project crates configuration
 ---
-testing.blog:
-  routing_prefix: /
+testing-blog:
+  mount: /
   recaptcha:
     enabled: false
-    site_key: ${recaptcha.site_key}
-    secret_key: ${recaptcha.secret_key}
+    site_key: ${secrets.recaptcha.site_key}
+    secret_key: ${secrets.recaptcha.secret_key}

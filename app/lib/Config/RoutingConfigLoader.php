@@ -3,31 +3,25 @@
 namespace Dailex\Config;
 
 use Daikon\Config\ConfigLoaderInterface;
+use Daikon\Config\ConfigProviderInterface;
 use Silex\Application;
 
 final class RoutingConfigLoader implements ConfigLoaderInterface
 {
-    /**
-     * @var Application
-     */
     private $app;
 
-    /**
-     * @param Application $app
-     */
-    public function __construct(Application $app)
+    private $configProvider;
+
+    public function __construct(Application $app, ConfigProviderInterface $configProvider)
     {
         $this->app = $app;
+        $this->configProvider = $configProvider;
     }
 
-    /**
-     * @param string[] $locations
-     * @param string[] $sources
-     * @return mixed[]
-     */
     public function load(array $locations, array $sources): array
     {
         $app = $this->app;
+        $configProvider = $this->configProvider;
         $loadedConfigs = [];
         foreach ($locations as $location) {
             if (substr($location, -1) !== "/") {
@@ -43,20 +37,12 @@ final class RoutingConfigLoader implements ConfigLoaderInterface
         return $loadedConfigs;
     }
 
-    /**
-     * @param mixed[] $config
-     * @return string
-     */
     public function serialize(array $config): string
     {
         // not implemented yet
         return '';
     }
 
-    /**
-     * @param string $serializedConfig
-     * @return mixed[]
-     */
     public function deserialize(string $serializedConfig): array
     {
         // not implemented yet

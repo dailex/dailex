@@ -24,11 +24,11 @@ final class ControllerProvisioner implements ProvisionerInterface
 
         $app->register(new ControllerResolverServiceProvider);
 
-        (new RoutingConfigLoader($app))->load(
+        (new RoutingConfigLoader($app, $configProvider))->load(
             [
                 $appConfigDir,
                 // @todo get crate directories from config provider
-                $configProvider->get('app.crate_dir').'/testing-blog/config'
+                $configProvider->get('app.crates_dir').'/testing-blog/config'
             ],
             [
                 'routing.php',

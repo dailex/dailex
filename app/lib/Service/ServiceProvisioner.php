@@ -60,7 +60,6 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
     {
         $serviceConfigs = $this->configProvider->get('services');
 
-        $serviceDefinitions = [];
         foreach ($serviceConfigs as $namespace => $namespaceDefinitions) {
             foreach ($namespaceDefinitions as $rootPath => $rootDefinitions) {
                 foreach ($rootDefinitions as $serviceName => $serviceDefinition) {
@@ -75,7 +74,7 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
             }
         }
 
-        return new ServiceDefinitionMap($serviceDefinitions);
+        return new ServiceDefinitionMap($serviceDefinitions ?? []);
     }
 
     private function makeServices(ServiceDefinitionMap $serviceDefinitionMap): void

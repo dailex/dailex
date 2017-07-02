@@ -2,6 +2,9 @@
 
 use Testing\Blog\Article\Controller\ArticleController;
 
-$app->mount('/blog', function ($blog) {
-    $blog->get('/article', [ArticleController::class, 'read'])->bind('testing.blog.article');
+$cratePrefix = 'testing-blog';
+$mount = $configProvider->get('crates.'.$cratePrefix.'.mount');
+
+$app->mount($mount, function ($blog) use ($cratePrefix) {
+    $blog->get('/article', [ArticleController::class, 'read'])->bind($cratePrefix.'.article');
 });

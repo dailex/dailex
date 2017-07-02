@@ -2,12 +2,13 @@
 # Services configuration for the Blog crate
 ---
 testing.blog:
-  mail_service:
-    class: Hash\NisekoFinder\Service\MailService
-    options:
-      from_email: ${project.email.from_email}
-      from_name: ${project.email.from_name}
-      sender_email: ${project.email.sender_email}
-      sender_name: ${project.email.sender_name}
-      reply_email: ${project.email.reply_email}
-      reply_name: ${project.email.reply_name}
+  infrastructure:
+    mail_service:
+      class: Hash\NisekoFinder\Service\MailService
+      options:
+        from_email: ${project.email.from_email}
+        from_name: ${project.email.from_name}
+        sender_email: ${project.email.sender_email}
+        sender_name: ${project.email.sender_name}
+        reply_email: ${project.email.reply_email}
+        reply_name: ${project.email.reply_name}

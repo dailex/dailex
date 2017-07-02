@@ -72,9 +72,9 @@ final class WebBootstrap implements BootstrapInterface
                             'sources' => ['loaders.yml']
                         ]
                     ]
-                    )
                 )
-            );
+            )
+        );
 
         // initialize and share the config provider
         $this->configProvider = new ConfigProvider(
@@ -88,7 +88,7 @@ final class WebBootstrap implements BootstrapInterface
 
         $this->injector
             ->share($this->configProvider)
-            ->alias(ConfigProviderInterface::CLASS, ConfigProvider::class);
+            ->alias(ConfigProviderInterface::class, ConfigProvider::class);
     }
 
     private function boostrapServices(Application $app): void
