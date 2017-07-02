@@ -21,11 +21,6 @@ class ArticleEntityType extends EntityType
         ]);
     }
 
-    /**
-     * @param mixed[] $articleState
-     * @param TypedEntityInterface|null $parent
-     * @return TypedEntityInterface
-     */
     public function makeEntity(array $articleState = [], TypedEntityInterface $parent = null): TypedEntityInterface
     {
         $articleState["@type"] = $this;

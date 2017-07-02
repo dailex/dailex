@@ -10,34 +10,19 @@ use Testing\Blog\Article\Domain\Event\ArticleWasCreated;
 
 final class Article extends AggregateRoot
 {
-    /**
-     * @var \Dailex\Article\Domain\Entity\ArticleEntity
-     */
     private $articleState;
 
-    /**
-     * @return AggregateIdInterface
-     */
     public function getIdentifier(): AggregateIdInterface
     {
         return $this->articleState->getIdentity();
     }
 
-    /**
-     * @param CreateArticle $createArticle
-     * @param ArticleEntityType $articleType
-     * @return self
-     */
-    public static function create(CreateArticle $createArticle, ArticleEntityType $articleType): self
+    public static function create(CreateArticle $createArticle): self
     {
-        return (new self($createArticle->getAggregateId(), $articleType))
+        return (new self($createArticle->getAggregateId()))
             ->reflectThat(ArticleWasCreated::viaCommand($createArticle));
     }
 
-    /**
-     * @param  ArticleWasCreated $articleWasCreated
-     * @return self
-     */
     protected function whenArticleWasCreated(ArticleWasCreated $articleWasCreated)
     {
         $this->articleState = $this->articleState
@@ -46,12 +31,9 @@ final class Article extends AggregateRoot
             ->withContent($articleWasCreated->getContent());
     }
 
-    /**
-     * @param ArticleEntityType $articleType
-     */
-    protected function __construct(AggregateIdInterface $aggregateId, ArticleEntityType $articleType)
+    protected function __construct(AggregateIdInterface $aggregateId)
     {
         parent::__construct($aggregateId);
-        $this->articleState = $articleType->makeEntity(["identity" => $aggregateId]);
+        $this->articleState = (new ArticleEntityType)->makeEntity(["identity" => $aggregateId]);
     }
 }

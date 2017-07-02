@@ -30,9 +30,9 @@ final class DataAccessServiceProvisioner implements ProvisionerInterface
     private function registerUowMapDelegate(Injector $injector, array $uowConfigs)
     {
         $factory = function () use ($uowConfigs) {
-            foreach ($uowConfigs as $uowId => $uowConfig) {
-                $unitsOfWork[$uowId] = new UnitOfWork(
-                    $uowConfig['dependencies']['aggregate_root_type'],
+            foreach ($uowConfigs as $uowName => $uowConfig) {
+                $unitsOfWork[$uowName] = new UnitOfWork(
+                    $uowConfig['dependencies']['aggregate_root'],
                     new \Dailex\Util\EchoPersistenceAdapter,
                     new \Daikon\Cqrs\EventStore\NoopStreamProcessor
                 );

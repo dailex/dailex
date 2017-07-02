@@ -25,4 +25,4 @@ units_of_work:
     event_reader: testing.blog.article::event_stream::event_source::reader
     event_writer: testing.blog.article::domain_event::event_source::writer
     dependencies:
-      aggregate_root_type: Testing\Blog\Article\Domain\Entity\ArticleEntityType
+      aggregate_root: Testing\Blog\Article\Domain\Article

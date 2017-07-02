@@ -6,23 +6,14 @@ use Daikon\Cqrs\Aggregate\AggregateId;
 use Daikon\Cqrs\Aggregate\Command;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
+use Testing\Blog\Article\Domain\Article;
 
 final class CreateArticle extends Command
 {
-    /**
-     * @var Text $title
-     */
     private $title;
 
-    /**
-     * @var Text $content
-     */
     private $content;
 
-    /**
-     * @param  mixed[] $nativeValues
-     * @return MessageInterface
-     */
     public static function fromArray(array $nativeValues): MessageInterface
     {
         return new self(
@@ -32,25 +23,16 @@ final class CreateArticle extends Command
         );
     }
 
-    /**
-     * @return Text
-     */
     public function getTitle(): Text
     {
         return $this->title;
     }
 
-    /**
-     * @return Text
-     */
     public function getContent(): Text
     {
         return $this->content;
     }
 
-    /**
-     * @return mixed[]
-     */
     public function toArray(): array
     {
         $arr['title'] = $this->title->toNative();
@@ -58,10 +40,11 @@ final class CreateArticle extends Command
         return $arr;
     }
 
-    /**
-     * @param Text $title
-     * @param Text $content
-     */
+    public static function getAggregateRootClass(): string
+    {
+        return Article::class;
+    }
+
     protected function __construct(AggregateId $aggregateId, Text $title, Text $content)
     {
         parent::__construct($aggregateId);

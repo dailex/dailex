@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "01d1c138aa3cba9f7512d953a46bdaf02da7b7b5"
+                "reference": "337274a7578b1cfae40cff0874bc89ee8836e486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/01d1c138aa3cba9f7512d953a46bdaf02da7b7b5",
-                "reference": "01d1c138aa3cba9f7512d953a46bdaf02da7b7b5",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/337274a7578b1cfae40cff0874bc89ee8836e486",
+                "reference": "337274a7578b1cfae40cff0874bc89ee8836e486",
                 "shasum": ""
             },
             "require": {
@@ -102,7 +102,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-06-30 22:49:18"
+            "time": "2017-07-02 22:07:49"
         },
         {
             "name": "daikon/cqrs",
@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a"
+                "reference": "e5cd8e577796b171089c8f5c3e2e4b778acb6b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a",
-                "reference": "3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/e5cd8e577796b171089c8f5c3e2e4b778acb6b19",
+                "reference": "e5cd8e577796b171089c8f5c3e2e4b778acb6b19",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "cqrs",
                 "event-sourcing"
             ],
-            "time": "2017-07-02 17:45:07"
+            "time": "2017-07-02 23:00:33"
         },
         {
             "name": "daikon/data-structures",

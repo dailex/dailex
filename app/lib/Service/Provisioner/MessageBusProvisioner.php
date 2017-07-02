@@ -35,10 +35,17 @@ final class MessageBusProvisioner implements ProvisionerInterface
         }
 
         $factory = function (ServiceLocatorInterface $serviceLocator) use ($provisionerSettings) {
+            $transports = [];
             foreach ($provisionerSettings['transports'] as $transportName => $transportConfig) {
                 $transports[$transportName] = new $transportConfig['class']($transportName);
             }
-            $transports = new TransportMap($transports ?? []);
+            $transports = new TransportMap($transports);
+
+            $channelSubs = [
+                'commands' => [],
+                'commits' => [],
+                'events' => []
+            ];
 
             $serviceDefinitionMap = $serviceLocator->getServiceDefinitionMap();
             foreach ($serviceDefinitionMap->getIterator() as $serviceId => $serviceDefinition) {
@@ -62,10 +69,11 @@ final class MessageBusProvisioner implements ProvisionerInterface
                 }
             }
 
-            foreach ($channelSubs ?? [] as $channelName => $subscriptions) {
+            $channels = [];
+            foreach ($channelSubs as $channelName => $subscriptions) {
                 $channels[$channelName] = new Channel($channelName, new SubscriptionMap($subscriptions));
             }
-            $channelMap = new ChannelMap($channels ?? []);
+            $channelMap = new ChannelMap($channels);
 
             return new MessageBus($channelMap);
         };
