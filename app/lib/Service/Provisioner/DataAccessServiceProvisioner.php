@@ -5,7 +5,7 @@ namespace Dailex\Service\Provisioner;
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Cqrs\EventStore\UnitOfWork;
-use Dailex\Infrastructure\DataAccess\UnitOfWorkMap;
+use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 

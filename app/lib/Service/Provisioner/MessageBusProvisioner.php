@@ -10,6 +10,7 @@ use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerList;
 use Daikon\MessageBus\Channel\Subscription\Subscription;
 use Daikon\MessageBus\Channel\Subscription\SubscriptionMap;
 use Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport;
+use Daikon\MessageBus\Channel\Subscription\Transport\TransportMap;
 use Daikon\MessageBus\MessageBus;
 use Daikon\MessageBus\MessageBusInterface;
 use Dailex\Exception\ConfigException;
@@ -37,13 +38,14 @@ final class MessageBusProvisioner implements ProvisionerInterface
             foreach ($provisionerSettings['transports'] as $transportName => $transportConfig) {
                 $transports[$transportName] = new $transportConfig['class']($transportName);
             }
+            $transports = new TransportMap($transports ?? []);
 
             $serviceDefinitionMap = $serviceLocator->getServiceDefinitionMap();
             foreach ($serviceDefinitionMap->getIterator() as $serviceId => $serviceDefinition) {
                 foreach ($serviceDefinition->getSubscriptions() as $subscriptionName => $subscriptionConfig) {
                     $channelName = $subscriptionConfig['channel'];
                     $transportName = $subscriptionConfig['transport'];
-                    if (!isset($transports[$transportName])) {
+                    if (!$transports->has($transportName)) {
                         throw new ConfigException(
                             sprintf('Message bus transport "%s" has not been configured.', $transportName)
                         );
@@ -54,7 +56,7 @@ final class MessageBusProvisioner implements ProvisionerInterface
                     });
                     $channelSubs[$channelName][] = new Subscription(
                         $subscriptionName,
-                        $transports[$transportName],
+                        $transports->get($transportName),
                         new MessageHandlerList([$lazyServiceHandler])
                     );
                 }

@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "30a6dcd0be5162e9849f9678f18ad71b224c313e"
+                "reference": "3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/30a6dcd0be5162e9849f9678f18ad71b224c313e",
-                "reference": "30a6dcd0be5162e9849f9678f18ad71b224c313e",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a",
+                "reference": "3531252fa6d3c3eef68bcdf4a09c59c75bc47e1a",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "cqrs",
                 "event-sourcing"
             ],
-            "time": "2017-06-30 16:15:53"
+            "time": "2017-07-02 17:45:07"
         },
         {
             "name": "daikon/data-structures",
@@ -240,12 +240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "b60677e9c436e454f14dde405a2fb9acca3552b3"
+                "reference": "edcaf1540cd1986271316c28616220f688ccf476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b60677e9c436e454f14dde405a2fb9acca3552b3",
-                "reference": "b60677e9c436e454f14dde405a2fb9acca3552b3",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/edcaf1540cd1986271316c28616220f688ccf476",
+                "reference": "edcaf1540cd1986271316c28616220f688ccf476",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +274,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-06-30 16:17:52"
+            "time": "2017-07-02 17:54:27"
         },
         {
             "name": "jms/parser-lib",

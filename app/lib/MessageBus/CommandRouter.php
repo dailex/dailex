@@ -3,10 +3,10 @@
 namespace Dailex\MessageBus;
 
 use Auryn\Injector;
+use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;
 use Daikon\MessageBus\MessageBusInterface;
-use Dailex\Infrastructure\DataAccess\UnitOfWorkMap;
 
 final class CommandRouter implements MessageHandlerInterface
 {
