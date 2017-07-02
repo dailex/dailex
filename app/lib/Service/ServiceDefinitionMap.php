@@ -4,7 +4,7 @@ namespace Dailex\Service;
 
 use Daikon\DataStructures\TypedMapTrait;
 
-final class ServiceDefinitionMap
+final class ServiceDefinitionMap implements \IteratorAggregate, \Countable
 {
     use TypedMapTrait;
 

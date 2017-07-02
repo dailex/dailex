@@ -19,7 +19,7 @@ class ArticleController
     public function read(Request $request, Application $app)
     {
         $this->messageBus->publish(CreateArticle::fromArray([
-            'aggregateId' => 'article-123',
+            'aggregateId' => 'testing.blog.article-123',
             'title' => 'hello world!',
             'content' => 'using cqrs+es to just output this message is over engineered, but it worx :D'
         ]), 'commands');

@@ -30,6 +30,7 @@ final class WebBootstrap implements BootstrapInterface
 
     public function __construct()
     {
+        // @todo use caching reflector?
         $this->injector = new Injector(new StandardReflector);
     }
 

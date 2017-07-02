@@ -39,3 +39,16 @@ services:
     - services.${app.context}.yml
     - services.${app.env}.yml
     - services.${app.context}.${app.env}.yml
+
+data_access:
+  loader: Daikon\Config\YamlConfigLoader
+  locations:
+    - ${app.dailex.config_dir}
+    - ${app.crates_dir}/testing-blog/config
+    - ${app.crates_dir}/testing-blog/config/Article
+    - ${app.config_dir}
+  sources:
+    - data_access.yml
+    - data_access.${app.context}.yml
+    - data_access.${app.env}.yml
+    - data_access.${app.context}.${app.env}.yml

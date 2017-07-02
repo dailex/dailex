@@ -25,6 +25,11 @@ dailex:
             inproc:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
 
+    data_access:
+      class: Dailex\Infrastructure\DataAccess\DataAccessService
+      provisioner:
+        class: Dailex\Service\Provisioner\DataAccessServiceProvisioner
+
     command_router:
       class: Dailex\MessageBus\CommandRouter
       subscriptions:

@@ -53,7 +53,6 @@ final class CreateArticle extends Command
      */
     public function toArray(): array
     {
-        $arr = parent::toArray();
         $arr['title'] = $this->title->toNative();
         $arr['content'] = $this->content->toNative();
         return $arr;

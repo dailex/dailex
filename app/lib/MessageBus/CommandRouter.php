@@ -5,30 +5,38 @@ namespace Dailex\MessageBus;
 use Auryn\Injector;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;
+use Daikon\MessageBus\MessageBusInterface;
+use Dailex\Infrastructure\DataAccess\UnitOfWorkMap;
 
 final class CommandRouter implements MessageHandlerInterface
 {
     private $injector;
 
-    public function __construct(Injector $injector)
+    private $unitOfWorkMap;
+
+    private $messageBus;
+
+    public function __construct(Injector $injector, UnitOfWorkMap $unitOfWorkMap, MessageBusInterface $messageBus)
     {
         $this->injector = $injector;
+        $this->unitOfWorkMap = $unitOfWorkMap;
+        $this->messageBus = $messageBus;
     }
 
     public function handle(EnvelopeInterface $envelope): bool
     {
         $commandHandlerClass = get_class($envelope->getMessage()).'Handler';
-//         $commandHandler = $this->injector->make($commandHandlerClass);
+        $typePrefix = explode('-', $envelope->getMessage()->getAggregateId(), 2)[0];
 
-        $commandHandler = new $commandHandlerClass(
-            new \Testing\Blog\Article\Domain\Entity\ArticleEntityType,
-            new \Daikon\Cqrs\EventStore\UnitOfWork(
-                \Testing\Blog\Article\Domain\ArticleEntityType::class,
-                new \Dailex\Util\EchoPersistenceAdapter,
-                new \Daikon\Cqrs\EventStore\NoopStreamProcessor
-            ),
-            $this->injector->make(\Daikon\MessageBus\MessageBus::class)
-        );
+        $state = [
+            ':articleType' => new \Testing\Blog\Article\Domain\Entity\ArticleEntityType,
+            ':unitOfWork' => $this->unitOfWorkMap->get($typePrefix.'::domain_event::event_source::unit_of_work'),
+            ':messageBus' => $this->messageBus
+        ];
+
+        $commandHandler = $this->injector
+            ->define($commandHandlerClass, $state)
+            ->make($commandHandlerClass);
 
         return $commandHandler->handle($envelope);
     }

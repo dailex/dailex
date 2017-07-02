@@ -52,6 +52,6 @@ final class Article extends AggregateRoot
     protected function __construct(AggregateIdInterface $aggregateId, ArticleEntityType $articleType)
     {
         parent::__construct($aggregateId);
-        $this->articleState = $articleType->makeEntity([ "identity" => $aggregateId ]);
+        $this->articleState = $articleType->makeEntity(["identity" => $aggregateId]);
     }
 }
