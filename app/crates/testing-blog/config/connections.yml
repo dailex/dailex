@@ -1,0 +1,13 @@
+#
+# Blog specific connections.
+---
+testing.blog.event_source:
+  class: Dailex\Infrastructure\DataAccess\CouchDb2\Connector\CouchDb2Connector
+  settings:
+    auth:
+      username: ${secrets.couchdb.user}
+      password: ${secrets.couchdb.password}
+    host: ${secrets.couchdb.host}
+    port: ${secrets.couchdb.port}
+    transport: ${secrets.couchdb.transport}
+    database: ${project.prefix}%2Btesting-blog

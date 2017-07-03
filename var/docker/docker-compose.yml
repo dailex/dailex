@@ -1,11 +1,7 @@
 version: "3.2"
 secrets:
-  couchdb.json:
-    file: ../secrets/default/couchdb.json
-  elasticsearch.json:
-    file: ../secrets/default/elasticsearch.json
-  rabbitmq.json:
-    file: ../secrets/default/rabbitmq.json
+  couchdb.yml:
+    file: ../secrets/default/couchdb.yml
 services:
   proxy:
     image: blacklabelops/nginx:latest
@@ -42,9 +38,7 @@ services:
       - elasticsearch:elasticsearch
       - rabbitmq:rabbitmq
     secrets:
-      - couchdb.json
-      - elasticsearch.json
-      - rabbitmq.json
+      - couchdb.yml
     environment:
       - APP_VERSION
       - APP_ENV
@@ -55,7 +49,7 @@ services:
       - PHP_INI_SCAN_DIR=var/docker/php/conf/conf.d
 
   couchdb:
-    image: couchdb:1
+    image: klaemo/couchdb:latest
     ports:
       - "5984:5984"
 

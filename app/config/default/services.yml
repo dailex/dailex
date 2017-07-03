@@ -25,10 +25,20 @@ dailex:
             inproc:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
 
-    data_access:
-      class: Dailex\Infrastructure\DataAccess\DataAccessService
+    connector_map:
+      class: Dailex\Infrastructure\DataAccess\Connector\ConnectorMap
       provisioner:
-        class: Dailex\Service\Provisioner\DataAccessServiceProvisioner
+        class: Dailex\Service\Provisioner\ConnectorMapProvisioner
+
+    persistence_adapter_map:
+      class: Daikon\Cqrs\EventStore\PersistenceAdapterMap
+      provisioner:
+        class: Dailex\Service\Provisioner\PersistenceAdapterMapProvisioner
+
+    unit_of_work_map:
+      class: Daikon\Cqrs\EventStore\UnitOfWorkMap
+      provisioner:
+        class: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
 
     command_router:
       class: Dailex\Service\CommandRouter

@@ -13,7 +13,7 @@ services:
 
   couchdb:
     volumes:
-      - couchdb:/usr/local/var/lib/couchdb
+      - couchdb:/opt/couchdb/data
 
   elasticsearch:
     volumes:

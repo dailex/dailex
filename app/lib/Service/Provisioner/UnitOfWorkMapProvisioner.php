@@ -4,12 +4,14 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
+use Daikon\Cqrs\EventStore\PersistenceAdapterMap;
 use Daikon\Cqrs\EventStore\UnitOfWork;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
+use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
-final class DataAccessServiceProvisioner implements ProvisionerInterface
+final class UnitOfWorkMapProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,
@@ -18,30 +20,22 @@ final class DataAccessServiceProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $dataAccessConfig = $configProvider->get('data_access');
+        $uowConfigs = $configProvider->get('data_access.units_of_work');
 
-        $this->registerUowMapDelegate($injector, $dataAccessConfig['units_of_work']);
-
-        $injector
-            ->share($serviceClass)
-            ->alias(DataAccessServiceInterface::CLASS, $serviceClass);
-    }
-
-    private function registerUowMapDelegate(Injector $injector, array $uowConfigs)
-    {
-        $factory = function () use ($uowConfigs) {
+        $factory = function (PersistenceAdapterMap $persistenceAdapaterMap) use ($injector, $uowConfigs) {
+            $unitsOfWork = [];
             foreach ($uowConfigs as $uowName => $uowConfig) {
                 $unitsOfWork[$uowName] = new UnitOfWork(
-                    $uowConfig['dependencies']['aggregate_root'],
-                    new \Dailex\Util\EchoPersistenceAdapter,
+                    $uowConfig['aggregate_root'],
+                    $persistenceAdapaterMap->get($uowConfig['persistence_adapter']),
                     new \Daikon\Cqrs\EventStore\NoopStreamProcessor
                 );
             }
-            return new UnitOfWorkMap($unitsOfWork ?? []);
+            return new UnitOfWorkMap($unitsOfWork);
         };
 
         $injector
-            ->share(UnitOfWorkMap::class)
-            ->delegate(UnitOfWorkMap::class, $factory);
+            ->share($serviceClass)
+            ->delegate($serviceClass, $factory);
     }
 }

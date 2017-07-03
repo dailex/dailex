@@ -10,7 +10,6 @@ final class ServiceDefinitionMap implements \IteratorAggregate, \Countable
 
     public function __construct(array $serviceDefinitions = [])
     {
-        // @todo stricter init
         $this->init($serviceDefinitions, ServiceDefinitionInterface::class);
     }
 }
