@@ -24,23 +24,22 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
     {
         $this->app = $app;
         $this->injector = $injector;
+        $this->injector->share($injector);
         $this->configProvider = $configProvider;
     }
 
     public function provision(): ServiceLocatorInterface
     {
         $serviceDefinitionMap = $this->getServiceDefinitionMap();
-        $this->makeServices($serviceDefinitionMap);
+        $this->prepareServices($serviceDefinitionMap);
 
-        $serviceLocatorState = [
-            ':injector' => $this->injector,
-            ':serviceDefinitionMap' => $serviceDefinitionMap
-        ];
+        $serviceLocator = new ServiceLocator($this->injector, $serviceDefinitionMap);
 
-        return $this->injector
-            ->share(ServiceLocator::class)
-            ->alias(ServiceLocatorInterface::class, ServiceLocator::class)
-            ->make(ServiceLocator::class, $serviceLocatorState);
+        $this->injector
+            ->share($serviceLocator)
+            ->alias(ServiceLocatorInterface::class, ServiceLocator::class);
+
+        return $serviceLocator;
     }
 
     public function subscribe(Container $app, EventDispatcherInterface $dispatcher): void
@@ -58,8 +57,8 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
 
     private function getServiceDefinitionMap(): ServiceDefinitionMap
     {
+        $serviceDefinitions = [];
         $serviceConfigs = $this->configProvider->get('services');
-
         foreach ($serviceConfigs as $namespace => $namespaceDefinitions) {
             foreach ($namespaceDefinitions as $rootPath => $rootDefinitions) {
                 foreach ($rootDefinitions as $serviceName => $serviceDefinition) {
@@ -73,13 +72,12 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
                 }
             }
         }
-
-        return new ServiceDefinitionMap($serviceDefinitions ?? []);
+        return new ServiceDefinitionMap($serviceDefinitions);
     }
 
-    private function makeServices(ServiceDefinitionMap $serviceDefinitionMap): void
+    private function prepareServices(ServiceDefinitionMap $serviceDefinitionMap): void
     {
-        foreach ($serviceDefinitionMap->getIterator() as $serviceKey => $serviceDefinition) {
+        foreach ($serviceDefinitionMap->getIterator() as $serviceDefinition) {
             $provisionerClass = $serviceDefinition->getProvisionerClass();
             $provisioner = $this->injector->make($provisionerClass);
             if ($provisioner instanceof ProvisionerInterface) {

@@ -1,12 +1,11 @@
 <?php
 
-namespace Dailex\MessageBus;
+namespace Dailex\Service;
 
 use Auryn\Injector;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;
-use Daikon\MessageBus\MessageBusInterface;
 use Dailex\Util\StringToolkit;
 
 final class CommandRouter implements MessageHandlerInterface
@@ -15,13 +14,10 @@ final class CommandRouter implements MessageHandlerInterface
 
     private $unitOfWorkMap;
 
-    private $messageBus;
-
-    public function __construct(Injector $injector, UnitOfWorkMap $unitOfWorkMap, MessageBusInterface $messageBus)
+    public function __construct(Injector $injector, UnitOfWorkMap $unitOfWorkMap)
     {
         $this->injector = $injector;
         $this->unitOfWorkMap = $unitOfWorkMap;
-        $this->messageBus = $messageBus;
     }
 
     public function handle(EnvelopeInterface $envelope): bool
@@ -29,15 +25,11 @@ final class CommandRouter implements MessageHandlerInterface
         $commandClass = get_class($envelope->getMessage());
         $commandHandlerClass = $commandClass.'Handler';
         $typePrefix = StringToolkit::getAggregateRootPrefix($commandClass::getAggregateRootClass());
-
-        $state = [
-            ':unitOfWork' => $this->unitOfWorkMap->get($typePrefix.'::domain_event::event_source::unit_of_work'),
-            ':messageBus' => $this->messageBus
-        ];
+        $unitOfWork = $this->unitOfWorkMap->get($typePrefix.'::domain_event::event_source::unit_of_work');
 
         return $this->injector
-            ->define($commandHandlerClass, $state)
-            ->make($commandHandlerClass)
+            ->share($commandHandlerClass)
+            ->make($commandHandlerClass, [':unitOfWork' => $unitOfWork])
             ->handle($envelope);
     }
 }

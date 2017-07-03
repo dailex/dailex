@@ -4,7 +4,7 @@
 testing.blog:
   infrastructure:
     mail_service:
-      class: Hash\NisekoFinder\Service\MailService
+      class: Testing\Blog\Service\MailService
       options:
         from_email: ${project.email.from_email}
         from_name: ${project.email.from_name}

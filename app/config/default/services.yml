@@ -31,7 +31,7 @@ dailex:
         class: Dailex\Service\Provisioner\DataAccessServiceProvisioner
 
     command_router:
-      class: Dailex\MessageBus\CommandRouter
+      class: Dailex\Service\CommandRouter
       subscriptions:
         command_sub:
           channel: commands

@@ -31,15 +31,15 @@ final class MessageBusProvisioner implements ProvisionerInterface
         $provisionerSettings = $serviceDefinition->getProvisionerSettings();
 
         if (!isset($provisionerSettings['transports'])) {
-            throw new ConfigException('Message bus transports and channels configuration is required.');
+            throw new ConfigException('Message bus transports configuration is required.');
         }
 
-        $factory = function (ServiceLocatorInterface $serviceLocator) use ($provisionerSettings) {
+        $factory = function (ServiceLocatorInterface $serviceLocator) use ($provisionerSettings, $serviceClass) {
             $transports = [];
             foreach ($provisionerSettings['transports'] as $transportName => $transportConfig) {
                 $transports[$transportName] = new $transportConfig['class']($transportName);
             }
-            $transports = new TransportMap($transports);
+            $transportMap = new TransportMap($transports);
 
             $channelSubs = [
                 'commands' => [],
@@ -52,19 +52,16 @@ final class MessageBusProvisioner implements ProvisionerInterface
                 foreach ($serviceDefinition->getSubscriptions() as $subscriptionName => $subscriptionConfig) {
                     $channelName = $subscriptionConfig['channel'];
                     $transportName = $subscriptionConfig['transport'];
-                    if (!$transports->has($transportName)) {
+                    if (!$transportMap->has($transportName)) {
                         throw new ConfigException(
                             sprintf('Message bus transport "%s" has not been configured.', $transportName)
                         );
                     }
 
-                    $lazyServiceHandler = new LazyHandler(function () use ($serviceLocator, $serviceId) {
-                        return $serviceLocator->get($serviceId);
-                    });
                     $channelSubs[$channelName][] = new Subscription(
                         $subscriptionName,
-                        $transports->get($transportName),
-                        new MessageHandlerList([$lazyServiceHandler])
+                        $transportMap->get($transportName),
+                        new MessageHandlerList([$serviceLocator->get($serviceId)])
                     );
                 }
             }
@@ -75,7 +72,7 @@ final class MessageBusProvisioner implements ProvisionerInterface
             }
             $channelMap = new ChannelMap($channels);
 
-            return new MessageBus($channelMap);
+            return new $serviceClass($channelMap);
         };
 
         $injector
