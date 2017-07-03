@@ -30,10 +30,15 @@ dailex:
       provisioner:
         class: Dailex\Service\Provisioner\ConnectorMapProvisioner
 
-    persistence_adapter_map:
-      class: Daikon\Cqrs\EventStore\PersistenceAdapterMap
+    storage_adapter_map:
+      class: Dailex\Infrastructure\DataAccess\Storage\StorageAdapterMap
       provisioner:
-        class: Dailex\Service\Provisioner\PersistenceAdapterMapProvisioner
+        class: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
+
+    stream_store_map:
+      class: Daikon\Cqrs\EventStore\StreamStoreMap
+      provisioner:
+        class: Dailex\Service\Provisioner\StreamStoreMapProvisioner
 
     unit_of_work_map:
       class: Daikon\Cqrs\EventStore\UnitOfWorkMap

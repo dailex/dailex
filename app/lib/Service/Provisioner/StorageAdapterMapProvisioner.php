@@ -4,13 +4,13 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\Cqrs\EventStore\PersistenceAdapterMap;
 use Dailex\Exception\RuntimeException;
+use Dailex\Infrastructure\DataAccess\Storage\StorageAdapterMap;
 use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
-final class PersistenceAdapterMapProvisioner implements ProvisionerInterface
+final class StorageAdapterMapProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,
@@ -19,7 +19,7 @@ final class PersistenceAdapterMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $adapterConfigs = $configProvider->get('data_access.persistence_adapters');
+        $adapterConfigs = $configProvider->get('data_access.storage_adapters');
 
         $factory = function (ConnectorMap $connectorMap) use ($injector, $adapterConfigs) {
             $adapters = [];
@@ -30,7 +30,7 @@ final class PersistenceAdapterMapProvisioner implements ProvisionerInterface
                     [':connector' => $connectorMap->get($adapterConfigs['connection'])]
                 );
             }
-            return new PersistenceAdapterMap($adapters);
+            return new StorageAdapterMap($adapters);
         };
 
         $injector

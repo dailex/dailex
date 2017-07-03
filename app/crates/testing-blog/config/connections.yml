@@ -1,7 +1,7 @@
 #
 # Blog specific connections.
 ---
-testing.blog.event_source:
+testing.blog.event_store:
   class: Dailex\Infrastructure\DataAccess\CouchDb2\Connector\CouchDb2Connector
   settings:
     auth:

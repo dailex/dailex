@@ -4,7 +4,7 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\Cqrs\EventStore\PersistenceAdapterMap;
+use Daikon\Cqrs\EventStore\StreamStoreMap;
 use Daikon\Cqrs\EventStore\UnitOfWork;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
@@ -22,12 +22,12 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
         $serviceClass = $serviceDefinition->getServiceClass();
         $uowConfigs = $configProvider->get('data_access.units_of_work');
 
-        $factory = function (PersistenceAdapterMap $persistenceAdapaterMap) use ($injector, $uowConfigs) {
+        $factory = function (StreamStoreMap $streamStoreMap) use ($injector, $uowConfigs) {
             $unitsOfWork = [];
             foreach ($uowConfigs as $uowName => $uowConfig) {
                 $unitsOfWork[$uowName] = new UnitOfWork(
                     $uowConfig['aggregate_root'],
-                    $persistenceAdapaterMap->get($uowConfig['persistence_adapter']),
+                    $streamStoreMap->get($uowConfig['stream_store']),
                     new \Daikon\Cqrs\EventStore\NoopStreamProcessor
                 );
             }
