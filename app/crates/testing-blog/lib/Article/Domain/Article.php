@@ -25,10 +25,9 @@ final class Article extends AggregateRoot
             ->reflectThat(ArticleWasCreated::viaCommand($createArticle));
     }
 
-    public static function update(UpdateArticle $updateArticle): self
+    public function update(UpdateArticle $updateArticle): self
     {
-        return (new self($updateArticle->getAggregateId()))
-            ->reflectThat(ArticleWasUpdated::viaCommand($updateArticle));
+        return $this->reflectThat(ArticleWasUpdated::viaCommand($updateArticle));
     }
 
     protected function whenArticleWasCreated(ArticleWasCreated $articleWasCreated)
