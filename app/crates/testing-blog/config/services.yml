@@ -5,7 +5,7 @@ testing.blog:
   infrastructure:
     mail_service:
       class: Testing\Blog\Service\MailService
-      options:
+      settings:
         from_email: ${project.email.from_email}
         from_name: ${project.email.from_name}
         sender_email: ${project.email.sender_email}

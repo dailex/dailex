@@ -1,5 +1,5 @@
 #
-# Connections that are used for the Blog crate's ArticleType.
+# Data access configuration for the Blog crate Article resource.
 ---
 storage_adapters:
   testing.blog.article.storage_adapter:

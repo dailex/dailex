@@ -22,7 +22,7 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
         $serviceClass = $serviceDefinition->getServiceClass();
         $uowConfigs = $configProvider->get('data_access.units_of_work');
 
-        $factory = function (StreamStoreMap $streamStoreMap) use ($injector, $uowConfigs) {
+        $factory = function (StreamStoreMap $streamStoreMap) use ($uowConfigs, $serviceClass) {
             $unitsOfWork = [];
             foreach ($uowConfigs as $uowName => $uowConfig) {
                 $unitsOfWork[$uowName] = new UnitOfWork(
@@ -31,7 +31,7 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
                     new \Daikon\Cqrs\EventStore\NoopStreamProcessor
                 );
             }
-            return new UnitOfWorkMap($unitsOfWork);
+            return new $serviceClass($unitsOfWork);
         };
 
         $injector

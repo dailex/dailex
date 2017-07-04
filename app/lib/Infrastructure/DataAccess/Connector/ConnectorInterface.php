@@ -9,4 +9,6 @@ interface ConnectorInterface
     public function isConnected(): bool;
 
     public function disconnect(): void;
+
+    public function getSettings(): array;
 }

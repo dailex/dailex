@@ -6,7 +6,7 @@ interface StorageAdapterInterface
 {
     public function read();
 
-    public function write();
+    public function write(string $identifier, array $data);
 
-    public function delete();
+    public function delete(string $identifier);
 }

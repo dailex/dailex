@@ -20,16 +20,16 @@ final class ConnectorMapProvisioner implements ProvisionerInterface
         $serviceClass = $serviceDefinition->getServiceClass();
         $connectorConfigs = $configProvider->get('connections');
 
-        $factory = function () use ($injector, $connectorConfigs) {
+        $factory = function () use ($injector, $connectorConfigs, $serviceClass) {
             $connectors = [];
             foreach ($connectorConfigs as $connectorName => $connectorConfig) {
                 $connectorClass = $connectorConfig['class'];
                 $connectors[$connectorName] = $injector->make(
                     $connectorClass,
-                    [':config' => $connectorConfig['settings']]
+                    [':settings' => $connectorConfig['settings']]
                 );
             }
-            return new ConnectorMap($connectors);
+            return new $serviceClass($connectors);
         };
 
         $injector

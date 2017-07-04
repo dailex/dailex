@@ -28,6 +28,11 @@ final class CouchDb2StreamStore implements StreamStoreInterface
 
     public function commit(CommitStreamInterface $stream, CommitStreamRevision $storeHead): StoreResultInterface
     {
+        $commitSequence = $stream->getCommitRange($storeHead, $stream->getStreamRevision());
+        foreach ($commitSequence as $commit) {
+            $identifier = $stream->getStreamId()->toNative().'-'.$commit->getStreamRevision();
+            $this->storageAdapter->write($identifier, $commit->toArray());
+        }
         return new StoreSuccess;
     }
 }
