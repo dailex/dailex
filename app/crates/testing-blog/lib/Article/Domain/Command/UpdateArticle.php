@@ -8,7 +8,7 @@ use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
 use Testing\Blog\Article\Domain\Article;
 
-final class CreateArticle extends Command
+final class UpdateArticle extends Command
 {
     private $title;
 

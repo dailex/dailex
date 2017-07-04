@@ -1,10 +1,12 @@
 #
-# Data access configuration for the Blog crate Article resource.
+# Database configuration for the Blog crate Article resource.
 ---
 storage_adapters:
   testing.blog.article.storage_adapter:
     class: Dailex\Infrastructure\DataAccess\CouchDb2\Storage\CouchDb2StorageAdapter
-    connection: testing.blog.event_store
+    connector: testing.blog.event_store
+    settings:
+      design_doc: testing-blog-article
 
 stream_stores:
   testing.blog.article.stream_store:

@@ -1,14 +1,14 @@
 <?php
 
-namespace Testing\Blog\Article\Domain\Command;
+namespace Testing\Blog\Article\Domain\Event;
 
 use Daikon\Cqrs\Aggregate\AggregateId;
-use Daikon\Cqrs\Aggregate\Command;
+use Daikon\Cqrs\Aggregate\DomainEvent;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
-use Testing\Blog\Article\Domain\Article;
+use Testing\Blog\Article\Domain\Command\UpdateArticle;
 
-final class CreateArticle extends Command
+final class ArticleWasUpdated extends DomainEvent
 {
     private $title;
 
@@ -20,6 +20,15 @@ final class CreateArticle extends Command
             AggregateId::fromNative($nativeValues['aggregateId']),
             Text::fromNative($nativeValues['title']),
             Text::fromNative($nativeValues['content'])
+        );
+    }
+
+    public static function viaCommand(UpdateArticle $updateArticle): self
+    {
+        return new self(
+            $updateArticle->getAggregateId(),
+            $updateArticle->getTitle(),
+            $updateArticle->getContent()
         );
     }
 
@@ -39,11 +48,6 @@ final class CreateArticle extends Command
         $arr['title'] = $this->title->toNative();
         $arr['content'] = $this->content->toNative();
         return $arr;
-    }
-
-    public static function getAggregateRootClass(): string
-    {
-        return Article::class;
     }
 
     protected function __construct(AggregateId $aggregateId, Text $title, Text $content)

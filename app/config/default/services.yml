@@ -26,12 +26,12 @@ dailex:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
 
     connector_map:
-      class: Dailex\Infrastructure\DataAccess\Connector\ConnectorMap
+      class: Daikon\Dbal\Connector\ConnectorMap
       provisioner:
         class: Dailex\Service\Provisioner\ConnectorMapProvisioner
 
     storage_adapter_map:
-      class: Dailex\Infrastructure\DataAccess\Storage\StorageAdapterMap
+      class: Daikon\Dbal\Storage\StorageAdapterMap
       provisioner:
         class: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
 

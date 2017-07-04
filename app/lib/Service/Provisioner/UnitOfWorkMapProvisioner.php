@@ -7,7 +7,7 @@ use Daikon\Config\ConfigProviderInterface;
 use Daikon\Cqrs\EventStore\StreamStoreMap;
 use Daikon\Cqrs\EventStore\UnitOfWork;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
-use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
+use Daikon\Dbal\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
@@ -20,7 +20,7 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $uowConfigs = $configProvider->get('data_access.units_of_work');
+        $uowConfigs = $configProvider->get('databases.units_of_work');
 
         $factory = function (StreamStoreMap $streamStoreMap) use ($uowConfigs, $serviceClass) {
             $unitsOfWork = [];

@@ -4,9 +4,9 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
+use Daikon\Dbal\Connector\ConnectorMap;
+use Daikon\Dbal\Storage\StorageAdapterMap;
 use Dailex\Exception\RuntimeException;
-use Dailex\Infrastructure\DataAccess\Storage\StorageAdapterMap;
-use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
@@ -19,7 +19,7 @@ final class StorageAdapterMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $adapterConfigs = $configProvider->get('data_access.storage_adapters');
+        $adapterConfigs = $configProvider->get('databases.storage_adapters');
 
         $factory = function (ConnectorMap $connectorMap) use ($injector, $adapterConfigs, $serviceClass) {
             $adapters = [];
@@ -27,7 +27,10 @@ final class StorageAdapterMapProvisioner implements ProvisionerInterface
                 $adapterClass = $adapterConfigs['class'];
                 $adapters[$adapterName] = $injector->make(
                     $adapterClass,
-                    [':connector' => $connectorMap->get($adapterConfigs['connection'])]
+                    [
+                        ':connector' => $connectorMap->get($adapterConfigs['connector']),
+                        ':settings' => $adapterConfigs['settings'] ?? []
+                    ]
                 );
             }
             return new $serviceClass($adapters);

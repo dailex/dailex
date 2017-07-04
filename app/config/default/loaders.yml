@@ -47,19 +47,7 @@ services:
     - services.${app.env}.yml
     - services.${app.context}.${app.env}.yml
 
-connections:
-  loader: Daikon\Config\YamlConfigLoader
-  locations:
-    - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
-    - ${app.config_dir}
-  sources:
-    - connections.yml
-    - connections.${app.context}.yml
-    - connections.${app.env}.yml
-    - connections.${app.context}.${app.env}.yml
-
-data_access:
+databases:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
@@ -67,7 +55,7 @@ data_access:
     - ${app.crates_dir}/testing-blog/config/Article
     - ${app.config_dir}
   sources:
-    - data_access.yml
-    - data_access.${app.context}.yml
-    - data_access.${app.env}.yml
-    - data_access.${app.context}.${app.env}.yml
+    - databases.yml
+    - databases.${app.context}.yml
+    - databases.${app.env}.yml
+    - databases.${app.context}.${app.env}.yml

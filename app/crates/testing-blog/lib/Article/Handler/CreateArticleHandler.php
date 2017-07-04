@@ -1,6 +1,6 @@
 <?php
 
-namespace Testing\Blog\Article\Domain\Command;
+namespace Testing\Blog\Article\Handler;
 
 use Daikon\Cqrs\Aggregate\CommandHandler;
 use Daikon\MessageBus\Metadata\Metadata;

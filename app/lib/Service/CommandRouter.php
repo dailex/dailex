@@ -23,7 +23,7 @@ final class CommandRouter implements MessageHandlerInterface
     public function handle(EnvelopeInterface $envelope): bool
     {
         $commandClass = get_class($envelope->getMessage());
-        $commandHandlerClass = $commandClass.'Handler';
+        $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', $commandClass).'Handler';
         $typePrefix = StringToolkit::getAggregateRootPrefix($commandClass::getAggregateRootClass());
         $unitOfWork = $this->unitOfWorkMap->get($typePrefix.'.unit_of_work');
 

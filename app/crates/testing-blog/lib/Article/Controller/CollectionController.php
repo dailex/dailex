@@ -7,7 +7,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Testing\Blog\Article\Domain\Command\CreateArticle;
 
-class ArticleController
+class CollectionController
 {
     private $messageBus;
 
@@ -17,6 +17,11 @@ class ArticleController
     }
 
     public function read(Request $request, Application $app)
+    {
+        return 'Article collection listing not yet implemented';
+    }
+
+    public function write(Request $request, Application $app)
     {
         $this->messageBus->publish(CreateArticle::fromArray([
             'aggregateId' => 'testing.blog.article-123',

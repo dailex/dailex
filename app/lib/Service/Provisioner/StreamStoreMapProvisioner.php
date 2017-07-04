@@ -5,8 +5,8 @@ namespace Dailex\Service\Provisioner;
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Cqrs\EventStore\StreamStoreMap;
+use Daikon\Dbal\Storage\StorageAdapterMap;
 use Dailex\Exception\RuntimeException;
-use Dailex\Infrastructure\DataAccess\Storage\StorageAdapterMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
@@ -19,7 +19,7 @@ final class StreamStoreMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $adapterConfigs = $configProvider->get('data_access.stream_stores');
+        $adapterConfigs = $configProvider->get('databases.stream_stores');
 
         $factory = function (StorageAdapterMap $storageAdapterMap) use ($injector, $adapterConfigs, $serviceClass) {
             $adapters = [];

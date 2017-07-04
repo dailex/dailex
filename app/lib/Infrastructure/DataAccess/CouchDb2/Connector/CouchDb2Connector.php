@@ -2,14 +2,14 @@
 
 namespace Dailex\Infrastructure\DataAccess\CouchDb2\Connector;
 
-use Dailex\Infrastructure\DataAccess\Connector\ConnectorInterface;
+use Daikon\Dbal\Connector\ConnectorInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
 
-class CouchDb2Connector implements ConnectorInterface
+final class CouchDb2Connector implements ConnectorInterface
 {
     private $settings;
 
@@ -66,14 +66,15 @@ class CouchDb2Connector implements ConnectorInterface
             $clientOptions['debug'] = $this->settings['debug'] === true;
         }
 
-        if (isset($this->settings['auth'])) {
-            if (!empty($this->settings['auth']['username'])) {
-                $clientOptions['auth'] = [
-                    $this->settings['auth']['username'],
-                    $this->settings['auth']['password'],
-                    $this->settings['auth']['type'] ?? 'basic'
-                ];
-            }
+        if (isset($this->settings['auth'])
+            && !empty($this->settings['auth']['username'])
+            && !empty($this->settings['auth']['password'])
+        ) {
+            $clientOptions['auth'] = [
+                $this->settings['auth']['username'],
+                $this->settings['auth']['password'],
+                $this->settings['auth']['type'] ?? 'basic'
+            ];
         }
 
         if (isset($this->settings['default_headers'])) {

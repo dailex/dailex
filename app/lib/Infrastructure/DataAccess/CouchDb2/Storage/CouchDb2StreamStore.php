@@ -2,6 +2,7 @@
 
 namespace Dailex\Infrastructure\DataAccess\CouchDb2\Storage;
 
+use Daikon\Cqrs\EventStore\CommitStream;
 use Daikon\Cqrs\EventStore\CommitStreamId;
 use Daikon\Cqrs\EventStore\CommitStreamInterface;
 use Daikon\Cqrs\EventStore\CommitStreamRevision;
@@ -24,6 +25,8 @@ final class CouchDb2StreamStore implements StreamStoreInterface
         CommitStreamRevision $from = null,
         CommitStreamRevision $to = null
     ): CommitStreamInterface {
+        $commitSequence = $this->storageAdapter->read($streamId->toNative());
+        return new CommitStream($streamId, $commitSequence);
     }
 
     public function commit(CommitStreamInterface $stream, CommitStreamRevision $storeHead): StoreResultInterface

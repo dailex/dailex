@@ -4,8 +4,8 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
+use Daikon\Dbal\Connector\ConnectorMap;
 use Dailex\Exception\RuntimeException;
-use Dailex\Infrastructure\DataAccess\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
@@ -18,7 +18,7 @@ final class ConnectorMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $connectorConfigs = $configProvider->get('connections');
+        $connectorConfigs = $configProvider->get('databases.connectors');
 
         $factory = function () use ($injector, $connectorConfigs, $serviceClass) {
             $connectors = [];
