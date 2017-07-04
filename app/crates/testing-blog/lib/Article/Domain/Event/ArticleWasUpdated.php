@@ -19,7 +19,8 @@ final class ArticleWasUpdated extends DomainEvent
         return new self(
             AggregateId::fromNative($nativeValues['aggregateId']),
             Text::fromNative($nativeValues['title']),
-            Text::fromNative($nativeValues['content'])
+            Text::fromNative($nativeValues['content']),
+            AggregateRevision::fromNative($nativeValues['aggregateRevision'])
         );
     }
 
@@ -45,14 +46,19 @@ final class ArticleWasUpdated extends DomainEvent
     public function toArray(): array
     {
         $arr['aggregateId'] = $this->getAggregateId()->toNative();
+        $arr['aggregateRevision'] = $this->getAggregateRevision()->toNative();
         $arr['title'] = $this->title->toNative();
         $arr['content'] = $this->content->toNative();
         return $arr;
     }
 
-    protected function __construct(AggregateId $aggregateId, Text $title, Text $content)
-    {
-        parent::__construct($aggregateId);
+    protected function __construct(
+        AggregateId $aggregateId,
+        Text $title,
+        Text $content,
+        AggregateRevision $revision = null
+    ) {
+        parent::__construct($aggregateId, $revision);
         $this->title = $title;
         $this->content = $content;
     }

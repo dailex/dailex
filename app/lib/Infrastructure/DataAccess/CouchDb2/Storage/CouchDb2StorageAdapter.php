@@ -58,7 +58,9 @@ final class CouchDb2StorageAdapter implements StorageAdapterInterface
             throw new RuntimeException('Failed to read data for '.$identifier);
         }
 
-        return $this->createCommitSequence($identifier, array_reverse($rawResponse['rows']));
+        return CommitSequence::fromArray(array_map(function (array $commitData) {
+            return $commitData['doc'];
+        }, array_reverse($rawResponse['rows'])));
     }
 
     public function write(string $identifier, array $data)
@@ -103,27 +105,5 @@ final class CouchDb2StorageAdapter implements StorageAdapterInterface
             $requestPath .= '?'.http_build_query($params);
         }
         return str_replace('//', '/', $requestPath);
-    }
-
-    private function createCommitSequence(string $identifier, array $commitData)
-    {
-        $commitStreamId = CommitStreamId::fromNative($identifier);
-        $commits = [];
-        foreach ($commitData as $commit) {
-            $eventLog = $commit['doc']['eventLog'];
-            $events = [];
-            foreach ($eventLog as $eventData) {
-                $eventClass = $eventData['@type'];
-                $events[] = $eventClass::fromArray($eventData);
-            }
-            $domainEventSequence = new DomainEventSequence($events);
-            $commits[] = Commit::make(
-                $commitStreamId,
-                CommitStreamRevision::fromNative($commit['doc']['streamRevision']),
-                $domainEventSequence,
-                Metadata::fromArray($commit['doc']['metadata'])
-            );
-        }
-        return new CommitSequence($commits);
     }
 }
