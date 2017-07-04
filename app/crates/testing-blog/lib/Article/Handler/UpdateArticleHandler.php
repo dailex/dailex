@@ -12,6 +12,6 @@ final class UpdateArticleHandler extends CommandHandler
     protected function handleUpdateArticle(UpdateArticle $updateArticle, Metadata $metadata): bool
     {
         $article = $this->checkout($updateArticle->getAggregateId());
-        return true;
+        return $this->commit($article->update($updateArticle), $metadata);
     }
 }
