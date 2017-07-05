@@ -17,10 +17,16 @@ services:
 
   elasticsearch:
     volumes:
-      - ./elasticsearch/conf:/usr/share/elasticsearch/config:ro
       - elasticsearch:/usr/share/elasticsearch/data
+    environment:
+      - transport.host=127.0.0.1
+      - http.host=0.0.0.0
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - http.cors.allow-headers=Authorization
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
 
   elasticsearch-head:
-    image: mobz/elasticsearch-head:2
+    image: mobz/elasticsearch-head:5
     ports:
       - "9100:9100"
