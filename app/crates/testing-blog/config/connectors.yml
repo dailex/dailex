@@ -1,0 +1,10 @@
+testing.blog.event_store:
+  class: Daikon\CouchDb\Connector\CouchDbConnector
+  settings:
+    auth:
+      username: ${secrets.couchdb.user}
+      password: ${secrets.couchdb.password}
+    host: ${secrets.couchdb.host}
+    port: ${secrets.couchdb.port}
+    transport: ${secrets.couchdb.transport}
+    database: ${project.prefix}%2Btesting-blog

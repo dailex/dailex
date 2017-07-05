@@ -25,7 +25,7 @@ final class CommandRouter implements MessageHandlerInterface
         $commandClass = get_class($envelope->getMessage());
         $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', $commandClass).'Handler';
         $typePrefix = StringToolkit::getAggregateRootPrefix($commandClass::getAggregateRootClass());
-        $unitOfWork = $this->unitOfWorkMap->get($typePrefix.'.unit_of_work');
+        $unitOfWork = $this->unitOfWorkMap->get($typePrefix);
 
         return $this->injector
             ->share($commandHandlerClass)

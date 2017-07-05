@@ -1,6 +1,3 @@
-#
-# Dailex default loaders
----
 project:
   loader: Daikon\Config\YamlConfigLoader
   locations:
@@ -46,6 +43,18 @@ services:
     - services.${app.context}.yml
     - services.${app.env}.yml
     - services.${app.context}.${app.env}.yml
+
+connectors:
+  loader: Daikon\Config\YamlConfigLoader
+  locations:
+    - ${app.dailex.config_dir}
+    - ${app.crates_dir}/testing-blog/config
+    - ${app.config_dir}
+  sources:
+    - connectors.yml
+    - connectors.${app.context}.yml
+    - connectors.${app.env}.yml
+    - connectors.${app.context}.${app.env}.yml
 
 databases:
   loader: Daikon\Config\YamlConfigLoader

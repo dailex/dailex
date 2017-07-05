@@ -1,6 +1,3 @@
-#
-# Services configuration for the Blog crate
----
 testing.blog:
   infrastructure:
     mail_service:

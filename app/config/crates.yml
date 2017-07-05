@@ -1,6 +1,3 @@
-#
-# Project crates configuration
----
 testing-blog:
   mount: /
   recaptcha:

@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b2417e15f09883a0145c28c300d34d4f",
-    "content-hash": "ab90cecedad09f845a7019f9307003e6",
+    "content-hash": "aa5e94c2785cca7fbcb1f7f3446b3111",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -60,7 +59,7 @@
                 "assertion",
                 "validation"
             ],
-            "time": "2017-05-04 02:00:24"
+            "time": "2017-05-04T02:00:24+00:00"
         },
         {
             "name": "daikon/config",
@@ -68,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "7b379338a3e8b2e3b86c0687e15a2f0db51e72ed"
+                "reference": "926a220302a47a4afeebb6cdce45e2ea352096a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/7b379338a3e8b2e3b86c0687e15a2f0db51e72ed",
-                "reference": "7b379338a3e8b2e3b86c0687e15a2f0db51e72ed",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/926a220302a47a4afeebb6cdce45e2ea352096a0",
+                "reference": "926a220302a47a4afeebb6cdce45e2ea352096a0",
                 "shasum": ""
             },
             "require": {
@@ -103,7 +102,50 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-04 10:51:17"
+            "time": "2017-07-05 13:39:36"
+        },
+        {
+            "name": "daikon/couchdb-adapter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
+                "reference": "4bf3e89d1ca41c881b42f30e21e0cc3c5644feca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/4bf3e89d1ca41c881b42f30e21e0cc3c5644feca",
+                "reference": "4bf3e89d1ca41c881b42f30e21e0cc3c5644feca",
+                "shasum": ""
+            },
+            "require": {
+                "daikon/cqrs": "master@dev",
+                "daikon/dbal": "master@dev",
+                "guzzlehttp/guzzle": "^6.2",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2",
+                "satooshi/php-coveralls": "master@dev",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\CouchDb\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "CouchDB 1|2 adapter for Daikon projects.",
+            "homepage": "https://github.com/daikon-cqrs/couchdb-adapter",
+            "keywords": [
+                "adapter",
+                "couchdb"
+            ],
+            "time": "2017-07-05 13:47:58"
         },
         {
             "name": "daikon/cqrs",
@@ -196,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "128710e5e5737d8332665df70abd400167e4dda1"
+                "reference": "02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/128710e5e5737d8332665df70abd400167e4dda1",
-                "reference": "128710e5e5737d8332665df70abd400167e4dda1",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55",
+                "reference": "02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55",
                 "shasum": ""
             },
             "require": {
@@ -228,7 +270,7 @@
             "keywords": [
                 "dbal"
             ],
-            "time": "2017-07-04 10:39:27"
+            "time": "2017-07-05 13:34:24"
         },
         {
             "name": "daikon/entity",
@@ -380,7 +422,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22 18:50:49"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -431,7 +473,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20 10:07:11"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -496,7 +538,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-03-20 17:10:46"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "jms/parser-lib",
@@ -531,7 +573,7 @@
                 "Apache2"
             ],
             "description": "A library for easily creating recursive-descent parsers.",
-            "time": "2012-11-18 18:08:43"
+            "time": "2012-11-18T18:08:43+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -609,7 +651,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19 01:22:40"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -657,7 +699,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13 16:27:32"
+            "time": "2017-03-13T16:27:32+00:00"
         },
         {
             "name": "php-ds/php-ds",
@@ -704,7 +746,7 @@
                 "php",
                 "polyfill"
             ],
-            "time": "2016-08-08 13:04:16"
+            "time": "2016-08-08T13:04:16+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -754,7 +796,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25 16:39:46"
+            "time": "2015-07-25T16:39:46+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -804,7 +846,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-03 14:06:46"
+            "time": "2017-07-03T14:06:46+00:00"
         },
         {
             "name": "psr/container",
@@ -853,7 +895,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-message",
@@ -903,7 +945,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -950,7 +992,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -1032,7 +1074,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-26 20:37:53"
+            "time": "2017-03-26T20:37:53+00:00"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1093,7 +1135,7 @@
                 "dic",
                 "ioc"
             ],
-            "time": "2017-05-15 06:26:46"
+            "time": "2017-05-15T06:26:46+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -1229,7 +1271,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-06-22 16:43:17"
+            "time": "2017-06-22T16:43:17+00:00"
         },
         {
             "name": "shrink0r/php-schema",
@@ -1274,7 +1316,7 @@
                 "schema",
                 "validation"
             ],
-            "time": "2016-10-26 22:04:22"
+            "time": "2016-10-26T22:04:22+00:00"
         },
         {
             "name": "silex/silex",
@@ -1360,11 +1402,11 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2017-05-03 15:21:42"
+            "time": "2017-05-03T15:21:42+00:00"
         },
         {
             "name": "symfony/asset",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset.git",
@@ -1416,20 +1458,20 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-01 15:01:29"
+            "time": "2017-05-01T15:01:29+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "bcfd02728d9b776e5c2195a4750c813fe440402f"
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/bcfd02728d9b776e5c2195a4750c813fe440402f",
-                "reference": "bcfd02728d9b776e5c2195a4750c813fe440402f",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
+                "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
                 "shasum": ""
             },
             "require": {
@@ -1472,11 +1514,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-06 14:51:55"
+            "time": "2017-07-05T13:02:37+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1535,11 +1577,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-09 14:53:08"
+            "time": "2017-06-09T14:53:08+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1584,11 +1626,11 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:01:25"
+            "time": "2017-06-01T21:01:25+00:00"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -1637,20 +1679,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "98e6c9197e2d4eb42a059eb69ef4168a6b3c4891"
+                "reference": "33f87c957122cfbd9d90de48698ee074b71106ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/98e6c9197e2d4eb42a059eb69ef4168a6b3c4891",
-                "reference": "98e6c9197e2d4eb42a059eb69ef4168a6b3c4891",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/33f87c957122cfbd9d90de48698ee074b71106ea",
+                "reference": "33f87c957122cfbd9d90de48698ee074b71106ea",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1765,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-04 06:02:59"
+            "time": "2017-07-05T13:28:15+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1782,11 +1824,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/routing",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -1860,11 +1902,11 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/twig-bridge",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/twig-bridge.git",
@@ -1947,11 +1989,11 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -2002,7 +2044,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-15 12:58:50"
+            "time": "2017-06-15T12:58:50+00:00"
         },
         {
             "name": "twig/twig",
@@ -2068,7 +2110,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07 18:47:58"
+            "time": "2017-06-07T18:47:58+00:00"
         }
     ],
     "packages-dev": [
@@ -2127,7 +2169,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2017-04-23 23:11:39"
+            "time": "2017-04-23T23:11:39+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2205,7 +2247,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-05-22 02:43:20"
+            "time": "2017-05-22T02:43:20+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -2264,11 +2306,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -2313,20 +2355,20 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12 14:14:56"
+            "time": "2017-04-12T14:14:56+00:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "05b5b7f1e26fe2f83827e7daae16191e6f742b8f"
+                "reference": "9ee920bba1d2ce877496dcafca7cbffff4dbe08a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/05b5b7f1e26fe2f83827e7daae16191e6f742b8f",
-                "reference": "05b5b7f1e26fe2f83827e7daae16191e6f742b8f",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/9ee920bba1d2ce877496dcafca7cbffff4dbe08a",
+                "reference": "9ee920bba1d2ce877496dcafca7cbffff4dbe08a",
                 "shasum": ""
             },
             "require": {
@@ -2381,11 +2423,11 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-07-05T13:02:37+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",
-            "version": "v3.3.3",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/web-profiler-bundle.git",
@@ -2447,7 +2489,7 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03 08:12:02"
+            "time": "2017-07-03T08:12:02+00:00"
         }
     ],
     "aliases": [],
@@ -2455,7 +2497,7 @@
     "stability-flags": {
         "daikon/config": 20,
         "daikon/cqrs": 20,
-        "daikon/dbal": 20,
+        "daikon/couchdb-adapter": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

@@ -23,10 +23,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
-        "daikon/config": "dev-master",
-        "daikon/cqrs": "dev-master",
-        "daikon/dbal": "dev-master",
-        "guzzlehttp/guzzle": "^6.2",
+        "daikon/config": "master@dev",
+        "daikon/cqrs": "master@dev",
+        "daikon/couchdb-adapter": "master@dev",
         "monolog/monolog": "^1.0",
         "psr/container": "^1.0",
         "rdlowrey/auryn": "^1.4.0",

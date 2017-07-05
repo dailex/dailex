@@ -1,6 +1,3 @@
-#
-# Dailex default services configuration
----
 dailex:
   infrastructure:
     logger:
