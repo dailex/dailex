@@ -3,10 +3,11 @@
 namespace Dailex\Service;
 
 use Auryn\Injector;
+use Daikon\Cqrs\Aggregate\CommandInterface;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;
-use Dailex\Util\StringToolkit;
+use Dailex\Exception\RuntimeException;
 
 final class CommandRouter implements MessageHandlerInterface
 {
@@ -22,10 +23,17 @@ final class CommandRouter implements MessageHandlerInterface
 
     public function handle(EnvelopeInterface $envelope): bool
     {
-        $commandClass = get_class($envelope->getMessage());
-        $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', $commandClass).'Handler';
-        $typePrefix = StringToolkit::getAggregateRootPrefix($commandClass::getAggregateRootClass());
-        $unitOfWork = $this->unitOfWorkMap->get($typePrefix);
+        $command = $envelope->getMessage();
+        if (!$command instanceof CommandInterface) {
+            throw new RuntimeException(sprintf(
+                'Message of type %s must implement %s ',
+                get_class($command),
+                CommandInterface::class
+            ));
+        }
+
+        $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', get_class($command)).'Handler';
+        $unitOfWork = $this->unitOfWorkMap->getByAggregateId($command->getAggregateId());
 
         return $this->injector
             ->share($commandHandlerClass)

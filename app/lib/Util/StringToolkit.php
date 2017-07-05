@@ -52,15 +52,4 @@ class StringToolkit
 
         return false;
     }
-
-    public static function getAggregateRootPrefix(string $aggregateRoot)
-    {
-        $parts = explode('\\', $aggregateRoot, 4);
-        return sprintf(
-            '%s.%s.%s',
-            self::asSnakeCase($parts[0]),
-            self::asSnakeCase($parts[1]),
-            self::asSnakeCase($parts[2])
-        );
-    }
 }
