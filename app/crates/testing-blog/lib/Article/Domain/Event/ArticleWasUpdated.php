@@ -7,6 +7,7 @@ use Daikon\Cqrs\Aggregate\AggregateRevision;
 use Daikon\Cqrs\Aggregate\DomainEvent;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
+use Testing\Blog\Article\Domain\Article;
 use Testing\Blog\Article\Domain\Command\UpdateArticle;
 
 final class ArticleWasUpdated extends DomainEvent
@@ -14,6 +15,11 @@ final class ArticleWasUpdated extends DomainEvent
     private $title;
 
     private $content;
+
+    public static function getAggregateRootClass(): string
+    {
+        return Article::class;
+    }
 
     public static function fromArray(array $nativeValues): MessageInterface
     {
