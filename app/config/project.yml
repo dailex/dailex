@@ -1,3 +1,7 @@
+#
+# Dailex project settings.
+#
+
 name: Dailex
 description: 'Daikon CQRS & ES integration with the Silex framework'
 prefix: dailex
