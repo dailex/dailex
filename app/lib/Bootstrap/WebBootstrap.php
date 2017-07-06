@@ -52,37 +52,22 @@ final class WebBootstrap implements BootstrapInterface
 
     private function bootstrapConfig(Application $app): void
     {
-        $appLoaderConfig = [
-            'app' => [
-                'loader' => ArrayConfigLoader::class,
-                'sources' => $app['config']
-            ]
-        ];
-
-        $loaderConfigProvider = new ConfigProvider(
-            new ConfigProviderParams(
-                array_merge(
-                    $appLoaderConfig,
-                    [
-                        'loaders' => [
-                            'loader' => YamlConfigLoader::class,
-                            'locations' => [
-                                $app['config']['dailex']['config_dir'],
-                                $app['config']['config_dir']
-                            ],
-                            'sources' => ['loaders.yml']
-                        ]
-                    ]
-                )
-            )
-        );
-
-        // initialize and share the config provider
         $this->configProvider = new ConfigProvider(
             new ConfigProviderParams(
                 array_merge(
-                    $appLoaderConfig,
-                    $loaderConfigProvider->get('loaders')
+                    [
+                        'app' => [
+                            'loader' => ArrayConfigLoader::class,
+                            'sources' => $app['config']
+                        ]
+                    ],
+                    (new YamlConfigLoader)->load(
+                        [
+                            $app['config']['dailex']['config_dir'],
+                            $app['config']['config_dir']
+                        ],
+                        ['loaders.yml']
+                    )
                 )
             )
         );
@@ -131,6 +116,7 @@ final class WebBootstrap implements BootstrapInterface
     {
         $app->error(function (\Exception $e, Request $request, $code) use ($app) {
             $message = $e->getMessage();
+            //@todo check exception type before getMessageKey()
             $message = $message ?: $e->getMessageKey();
             $errors = ['errors' => ['code' => $code, 'message' => $message]];
 
