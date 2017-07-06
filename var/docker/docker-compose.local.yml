@@ -19,11 +19,14 @@ services:
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
     environment:
+      - node.name=${HOST_NAME}
       - transport.host=127.0.0.1
       - http.host=0.0.0.0
       - http.cors.enabled=true
       - http.cors.allow-origin=*
       - http.cors.allow-headers=Authorization
+      - xpack.watcher.enabled=false
+      - xpack.monitoring.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
 
   elasticsearch-head:

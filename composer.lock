@@ -67,15 +67,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "b855969b89339db4df1b2ce25c58520040fa7004"
+                "reference": "991b46df1ee567d4e8a383cec9c1893ca1a2c737"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/b855969b89339db4df1b2ce25c58520040fa7004",
-                "reference": "b855969b89339db4df1b2ce25c58520040fa7004",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/991b46df1ee567d4e8a383cec9c1893ca1a2c737",
+                "reference": "991b46df1ee567d4e8a383cec9c1893ca1a2c737",
                 "shasum": ""
             },
             "require": {
+                "beberlei/assert": "^2.7",
                 "daikon/data-structures": "master@dev",
                 "php": ">=7.1",
                 "shrink0r/php-schema": "^0.3",
@@ -102,7 +103,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-05 22:53:15"
+            "time": "2017-07-06 01:18:53"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -110,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "4bf3e89d1ca41c881b42f30e21e0cc3c5644feca"
+                "reference": "d06fc8b7132292f093fd69679b918a16c5165738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/4bf3e89d1ca41c881b42f30e21e0cc3c5644feca",
-                "reference": "4bf3e89d1ca41c881b42f30e21e0cc3c5644feca",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/d06fc8b7132292f093fd69679b918a16c5165738",
+                "reference": "d06fc8b7132292f093fd69679b918a16c5165738",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +146,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-05 13:47:58"
+            "time": "2017-07-06 11:58:34"
         },
         {
             "name": "daikon/cqrs",
@@ -153,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "7bb636726aa1d2e8944a17f346bda86643c3e008"
+                "reference": "aeaff7907f726193280251c8cff598765f231773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/7bb636726aa1d2e8944a17f346bda86643c3e008",
-                "reference": "7bb636726aa1d2e8944a17f346bda86643c3e008",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/aeaff7907f726193280251c8cff598765f231773",
+                "reference": "aeaff7907f726193280251c8cff598765f231773",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +189,7 @@
                 "cqrs",
                 "event-sourcing"
             ],
-            "time": "2017-07-05 16:51:52"
+            "time": "2017-07-06 01:01:44"
         },
         {
             "name": "daikon/data-structures",
@@ -238,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55"
+                "reference": "deb3970a8854e91bc93d13ce75392f02a779971d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55",
-                "reference": "02fa5ea2ab97d0464a9d4ffc0e6ab8e13ea02b55",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/deb3970a8854e91bc93d13ce75392f02a779971d",
+                "reference": "deb3970a8854e91bc93d13ce75392f02a779971d",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +271,7 @@
             "keywords": [
                 "dbal"
             ],
-            "time": "2017-07-05 13:34:24"
+            "time": "2017-07-06 12:54:29"
         },
         {
             "name": "daikon/entity",

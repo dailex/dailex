@@ -1,10 +1,18 @@
 testing.blog.event_store:
   class: Daikon\CouchDb\Connector\CouchDbConnector
   settings:
-    auth:
-      username: ${secrets.couchdb.user}
-      password: ${secrets.couchdb.password}
+    scheme: ${secrets.couchdb.scheme}
     host: ${secrets.couchdb.host}
     port: ${secrets.couchdb.port}
-    transport: ${secrets.couchdb.transport}
+    user: ${secrets.couchdb.user}
+    password: ${secrets.couchdb.password}
     database: ${project.prefix}%2Btesting-blog
+
+testing.blog.projection_store.standard:
+  class: Dailex\Infrastructure\Elasticsearch5\Connector\Elasticsearch5Connector
+  settings:
+    scheme: ${secrets.elasticsearch.scheme}
+    host: ${secrets.elasticsearch.host}
+    port: ${secrets.elasticsearch.port}
+    user: ${secrets.elasticsearch.user}
+    password: ${secrets.elasticsearch.password}

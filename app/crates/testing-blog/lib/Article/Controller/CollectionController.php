@@ -29,6 +29,6 @@ class CollectionController
             'content' => 'using cqrs+es to just output this message is over engineered, but it worx :D'
         ]), 'commands');
 
-        return "CreateArticle command was created and dispatched!";
+        return 'CreateArticle command was created and dispatched!';
     }
 }

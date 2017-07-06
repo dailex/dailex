@@ -2,6 +2,10 @@ version: "3.2"
 secrets:
   couchdb.yml:
     file: ../secrets/default/couchdb.yml
+  elasticsearch.yml:
+    file: ../secrets/default/elasticsearch.yml
+  rabbitmq.yml:
+    file: ../secrets/default/rabbitmq.yml
 services:
   proxy:
     image: blacklabelops/nginx:latest
@@ -39,6 +43,8 @@ services:
       - rabbitmq:rabbitmq
     secrets:
       - couchdb.yml
+      - elasticsearch.yml
+      - rabbitmq.yml
     environment:
       - APP_VERSION
       - APP_ENV

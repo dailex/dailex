@@ -1,0 +1,17 @@
+storage_adapters:
+  testing.blog.article.standard:
+    class: Dailex\Infrastructure\Elasticsearch5\Storage\Elasticsearch5StorageAdapter
+    connector: testing.blog.projection_store.standard
+    settings:
+      index: ${project.prefix}.testing-blog
+      type: testing-blog-article-standard
+
+projectors:
+  testing.blog.article.standard:
+    class: Dailex\Infrastructure\Projector\StandardProjector
+    repository: testing.blog.article.standard
+
+repositories:
+   testing.blog.article.standard:
+     class: Testing\Blog\Article\Repository\Standard\ArticleRepository
+     storage_adapter: testing.blog.article.standard

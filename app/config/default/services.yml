@@ -42,6 +42,23 @@ dailex:
       provisioner:
         class: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
 
+    repository_map:
+      class: Daikon\Dbal\Repository\RepositoryMap
+      provisioner:
+        class: Dailex\Service\Provisioner\RepositoryMapProvisioner
+
+    projector_map:
+      class: Dailex\Infrastructure\Projector\ProjectorMap
+      provisioner:
+        class: Dailex\Service\Provisioner\ProjectorMapProvisioner
+
+    projector_service:
+      class: Dailex\Infrastructure\Projector\ProjectorService
+      subscriptions:
+        commit_sub:
+          channel: commits
+          transport: inproc
+
     command_router:
       class: Dailex\Service\CommandRouter
       subscriptions:
