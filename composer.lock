@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "89c5b3dc28489915f2b344d9699213ef",
+    "content-hash": "4bd04b97cc0c1b6dd6de60c661d4171f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "28f89368fcd95ab12229b128502bc44c082c2062"
+                "reference": "7bc066c4a29cb41e28c49e72f7a4aba695196ec6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/28f89368fcd95ab12229b128502bc44c082c2062",
-                "reference": "28f89368fcd95ab12229b128502bc44c082c2062",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/7bc066c4a29cb41e28c49e72f7a4aba695196ec6",
+                "reference": "7bc066c4a29cb41e28c49e72f7a4aba695196ec6",
                 "shasum": ""
             },
             "require": {
@@ -183,13 +183,14 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "CQRS and event-sourcing library for php.",
+            "description": "CQRS and event-sourcing library for PHP7.",
             "homepage": "https://github.com/daikon-cqrs/cqrs",
             "keywords": [
                 "cqrs",
-                "event-sourcing"
+                "event-sourcing",
+                "immutable"
             ],
-            "time": "2017-07-06 15:03:25"
+            "time": "2017-07-06 16:24:41"
         },
         {
             "name": "daikon/data-structures",
@@ -197,12 +198,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structures.git",
-                "reference": "00e74b52aa9d77569689a02123565ded0d234b5e"
+                "reference": "6b349183c842787ff64d610cc069e973cfa75da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structures/zipball/00e74b52aa9d77569689a02123565ded0d234b5e",
-                "reference": "00e74b52aa9d77569689a02123565ded0d234b5e",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structures/zipball/6b349183c842787ff64d610cc069e973cfa75da3",
+                "reference": "6b349183c842787ff64d610cc069e973cfa75da3",
                 "shasum": ""
             },
             "require": {
@@ -224,14 +225,14 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Generic data-structure traits based on php/ds.",
+            "description": "Data-structure traits based on php/ds.",
             "homepage": "https://github.com/daikon-cqrs/data-structures",
             "keywords": [
                 "data-structures",
                 "list",
                 "map"
             ],
-            "time": "2017-07-04 17:07:18"
+            "time": "2017-07-06 16:20:15"
         },
         {
             "name": "daikon/dbal",
@@ -275,17 +276,59 @@
             "time": "2017-07-06 15:52:31"
         },
         {
+            "name": "daikon/elasticsearch5-adapter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
+                "reference": "e11a16577f30a0f773fc0049507d5f2546e41c48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/e11a16577f30a0f773fc0049507d5f2546e41c48",
+                "reference": "e11a16577f30a0f773fc0049507d5f2546e41c48",
+                "shasum": ""
+            },
+            "require": {
+                "daikon/dbal": "master@dev",
+                "elasticsearch/elasticsearch": "^5.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2",
+                "satooshi/php-coveralls": "master@dev",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\Elasticsearch5\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "Elasticsearch 5 adapter for Daikon projects.",
+            "homepage": "https://github.com/daikon-cqrs/elasticsearch5-adapter",
+            "keywords": [
+                "adapter",
+                "elasticsearch"
+            ],
+            "time": "2017-07-06 16:15:50"
+        },
+        {
             "name": "daikon/entity",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "fc875da0b29e3d2685d87ce392909666ccce29ee"
+                "reference": "cd8ea38057e86afa1363e57783bb343f112a69ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/fc875da0b29e3d2685d87ce392909666ccce29ee",
-                "reference": "fc875da0b29e3d2685d87ce392909666ccce29ee",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/cd8ea38057e86afa1363e57783bb343f112a69ad",
+                "reference": "cd8ea38057e86afa1363e57783bb343f112a69ad",
                 "shasum": ""
             },
             "require": {
@@ -310,14 +353,14 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Generic boilerplate for implementing structured entities in php.",
+            "description": "Boilerplate for implementing well structured entities in PHP7.",
             "homepage": "https://github.com/daikon-cqrs/entity",
             "keywords": [
                 "entity",
                 "generic",
                 "value-object"
             ],
-            "time": "2017-06-30 16:16:34"
+            "time": "2017-07-06 16:21:35"
         },
         {
             "name": "daikon/message-bus",
@@ -2702,6 +2745,7 @@
         "daikon/config": 20,
         "daikon/cqrs": 20,
         "daikon/couchdb-adapter": 20,
+        "daikon/elasticsearch5-adapter": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

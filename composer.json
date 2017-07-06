@@ -26,6 +26,7 @@
         "daikon/config": "master@dev",
         "daikon/cqrs": "master@dev",
         "daikon/couchdb-adapter": "master@dev",
+        "daikon/elasticsearch5-adapter": "master@dev",
         "monolog/monolog": "^1.0",
         "psr/container": "^1.0",
         "rdlowrey/auryn": "^1.4.0",
@@ -34,8 +35,7 @@
         "symfony/asset": "^3.0",
         "symfony/twig-bridge": "^3.0",
         "symfony/yaml": "^3.0",
-        "twig/twig": "^2.0",
-        "elasticsearch/elasticsearch": "^5.0"
+        "twig/twig": "^2.0"
     },
     "require-dev": {
         "silex/web-profiler": "^2.0",

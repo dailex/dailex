@@ -1,6 +1,6 @@
 storage_adapters:
   testing.blog.article.standard:
-    class: Dailex\Infrastructure\Elasticsearch5\Storage\Elasticsearch5StorageAdapter
+    class: Daikon\Elasticsearch5\Storage\Elasticsearch5StorageAdapter
     connector: testing.blog.projection_store.standard
     settings:
       index: ${project.prefix}.testing-blog

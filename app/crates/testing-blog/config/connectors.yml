@@ -9,7 +9,7 @@ testing.blog.event_store:
     database: ${project.prefix}%2Btesting-blog
 
 testing.blog.projection_store.standard:
-  class: Dailex\Infrastructure\Elasticsearch5\Connector\Elasticsearch5Connector
+  class: Daikon\Elasticsearch5\Connector\Elasticsearch5Connector
   settings:
     scheme: ${secrets.elasticsearch.scheme}
     host: ${secrets.elasticsearch.host}
