@@ -4,6 +4,7 @@ namespace Dailex\Service;
 
 use Assert\Assertion;
 use Auryn\Injector;
+use Daikon\Cqrs\Aggregate\AggregatePrefix;
 use Daikon\Cqrs\Aggregate\CommandInterface;
 use Daikon\Cqrs\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
@@ -24,10 +25,11 @@ final class CommandRouter implements MessageHandlerInterface
     public function handle(EnvelopeInterface $envelope): bool
     {
         $command = $envelope->getMessage();
-        Assertion::isInstanceOf($command, CommandInterface::class);
+        Assertion::implementsInterface($command, CommandInterface::class);
 
         $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', get_class($command)).'Handler';
-        $unitOfWork = $this->unitOfWorkMap->getByAggregateId($command->getAggregateId());
+        $aggregatePrefix = AggregatePrefix::fromFqcn($command->getAggregateRootClass());
+        $unitOfWork = $this->unitOfWorkMap->getByAggregatePrefix($aggregatePrefix);
 
         return $this->injector
             ->share($commandHandlerClass)

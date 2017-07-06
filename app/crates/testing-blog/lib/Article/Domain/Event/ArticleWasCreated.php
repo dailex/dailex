@@ -59,6 +59,11 @@ final class ArticleWasCreated extends DomainEvent
         return $arr;
     }
 
+    public static function getAggregateRootClass(): string
+    {
+        return Article::class;
+    }
+
     protected function __construct(
         AggregateId $aggregateId,
         Text $title,

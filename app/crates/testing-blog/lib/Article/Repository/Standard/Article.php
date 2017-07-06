@@ -25,8 +25,6 @@ final class Article implements ProjectionInterface
     {
         return self::fromArray(
             [
-                '@type' => get_class($this),
-                '@parent' => null,
                 'aggregateId' => $articleWasCreated->getAggregateId()->toNative(),
                 'aggregateRevision' => $articleWasCreated->getAggregateRevision()->toNative(),
                 'title' => $articleWasCreated->getTitle()->toNative(),

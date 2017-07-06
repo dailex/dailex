@@ -3,6 +3,7 @@
 namespace Dailex\Infrastructure\Projector;
 
 use Assert\Assertion;
+use Daikon\Cqrs\Aggregate\AggregatePrefix;
 use Daikon\Cqrs\EventStore\CommitInterface;
 use Daikon\MessageBus\EnvelopeInterface;
 use Dailex\Exception\RuntimeException;
@@ -19,12 +20,15 @@ final class ProjectorService implements ProjectorServiceInterface
     public function handle(EnvelopeInterface $envelope): bool
     {
         $commit = $envelope->getMessage();
-        Assertion::isInstanceOf($commit, CommitInterface::class);
+        Assertion::implementsInterface($commit, CommitInterface::class);
 
-        $projectors = $this->projectorMap->filterByStreamId($commit->getStreamId());
-        foreach ($projectors->getIterator() as $projector) {
-            if (!$projector->handle($envelope)) {
-                throw new RuntimeException('Projector %s failed to handle message.');
+        foreach ($commit->getEventLog() as $domainEvent) {
+            $aggregatePrefix = AggregatePrefix::fromFqcn($domainEvent->getAggregateRootClass());
+            $projectors = $this->projectorMap->filterByAggregatePrefix($aggregatePrefix);
+            foreach ($projectors->getIterator() as $projector) {
+                if (!$projector->handle($envelope)) {
+                    throw new RuntimeException('Projector %s failed to handle message.');
+                }
             }
         }
 

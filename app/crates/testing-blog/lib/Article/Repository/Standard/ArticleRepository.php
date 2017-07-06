@@ -32,6 +32,9 @@ final class ArticleRepository implements RepositoryInterface
 
     public function makeProjection(): ProjectionInterface
     {
-        return Article::fromArray();
+        return Article::fromArray([
+            '@type' => Article::class,
+            '@parent' => null
+        ]);
     }
 }

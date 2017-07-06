@@ -2,7 +2,7 @@
 
 namespace Dailex\Infrastructure\Projector;
 
-use Daikon\Cqrs\EventStore\CommitStreamId;
+use Daikon\Cqrs\Aggregate\AggregatePrefix;
 use Daikon\DataStructures\TypedMapTrait;
 
 final class ProjectorMap implements \IteratorAggregate, \Countable
@@ -14,11 +14,11 @@ final class ProjectorMap implements \IteratorAggregate, \Countable
         $this->init($projectors, ProjectorInterface::class);
     }
 
-    public function filterByStreamId(CommitStreamId $streamId)
+    public function filterByAggregatePrefix(AggregatePrefix $aggregatePrefix)
     {
-        $prefix = explode('-', $streamId->toNative(), 2)[0];
-        return $this->compositeMap->filter(function ($name) use ($prefix) {
-            return strpos($name, $prefix) === 0;
+        $prefix = $aggregatePrefix->toNative();
+        return $this->compositeMap->filter(function ($key) use ($prefix) {
+            return strpos($key, $prefix) === 0;
         });
     }
 }

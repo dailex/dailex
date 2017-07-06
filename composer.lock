@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "d59a5d3fbfb732918870cf7be52dc226afeadc78"
+                "reference": "28f89368fcd95ab12229b128502bc44c082c2062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/d59a5d3fbfb732918870cf7be52dc226afeadc78",
-                "reference": "d59a5d3fbfb732918870cf7be52dc226afeadc78",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/28f89368fcd95ab12229b128502bc44c082c2062",
+                "reference": "28f89368fcd95ab12229b128502bc44c082c2062",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
                 "cqrs",
                 "event-sourcing"
             ],
-            "time": "2017-07-06 14:08:25"
+            "time": "2017-07-06 15:03:25"
         },
         {
             "name": "daikon/data-structures",
