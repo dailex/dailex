@@ -3,6 +3,7 @@
 namespace Testing\Blog\Article\Domain\Command;
 
 use Daikon\Cqrs\Aggregate\AggregateId;
+use Daikon\Cqrs\Aggregate\AggregateIdInterface;
 use Daikon\Cqrs\Aggregate\Command;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
@@ -35,10 +36,10 @@ final class CreateArticle extends Command
 
     public function toArray(): array
     {
-        $arr['aggregateId'] = $this->getAggregateId()->toNative();
-        $arr['title'] = $this->title->toNative();
-        $arr['content'] = $this->content->toNative();
-        return $arr;
+        return array_merge([
+            'title' => $this->title->toNative(),
+            'content' => $this->content->toNative()
+        ], parent::toArray());
     }
 
     public static function getAggregateRootClass(): string
@@ -46,7 +47,7 @@ final class CreateArticle extends Command
         return Article::class;
     }
 
-    protected function __construct(AggregateId $aggregateId, Text $title, Text $content)
+    protected function __construct(AggregateIdInterface $aggregateId, Text $title, Text $content)
     {
         parent::__construct($aggregateId);
         $this->title = $title;

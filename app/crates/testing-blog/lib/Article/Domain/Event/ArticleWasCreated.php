@@ -52,11 +52,10 @@ final class ArticleWasCreated extends DomainEvent
 
     public function toArray(): array
     {
-        $arr['aggregateId'] = $this->getAggregateId()->toNative();
-        $arr['aggregateRevision'] = $this->getAggregateRevision()->toNative();
-        $arr['title'] = $this->title->toNative();
-        $arr['content'] = $this->content->toNative();
-        return $arr;
+        return array_merge([
+            'title' => $this->title->toNative(),
+            'content' => $this->content->toNative()
+        ], parent::toArray());
     }
 
     protected function __construct(

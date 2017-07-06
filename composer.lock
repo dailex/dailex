@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "991b46df1ee567d4e8a383cec9c1893ca1a2c737"
+                "reference": "940908caad82aa6af1c71e627efb790616debe69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/991b46df1ee567d4e8a383cec9c1893ca1a2c737",
-                "reference": "991b46df1ee567d4e8a383cec9c1893ca1a2c737",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/940908caad82aa6af1c71e627efb790616debe69",
+                "reference": "940908caad82aa6af1c71e627efb790616debe69",
                 "shasum": ""
             },
             "require": {
@@ -103,7 +103,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-06 01:18:53"
+            "time": "2017-07-06 22:25:21"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "7bc066c4a29cb41e28c49e72f7a4aba695196ec6"
+                "reference": "9a2f1c64d50616b28df5e3358e1bf1ec92f085d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/7bc066c4a29cb41e28c49e72f7a4aba695196ec6",
-                "reference": "7bc066c4a29cb41e28c49e72f7a4aba695196ec6",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/9a2f1c64d50616b28df5e3358e1bf1ec92f085d1",
+                "reference": "9a2f1c64d50616b28df5e3358e1bf1ec92f085d1",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-06 16:24:41"
+            "time": "2017-07-06 22:54:55"
         },
         {
             "name": "daikon/data-structures",
