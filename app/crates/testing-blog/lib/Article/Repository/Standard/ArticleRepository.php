@@ -2,10 +2,10 @@
 
 namespace Testing\Blog\Article\Repository\Standard;
 
+use Daikon\Dbal\Projection\ProjectionInterface;
+use Daikon\Dbal\Projection\ProjectionMap;
 use Daikon\Dbal\Repository\RepositoryInterface;
 use Daikon\Dbal\Storage\StorageAdapterInterface;
-use Dailex\Infrastructure\Projection\ProjectionInterface;
-use Dailex\Infrastructure\Projection\ProjectionMap;
 
 final class ArticleRepository implements RepositoryInterface
 {

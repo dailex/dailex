@@ -2,8 +2,8 @@
 
 namespace Testing\Blog\Article\Repository\Standard;
 
-use Dailex\Infrastructure\Projection\ProjectionInterface;
-use Dailex\Infrastructure\Projection\ProjectionTrait;
+use Daikon\Dbal\Projection\ProjectionInterface;
+use Daikon\Dbal\Projection\ProjectionTrait;
 use Testing\Blog\Article\Domain\Event\ArticleWasCreated;
 use Testing\Blog\Article\Domain\Event\ArticleWasUpdated;
 

@@ -239,15 +239,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "deb3970a8854e91bc93d13ce75392f02a779971d"
+                "reference": "eab8d59c6185294666ff1625093fc96fb0a10035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/deb3970a8854e91bc93d13ce75392f02a779971d",
-                "reference": "deb3970a8854e91bc93d13ce75392f02a779971d",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/eab8d59c6185294666ff1625093fc96fb0a10035",
+                "reference": "eab8d59c6185294666ff1625093fc96fb0a10035",
                 "shasum": ""
             },
             "require": {
+                "beberlei/assert": "^2.7",
                 "daikon/data-structures": "master@dev",
                 "php": ">=7.1"
             },
@@ -266,12 +267,12 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Data access components for Daikon.",
+            "description": "Database access layer for Daikon projects.",
             "homepage": "https://github.com/daikon-cqrs/dbal",
             "keywords": [
                 "dbal"
             ],
-            "time": "2017-07-06 12:54:29"
+            "time": "2017-07-06 15:52:31"
         },
         {
             "name": "daikon/entity",

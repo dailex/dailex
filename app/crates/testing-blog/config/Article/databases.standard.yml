@@ -8,7 +8,7 @@ storage_adapters:
 
 projectors:
   testing.blog.article.standard:
-    class: Dailex\Infrastructure\Projector\StandardProjector
+    class: Daikon\Dbal\Projector\StandardProjector
     repository: testing.blog.article.standard
 
 repositories:

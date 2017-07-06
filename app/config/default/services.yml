@@ -48,12 +48,12 @@ dailex:
         class: Dailex\Service\Provisioner\RepositoryMapProvisioner
 
     projector_map:
-      class: Dailex\Infrastructure\Projector\ProjectorMap
+      class: Daikon\Dbal\Projector\ProjectorMap
       provisioner:
         class: Dailex\Service\Provisioner\ProjectorMapProvisioner
 
     projector_service:
-      class: Dailex\Infrastructure\Projector\ProjectorService
+      class: Daikon\Dbal\Projector\ProjectorService
       subscriptions:
         commit_sub:
           channel: commits
