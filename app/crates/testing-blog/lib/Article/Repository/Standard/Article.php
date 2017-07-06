@@ -23,14 +23,15 @@ final class Article implements ProjectionInterface
 
     private function whenArticleWasCreated(ArticleWasCreated $articleWasCreated)
     {
-        return self::fromArray(
+        return self::fromArray(array_merge(
+            $this->state,
             [
                 'aggregateId' => $articleWasCreated->getAggregateId()->toNative(),
                 'aggregateRevision' => $articleWasCreated->getAggregateRevision()->toNative(),
                 'title' => $articleWasCreated->getTitle()->toNative(),
                 'content' => $articleWasCreated->getContent()->toNative()
             ]
-        );
+        ));
     }
 
     private function whenArticleWasUpdated(ArticleWasUpdated $articleWasUpdated)
