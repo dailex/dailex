@@ -2,8 +2,8 @@
 
 namespace Testing\Blog\Article\Controller;
 
-use Daikon\Dbal\Repository\RepositoryMap;
 use Daikon\MessageBus\MessageBusInterface;
+use Daikon\ReadModel\Repository\RepositoryMap;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Testing\Blog\Article\Domain\Command\UpdateArticle;

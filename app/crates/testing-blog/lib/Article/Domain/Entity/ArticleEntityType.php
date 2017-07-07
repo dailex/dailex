@@ -2,12 +2,12 @@
 
 namespace Testing\Blog\Article\Domain\Entity;
 
-use Daikon\EventSourcing\Aggregate\AggregateId;
-use Daikon\EventSourcing\Aggregate\AggregateRevision;
 use Daikon\Entity\EntityType\Attribute;
 use Daikon\Entity\EntityType\EntityType;
 use Daikon\Entity\Entity\TypedEntityInterface;
 use Daikon\Entity\ValueObject\Text;
+use Daikon\EventSourcing\Aggregate\AggregateId;
+use Daikon\EventSourcing\Aggregate\AggregateRevision;
 
 class ArticleEntityType extends EntityType
 {

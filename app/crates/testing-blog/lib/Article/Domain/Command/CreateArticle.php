@@ -2,10 +2,10 @@
 
 namespace Testing\Blog\Article\Domain\Command;
 
+use Daikon\Entity\ValueObject\Text;
 use Daikon\EventSourcing\Aggregate\AggregateId;
 use Daikon\EventSourcing\Aggregate\AggregateIdInterface;
 use Daikon\EventSourcing\Aggregate\Command;
-use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
 use Testing\Blog\Article\Domain\Article;
 
