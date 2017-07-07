@@ -7,11 +7,11 @@ use Silex\Application as SilexApp;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;
 
-class App extends Application
+final class Console extends Application
 {
-    protected $app;
+    private $app;
 
-    protected $configProvider;
+    private $configProvider;
 
     public static function getLogo()
     {
@@ -28,7 +28,7 @@ class App extends Application
 ASCII;
     }
 
-    public function __construct(SilexApp $app, array $appCommands, ConfigProviderInterface $configProvider)
+    public function __construct(SilexApp $app, array $commands, ConfigProviderInterface $configProvider)
     {
         $this->app = $app;
         $this->configProvider = $configProvider;
@@ -39,7 +39,7 @@ ASCII;
             new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev')
         );
 
-        foreach (array_map([ $app['dailex.service_locator'], 'make'], $appCommands) as $command) {
+        foreach (array_map([ $app['dailex.service_locator'], 'make'], $commands) as $command) {
             $this->add($command);
         }
 

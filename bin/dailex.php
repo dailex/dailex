@@ -1,6 +1,6 @@
 <?php
 
-use Dailex\Console\App;
+use Dailex\Console\Console;
 use Dailex\Console\Command\Project\ConfigureProject;
 use Dailex\Console\Command\Route\ListRoutes;
 use Symfony\Component\Console\Input\ArgvInput;
@@ -23,12 +23,14 @@ require $basedir.'/app/bootstrap.php';
 $app->boot();
 $app->flush();
 
-$appCommands = [
+$commands = [
     ConfigureProject::class,
     ListRoutes::class
 ];
 
 set_time_limit(0);
 
-$appState = [':app' => $app, ':appCommands' => $appCommands];
-$app['dailex.service_locator']->make(App::CLASS, $appState)->run();
+$app['dailex.service_locator']->make(
+    Console::class,
+    [':app' => $app, ':commands' => $commands]
+)->run();
