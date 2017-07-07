@@ -3,6 +3,7 @@
 #
 
 name: Dailex
+version: ${app.version}
 description: 'Daikon CQRS & ES integration with the Silex framework'
 prefix: dailex
 framework:

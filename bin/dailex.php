@@ -1,8 +1,8 @@
 <?php
 
-use Dailex\Console\Console;
 use Dailex\Console\Command\Project\ConfigureProject;
 use Dailex\Console\Command\Route\ListRoutes;
+use Dailex\Console\Console;
 use Symfony\Component\Console\Input\ArgvInput;
 
 ini_set('display_errors', true);
@@ -15,7 +15,6 @@ $appContext = 'console';
 $appVersion = getEnv('APP_VERSION') ?: 'master';
 $appEnv = (new ArgvInput)->getParameterOption([ '--env', '-e' ], getenv('APP_ENV') ?: 'dev');
 $appDebug = (new ArgvInput)->getParameterOption('--debug', getenv('APP_DEBUG') ?: true);
-$hostPrefix = (new ArgvInput)->getParameterOption([ '--host', '-h' ], getenv('HOST_PREFIX'));
 $secretsDir = getenv('SECRETS_DIR') ?: '/usr/local/env';
 
 require $basedir.'/app/bootstrap.php';

@@ -3,6 +3,7 @@
 namespace Dailex\Console;
 
 use Daikon\Config\ConfigProviderInterface;
+use Dailex\Service\ServiceLocatorInterface;
 use Silex\Application as Silex;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;
@@ -28,18 +29,25 @@ final class Console extends Application
 ASCII;
     }
 
-    public function __construct(Silex $app, array $commands, ConfigProviderInterface $configProvider)
-    {
+    public function __construct(
+        Silex $app,
+        ConfigProviderInterface $configProvider,
+        ServiceLocatorInterface $serviceLocator,
+        array $commands = []
+    ) {
         $this->app = $app;
         $this->configProvider = $configProvider;
 
-        parent::__construct('dailex', $configProvider->get('app.version'));
-
-        $this->getDefinition()->addOption(
-            new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev')
+        parent::__construct(
+            $configProvider->get('project.name'),
+            sprintf('%s@%s', $configProvider->get('project.version'), $configProvider->get('app.env'))
         );
 
-        foreach (array_map([ $app['dailex.service_locator'], 'make'], $commands) as $command) {
+        $this->getDefinition()->addOption(
+            new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The environment name.', 'dev')
+        );
+
+        foreach (array_map([$serviceLocator, 'make'], $commands) as $command) {
             $this->add($command);
         }
 

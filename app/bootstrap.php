@@ -11,7 +11,6 @@ $app['config'] = [
     'context' => $appContext,
     'env' => $appEnv,
     'debug' => $app['debug'],
-    'prefix' => $hostPrefix,
     'base_dir' => dirname(__DIR__),
     'dir' => __DIR__,
     'crates_dir' => __DIR__.'/crates',
