@@ -3,7 +3,7 @@
 namespace Dailex\Console;
 
 use Daikon\Config\ConfigProviderInterface;
-use Silex\Application as SilexApp;
+use Silex\Application as Silex;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -28,7 +28,7 @@ final class Console extends Application
 ASCII;
     }
 
-    public function __construct(SilexApp $app, array $commands, ConfigProviderInterface $configProvider)
+    public function __construct(Silex $app, array $commands, ConfigProviderInterface $configProvider)
     {
         $this->app = $app;
         $this->configProvider = $configProvider;
