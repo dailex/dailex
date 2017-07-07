@@ -49,9 +49,10 @@
             "Testing\\Blog\\": "app/crates/testing-blog/lib/"
         }
     },
-    "config": {
-        "bin-dir": "bin"
-    },
+    "bin": [
+        "bin/dailex",
+        "bin/dailex.php"
+    ],
     "scripts": {
         "code-sniffer": "phpcs --extensions=php --standard=psr2 app",
         "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 app"
