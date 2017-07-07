@@ -33,12 +33,12 @@ dailex:
         class: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
 
     stream_store_map:
-      class: Daikon\Cqrs\EventStore\StreamStoreMap
+      class: Daikon\EventSourcing\EventStore\StreamStoreMap
       provisioner:
         class: Dailex\Service\Provisioner\StreamStoreMapProvisioner
 
     unit_of_work_map:
-      class: Daikon\Cqrs\EventStore\UnitOfWorkMap
+      class: Daikon\EventSourcing\EventStore\UnitOfWorkMap
       provisioner:
         class: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
 

@@ -2,7 +2,7 @@
 
 namespace Testing\Blog\Article\Domain\Entity;
 
-use Daikon\Cqrs\Aggregate\AggregateId;
+use Daikon\EventSourcing\Aggregate\AggregateId;
 use Daikon\Entity\Entity\Entity;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\Entity\ValueObject\ValueObjectInterface;

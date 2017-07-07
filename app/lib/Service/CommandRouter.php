@@ -4,9 +4,9 @@ namespace Dailex\Service;
 
 use Assert\Assertion;
 use Auryn\Injector;
-use Daikon\Cqrs\Aggregate\AggregatePrefix;
-use Daikon\Cqrs\Aggregate\CommandInterface;
-use Daikon\Cqrs\EventStore\UnitOfWorkMap;
+use Daikon\EventSourcing\Aggregate\AggregatePrefix;
+use Daikon\EventSourcing\Aggregate\CommandInterface;
+use Daikon\EventSourcing\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;
 

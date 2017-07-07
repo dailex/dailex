@@ -2,8 +2,8 @@
 
 namespace Testing\Blog\Article\Domain;
 
-use Daikon\Cqrs\Aggregate\AggregateIdInterface;
-use Daikon\Cqrs\Aggregate\AggregateRoot;
+use Daikon\EventSourcing\Aggregate\AggregateIdInterface;
+use Daikon\EventSourcing\Aggregate\AggregateRoot;
 use Testing\Blog\Article\Domain\Command\CreateArticle;
 use Testing\Blog\Article\Domain\Command\UpdateArticle;
 use Testing\Blog\Article\Domain\Entity\ArticleEntityType;

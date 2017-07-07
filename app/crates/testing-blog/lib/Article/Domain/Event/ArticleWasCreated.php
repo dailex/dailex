@@ -2,9 +2,9 @@
 
 namespace Testing\Blog\Article\Domain\Event;
 
-use Daikon\Cqrs\Aggregate\AggregateId;
-use Daikon\Cqrs\Aggregate\AggregateRevision;
-use Daikon\Cqrs\Aggregate\DomainEvent;
+use Daikon\EventSourcing\Aggregate\AggregateId;
+use Daikon\EventSourcing\Aggregate\AggregateRevision;
+use Daikon\EventSourcing\Aggregate\DomainEvent;
 use Daikon\Entity\ValueObject\Text;
 use Daikon\MessageBus\MessageInterface;
 use Testing\Blog\Article\Domain\Article;
