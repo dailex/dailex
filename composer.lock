@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "6f9569b533da3d5379ebf0b2077bbcbf",
     "content-hash": "1e460146e00d68777a908b3ed3ce4c6c",
     "packages": [
         {
@@ -59,7 +60,7 @@
                 "assertion",
                 "validation"
             ],
-            "time": "2017-05-04T02:00:24+00:00"
+            "time": "2017-05-04 02:00:24"
         },
         {
             "name": "daikon/config",
@@ -67,17 +68,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "940908caad82aa6af1c71e627efb790616debe69"
+                "reference": "281781f31adf2443a99a4a654e69e1300e269d73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/940908caad82aa6af1c71e627efb790616debe69",
-                "reference": "940908caad82aa6af1c71e627efb790616debe69",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/281781f31adf2443a99a4a654e69e1300e269d73",
+                "reference": "281781f31adf2443a99a4a654e69e1300e269d73",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structures": "master@dev",
                 "php": ">=7.1",
                 "shrink0r/php-schema": "^0.3",
                 "symfony/finder": "^3.3",
@@ -103,7 +103,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-06 22:25:21"
+            "time": "2017-07-07 14:19:00"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -154,19 +154,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/cqrs.git",
-                "reference": "9a2f1c64d50616b28df5e3358e1bf1ec92f085d1"
+                "reference": "d51ca76c61da04775e22e98e30e08fb93931752d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/9a2f1c64d50616b28df5e3358e1bf1ec92f085d1",
-                "reference": "9a2f1c64d50616b28df5e3358e1bf1ec92f085d1",
+                "url": "https://api.github.com/repos/daikon-cqrs/cqrs/zipball/d51ca76c61da04775e22e98e30e08fb93931752d",
+                "reference": "d51ca76c61da04775e22e98e30e08fb93931752d",
                 "shasum": ""
             },
             "require": {
+                "daikon/data-structure": "master@dev",
                 "daikon/entity": "master@dev",
                 "daikon/message-bus": "master@dev",
-                "php": ">=7.1",
-                "php-ds/php-ds": "^v1.1"
+                "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
@@ -190,20 +190,20 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-06 22:54:55"
+            "time": "2017-07-07 14:28:18"
         },
         {
-            "name": "daikon/data-structures",
+            "name": "daikon/data-structure",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/daikon-cqrs/data-structures.git",
-                "reference": "6b349183c842787ff64d610cc069e973cfa75da3"
+                "url": "https://github.com/daikon-cqrs/data-structure.git",
+                "reference": "72588799a236a99a94a8a1170db0a97d4b093c20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structures/zipball/6b349183c842787ff64d610cc069e973cfa75da3",
-                "reference": "6b349183c842787ff64d610cc069e973cfa75da3",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/72588799a236a99a94a8a1170db0a97d4b093c20",
+                "reference": "72588799a236a99a94a8a1170db0a97d4b093c20",
                 "shasum": ""
             },
             "require": {
@@ -218,21 +218,22 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Daikon\\DataStructures\\": "src"
+                    "Daikon\\DataStructure\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Data-structure traits based on php/ds.",
+            "description": "Immutable data-structure traits based on php/ds.",
             "homepage": "https://github.com/daikon-cqrs/data-structures",
             "keywords": [
                 "data-structures",
+                "immutable",
                 "list",
                 "map"
             ],
-            "time": "2017-07-06 16:20:15"
+            "time": "2017-07-07 14:08:42"
         },
         {
             "name": "daikon/dbal",
@@ -240,17 +241,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "eab8d59c6185294666ff1625093fc96fb0a10035"
+                "reference": "456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/eab8d59c6185294666ff1625093fc96fb0a10035",
-                "reference": "eab8d59c6185294666ff1625093fc96fb0a10035",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c",
+                "reference": "456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structures": "master@dev",
+                "daikon/data-structure": "master@dev",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -268,12 +269,14 @@
             "license": [
                 "MPL-2.0"
             ],
-            "description": "Database access layer for Daikon projects.",
+            "description": "Database access components for Daikon projects.",
             "homepage": "https://github.com/daikon-cqrs/dbal",
             "keywords": [
-                "dbal"
+                "database",
+                "dbal",
+                "immutable"
             ],
-            "time": "2017-07-06 15:52:31"
+            "time": "2017-07-07 14:26:32"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
@@ -323,17 +326,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "cd8ea38057e86afa1363e57783bb343f112a69ad"
+                "reference": "0f759867b2729bea34b5f71c913fd625b62da1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/cd8ea38057e86afa1363e57783bb343f112a69ad",
-                "reference": "cd8ea38057e86afa1363e57783bb343f112a69ad",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/0f759867b2729bea34b5f71c913fd625b62da1d9",
+                "reference": "0f759867b2729bea34b5f71c913fd625b62da1d9",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.7",
-                "daikon/data-structures": "master@dev",
+                "daikon/data-structure": "master@dev",
                 "jms/parser-lib": "~1.0",
                 "php": ">=7.1",
                 "ramsey/uuid": "~3.6"
@@ -360,7 +363,7 @@
                 "generic",
                 "value-object"
             ],
-            "time": "2017-07-06 16:21:35"
+            "time": "2017-07-07 14:23:31"
         },
         {
             "name": "daikon/message-bus",
@@ -368,16 +371,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "bd5d774db37eafa94ce2b4fbdcd4eb5aa25ca9fb"
+                "reference": "fdacd7c5ac7ca6ac8f5f3de853a344fd60dab05a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/bd5d774db37eafa94ce2b4fbdcd4eb5aa25ca9fb",
-                "reference": "bd5d774db37eafa94ce2b4fbdcd4eb5aa25ca9fb",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/fdacd7c5ac7ca6ac8f5f3de853a344fd60dab05a",
+                "reference": "fdacd7c5ac7ca6ac8f5f3de853a344fd60dab05a",
                 "shasum": ""
             },
             "require": {
-                "daikon/data-structures": "master@dev",
+                "daikon/data-structure": "master@dev",
                 "php": ">=7.1",
                 "ramsey/uuid": "3.6.*"
             },
@@ -402,7 +405,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-07-04 01:26:00"
+            "time": "2017-07-07 14:21:47"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -457,7 +460,7 @@
                 "elasticsearch",
                 "search"
             ],
-            "time": "2017-04-12T20:40:50+00:00"
+            "time": "2017-04-12 20:40:50"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -522,7 +525,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2017-06-22 18:50:49"
         },
         {
             "name": "guzzlehttp/promises",
@@ -573,7 +576,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20T10:07:11+00:00"
+            "time": "2016-12-20 10:07:11"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -638,7 +641,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-03-20T17:10:46+00:00"
+            "time": "2017-03-20 17:10:46"
         },
         {
             "name": "guzzlehttp/ringphp",
@@ -689,7 +692,7 @@
                 }
             ],
             "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-05-20T03:37:09+00:00"
+            "time": "2015-05-20 03:37:09"
         },
         {
             "name": "guzzlehttp/streams",
@@ -739,7 +742,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-10-12T19:18:40+00:00"
+            "time": "2014-10-12 19:18:40"
         },
         {
             "name": "jms/parser-lib",
@@ -774,7 +777,7 @@
                 "Apache2"
             ],
             "description": "A library for easily creating recursive-descent parsers.",
-            "time": "2012-11-18T18:08:43+00:00"
+            "time": "2012-11-18 18:08:43"
         },
         {
             "name": "monolog/monolog",
@@ -852,7 +855,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19T01:22:40+00:00"
+            "time": "2017-06-19 01:22:40"
         },
         {
             "name": "paragonie/random_compat",
@@ -900,7 +903,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13T16:27:32+00:00"
+            "time": "2017-03-13 16:27:32"
         },
         {
             "name": "php-ds/php-ds",
@@ -947,7 +950,7 @@
                 "php",
                 "polyfill"
             ],
-            "time": "2016-08-08T13:04:16+00:00"
+            "time": "2016-08-08 13:04:16"
         },
         {
             "name": "phpoption/phpoption",
@@ -997,7 +1000,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25T16:39:46+00:00"
+            "time": "2015-07-25 16:39:46"
         },
         {
             "name": "pimple/pimple",
@@ -1047,7 +1050,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-03T14:06:46+00:00"
+            "time": "2017-07-03 14:06:46"
         },
         {
             "name": "psr/container",
@@ -1096,7 +1099,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/http-message",
@@ -1146,7 +1149,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06T14:39:51+00:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -1193,7 +1196,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "ramsey/uuid",
@@ -1275,7 +1278,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-26T20:37:53+00:00"
+            "time": "2017-03-26 20:37:53"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1336,7 +1339,7 @@
                 "dic",
                 "ioc"
             ],
-            "time": "2017-05-15T06:26:46+00:00"
+            "time": "2017-05-15 06:26:46"
         },
         {
             "name": "react/promise",
@@ -1382,7 +1385,7 @@
                 "promise",
                 "promises"
             ],
-            "time": "2017-03-25T12:08:31+00:00"
+            "time": "2017-03-25 12:08:31"
         },
         {
             "name": "roave/security-advisories",
@@ -1518,7 +1521,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-06-22T16:43:17+00:00"
+            "time": "2017-06-22 16:43:17"
         },
         {
             "name": "shrink0r/php-schema",
@@ -1563,7 +1566,7 @@
                 "schema",
                 "validation"
             ],
-            "time": "2016-10-26T22:04:22+00:00"
+            "time": "2016-10-26 22:04:22"
         },
         {
             "name": "silex/silex",
@@ -1649,7 +1652,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2017-05-03T15:21:42+00:00"
+            "time": "2017-05-03 15:21:42"
         },
         {
             "name": "symfony/asset",
@@ -1705,7 +1708,7 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-01T15:01:29+00:00"
+            "time": "2017-05-01 15:01:29"
         },
         {
             "name": "symfony/console",
@@ -1774,7 +1777,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03T13:19:36+00:00"
+            "time": "2017-07-03 13:19:36"
         },
         {
             "name": "symfony/debug",
@@ -1830,7 +1833,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-05T13:02:37+00:00"
+            "time": "2017-07-05 13:02:37"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1893,7 +1896,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-09T14:53:08+00:00"
+            "time": "2017-06-09 14:53:08"
         },
         {
             "name": "symfony/filesystem",
@@ -1942,7 +1945,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24T09:29:48+00:00"
+            "time": "2017-06-24 09:29:48"
         },
         {
             "name": "symfony/finder",
@@ -1991,7 +1994,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T21:01:25+00:00"
+            "time": "2017-06-01 21:01:25"
         },
         {
             "name": "symfony/http-foundation",
@@ -2044,7 +2047,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24T09:29:48+00:00"
+            "time": "2017-06-24 09:29:48"
         },
         {
             "name": "symfony/http-kernel",
@@ -2130,7 +2133,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-05T13:28:15+00:00"
+            "time": "2017-07-05 13:28:15"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2189,7 +2192,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-09 14:24:12"
         },
         {
             "name": "symfony/routing",
@@ -2267,7 +2270,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-06-24T09:29:48+00:00"
+            "time": "2017-06-24 09:29:48"
         },
         {
             "name": "symfony/twig-bridge",
@@ -2354,7 +2357,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24T09:29:48+00:00"
+            "time": "2017-06-24 09:29:48"
         },
         {
             "name": "symfony/yaml",
@@ -2409,7 +2412,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-15T12:58:50+00:00"
+            "time": "2017-06-15 12:58:50"
         },
         {
             "name": "twig/twig",
@@ -2475,7 +2478,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07T18:47:58+00:00"
+            "time": "2017-06-07 18:47:58"
         }
     ],
     "packages-dev": [
@@ -2534,7 +2537,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2017-04-23T23:11:39+00:00"
+            "time": "2017-04-23 23:11:39"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2612,7 +2615,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-05-22T02:43:20+00:00"
+            "time": "2017-05-22 02:43:20"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -2671,7 +2674,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-09 14:24:12"
         },
         {
             "name": "symfony/stopwatch",
@@ -2720,7 +2723,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12T14:14:56+00:00"
+            "time": "2017-04-12 14:14:56"
         },
         {
             "name": "symfony/var-dumper",
@@ -2788,7 +2791,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-07-05T13:02:37+00:00"
+            "time": "2017-07-05 13:02:37"
         },
         {
             "name": "symfony/web-profiler-bundle",
@@ -2854,7 +2857,7 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03T08:12:02+00:00"
+            "time": "2017-07-03 08:12:02"
         }
     ],
     "aliases": [],
