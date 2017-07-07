@@ -6,6 +6,7 @@ use Daikon\Entity\ValueObject\Text;
 use Daikon\EventSourcing\Aggregate\AggregateId;
 use Daikon\EventSourcing\Aggregate\AggregateRevision;
 use Daikon\EventSourcing\Aggregate\DomainEvent;
+use Daikon\EventSourcing\Aggregate\DomainEventInterface;
 use Daikon\MessageBus\MessageInterface;
 use Testing\Blog\Article\Domain\Article;
 use Testing\Blog\Article\Domain\Command\UpdateArticle;
@@ -38,6 +39,11 @@ final class ArticleWasUpdated extends DomainEvent
             $updateArticle->getTitle(),
             $updateArticle->getContent()
         );
+    }
+
+    public function conflictsWith(DomainEventInterface $otherEvent): bool
+    {
+        return false;
     }
 
     public function getTitle(): Text
