@@ -1,5 +1,6 @@
 <?php
 
+use Auryn\Injector;
 use Silex\Application;
 
 $app = new Application;
@@ -32,5 +33,5 @@ if (is_readable($customContextBootstrap)) {
 
 // default bootstrap attempt
 $bootstrapClass = 'Dailex\\Bootstrap\\'.ucfirst($appContext).'Bootstrap';
-$bootstrap = new $bootstrapClass;
+$bootstrap = new $bootstrapClass(new Injector);
 $bootstrap($app);
