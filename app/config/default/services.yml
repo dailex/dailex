@@ -59,6 +59,11 @@ dailex:
           channel: commits
           transport: inproc
 
+    migration_target_map:
+      class: Dailex\Infrastructure\Migration\MigrationTargetMap
+      provisioner:
+        class: Dailex\Service\Provisioner\MigrationTargetMapProvisioner
+
     command_router:
       class: Dailex\Service\CommandRouter
       subscriptions:

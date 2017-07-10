@@ -19,7 +19,7 @@ final class StorageAdapterMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $adapterConfigs = $configProvider->get('databases.storage_adapters');
+        $adapterConfigs = $configProvider->get('databases.storage_adapters', []);
 
         $factory = function (ConnectorMap $connectorMap) use ($injector, $adapterConfigs, $serviceClass) {
             $adapters = [];

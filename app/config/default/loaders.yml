@@ -71,3 +71,14 @@ databases:
     - databases.${app.context}.yml
     - databases.${app.env}.yml
     - databases.${app.context}.${app.env}.yml
+
+migrations:
+  loader: Daikon\Config\YamlConfigLoader
+  locations:
+    - ${app.crates_dir}/testing-blog/config
+    - ${app.config_dir}
+  sources:
+    - migrations.yml
+    - migrations.${app.context}.yml
+    - migrations.${app.env}.yml
+    - migrations.${app.context}.${app.env}.yml

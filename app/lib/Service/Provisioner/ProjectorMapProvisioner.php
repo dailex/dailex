@@ -17,7 +17,7 @@ final class ProjectorMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $projectorConfigs = $configProvider->get('databases.projectors');
+        $projectorConfigs = $configProvider->get('databases.projectors', []);
 
         $factory = function (RepositoryMap $repositoryMap) use ($injector, $projectorConfigs, $serviceClass) {
             $projectors = [];

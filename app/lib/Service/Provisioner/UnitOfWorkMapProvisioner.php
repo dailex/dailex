@@ -20,7 +20,7 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $uowConfigs = $configProvider->get('databases.units_of_work');
+        $uowConfigs = $configProvider->get('databases.units_of_work', []);
 
         $factory = function (StreamStoreMap $streamStoreMap) use ($uowConfigs, $serviceClass) {
             $unitsOfWork = [];

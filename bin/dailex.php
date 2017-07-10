@@ -1,7 +1,10 @@
 <?php
 
+use Dailex\Console\Command\Migrate\ListTargets;
 use Dailex\Console\Command\Project\ConfigureProject;
 use Dailex\Console\Command\Route\ListRoutes;
+use Dailex\Console\Command\Migrate\MigrateDown;
+use Dailex\Console\Command\Migrate\MigrateUp;
 use Dailex\Console\Console;
 use Symfony\Component\Console\Input\ArgvInput;
 
@@ -24,7 +27,10 @@ $app->flush();
 
 $commands = [
     ConfigureProject::class,
-    ListRoutes::class
+    ListRoutes::class,
+    ListTargets::class,
+    MigrateDown::class,
+    MigrateUp::class
 ];
 
 set_time_limit(0);

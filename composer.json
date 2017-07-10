@@ -24,9 +24,9 @@
     "require": {
         "php": ">=7.1",
         "daikon/config": "master@dev",
-        "daikon/event-sourcing": "master@dev",
         "daikon/couchdb-adapter": "master@dev",
         "daikon/elasticsearch5-adapter": "master@dev",
+        "daikon/event-sourcing": "master@dev",
         "daikon/read-model": "master@dev",
         "monolog/monolog": "^1.0",
         "psr/container": "^1.0",
@@ -36,6 +36,7 @@
         "symfony/asset": "^3.0",
         "symfony/console": "^3.0",
         "symfony/filesystem": "^3.0",
+        "symfony/finder": "^3.0",
         "symfony/twig-bridge": "^3.0",
         "symfony/yaml": "^3.0",
         "twig/twig": "^2.0"

@@ -18,7 +18,7 @@ final class ConnectorMapProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $connectorConfigs = $configProvider->get('connectors');
+        $connectorConfigs = $configProvider->get('connectors', []);
 
         $factory = function () use ($injector, $connectorConfigs, $serviceClass) {
             $connectors = [];

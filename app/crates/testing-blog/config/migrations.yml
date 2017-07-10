@@ -1,0 +1,10 @@
+migration_adapters:
+  testing.blog.event_store:
+    class: Daikon\CouchDb\Migration\CouchDbMigrationAdapter
+    connector: testing.blog.event_store
+
+migration_targets:
+  testing.blog.event_store:
+    enabled: true
+    migration_adapter: testing.blog.event_store
+    location: ${app.dir}/crates/testing-blog/migration/couchdb

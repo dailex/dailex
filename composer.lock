@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1477245fa8455364b90caf223d2b51e",
-    "content-hash": "234cbbcc76a2121df8f95a0d04f74b5e",
+    "content-hash": "ab1a9b202632a7fff18a43ccb7c22400",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -60,7 +59,7 @@
                 "assertion",
                 "validation"
             ],
-            "time": "2017-05-04 02:00:24"
+            "time": "2017-05-04T02:00:24+00:00"
         },
         {
             "name": "daikon/config",
@@ -111,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "b7877212e3c60f0c2d448e41d7f6c871a148aace"
+                "reference": "2b811b86bf04eba36cb4670d47d07187a57427df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/b7877212e3c60f0c2d448e41d7f6c871a148aace",
-                "reference": "b7877212e3c60f0c2d448e41d7f6c871a148aace",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/2b811b86bf04eba36cb4670d47d07187a57427df",
+                "reference": "2b811b86bf04eba36cb4670d47d07187a57427df",
                 "shasum": ""
             },
             "require": {
@@ -146,7 +145,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-07 22:05:09"
+            "time": "2017-07-10 12:42:47"
         },
         {
             "name": "daikon/data-structure",
@@ -154,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "176ed789d7ee9a4162c0f77aa05487fb53737b07"
+                "reference": "b8aee205226f0458d11b5930741ac1192af24d67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/176ed789d7ee9a4162c0f77aa05487fb53737b07",
-                "reference": "176ed789d7ee9a4162c0f77aa05487fb53737b07",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/b8aee205226f0458d11b5930741ac1192af24d67",
+                "reference": "b8aee205226f0458d11b5930741ac1192af24d67",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +188,7 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-07 15:11:37"
+            "time": "2017-07-10 00:27:14"
         },
         {
             "name": "daikon/dbal",
@@ -197,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c"
+                "reference": "06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c",
-                "reference": "456c6da86a56a0d8d56ce5a945c2a7fc5a6dff1c",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8",
+                "reference": "06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +231,7 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2017-07-07 14:26:32"
+            "time": "2017-07-10 12:38:11"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
@@ -327,12 +326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "e7440c1fe45e832d7086612831b2581b8d465fd4"
+                "reference": "33ccda7c527e305a15264d4e6da21756c77e0b24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/e7440c1fe45e832d7086612831b2581b8d465fd4",
-                "reference": "e7440c1fe45e832d7086612831b2581b8d465fd4",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/33ccda7c527e305a15264d4e6da21756c77e0b24",
+                "reference": "33ccda7c527e305a15264d4e6da21756c77e0b24",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +362,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-07 21:25:57"
+            "time": "2017-07-08 12:36:16"
         },
         {
             "name": "daikon/message-bus",
@@ -506,7 +505,7 @@
                 "elasticsearch",
                 "search"
             ],
-            "time": "2017-04-12 20:40:50"
+            "time": "2017-04-12T20:40:50+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -571,7 +570,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22 18:50:49"
+            "time": "2017-06-22T18:50:49+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -622,7 +621,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20 10:07:11"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -687,7 +686,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-03-20 17:10:46"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "guzzlehttp/ringphp",
@@ -738,7 +737,7 @@
                 }
             ],
             "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-05-20 03:37:09"
+            "time": "2015-05-20T03:37:09+00:00"
         },
         {
             "name": "guzzlehttp/streams",
@@ -788,7 +787,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-10-12 19:18:40"
+            "time": "2014-10-12T19:18:40+00:00"
         },
         {
             "name": "jms/parser-lib",
@@ -823,7 +822,7 @@
                 "Apache2"
             ],
             "description": "A library for easily creating recursive-descent parsers.",
-            "time": "2012-11-18 18:08:43"
+            "time": "2012-11-18T18:08:43+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -901,7 +900,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19 01:22:40"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -949,7 +948,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13 16:27:32"
+            "time": "2017-03-13T16:27:32+00:00"
         },
         {
             "name": "php-ds/php-ds",
@@ -996,7 +995,7 @@
                 "php",
                 "polyfill"
             ],
-            "time": "2016-08-08 13:04:16"
+            "time": "2016-08-08T13:04:16+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1046,7 +1045,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25 16:39:46"
+            "time": "2015-07-25T16:39:46+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -1096,7 +1095,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-03 14:06:46"
+            "time": "2017-07-03T14:06:46+00:00"
         },
         {
             "name": "psr/container",
@@ -1145,7 +1144,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1195,7 +1194,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -1242,7 +1241,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -1324,7 +1323,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-26 20:37:53"
+            "time": "2017-03-26T20:37:53+00:00"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1385,7 +1384,7 @@
                 "dic",
                 "ioc"
             ],
-            "time": "2017-05-15 06:26:46"
+            "time": "2017-05-15T06:26:46+00:00"
         },
         {
             "name": "react/promise",
@@ -1431,7 +1430,7 @@
                 "promise",
                 "promises"
             ],
-            "time": "2017-03-25 12:08:31"
+            "time": "2017-03-25T12:08:31+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -1567,7 +1566,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-06-22 16:43:17"
+            "time": "2017-06-22T16:43:17+00:00"
         },
         {
             "name": "shrink0r/php-schema",
@@ -1612,7 +1611,7 @@
                 "schema",
                 "validation"
             ],
-            "time": "2016-10-26 22:04:22"
+            "time": "2016-10-26T22:04:22+00:00"
         },
         {
             "name": "silex/silex",
@@ -1698,7 +1697,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2017-05-03 15:21:42"
+            "time": "2017-05-03T15:21:42+00:00"
         },
         {
             "name": "symfony/asset",
@@ -1754,7 +1753,7 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-01 15:01:29"
+            "time": "2017-05-01T15:01:29+00:00"
         },
         {
             "name": "symfony/console",
@@ -1823,7 +1822,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03 13:19:36"
+            "time": "2017-07-03T13:19:36+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1879,7 +1878,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-05 13:02:37"
+            "time": "2017-07-05T13:02:37+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1942,7 +1941,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-09 14:53:08"
+            "time": "2017-06-09T14:53:08+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1991,7 +1990,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/finder",
@@ -2040,7 +2039,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:01:25"
+            "time": "2017-06-01T21:01:25+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2093,7 +2092,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -2179,7 +2178,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-05 13:28:15"
+            "time": "2017-07-05T13:28:15+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2238,7 +2237,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/routing",
@@ -2316,7 +2315,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/twig-bridge",
@@ -2403,7 +2402,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-06-24 09:29:48"
+            "time": "2017-06-24T09:29:48+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -2458,7 +2457,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-15 12:58:50"
+            "time": "2017-06-15T12:58:50+00:00"
         },
         {
             "name": "twig/twig",
@@ -2524,7 +2523,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07 18:47:58"
+            "time": "2017-06-07T18:47:58+00:00"
         }
     ],
     "packages-dev": [
@@ -2583,7 +2582,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
-            "time": "2017-04-23 23:11:39"
+            "time": "2017-04-23T23:11:39+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2661,7 +2660,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-05-22 02:43:20"
+            "time": "2017-05-22T02:43:20+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -2720,7 +2719,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/stopwatch",
@@ -2769,7 +2768,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12 14:14:56"
+            "time": "2017-04-12T14:14:56+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -2837,7 +2836,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-07-05 13:02:37"
+            "time": "2017-07-05T13:02:37+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",
@@ -2903,16 +2902,16 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03 08:12:02"
+            "time": "2017-07-03T08:12:02+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "daikon/config": 20,
-        "daikon/event-sourcing": 20,
         "daikon/couchdb-adapter": 20,
         "daikon/elasticsearch5-adapter": 20,
+        "daikon/event-sourcing": 20,
         "daikon/read-model": 20,
         "roave/security-advisories": 20
     },
