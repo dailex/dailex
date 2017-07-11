@@ -1,0 +1,31 @@
+{
+    "dynamic_templates": [
+        {
+            "daikon_keyword": {
+                "match_pattern": "regex",
+                "match": "^(@type|@parent|aggregateId)$",
+                "mapping": {
+                    "type": "keyword"
+                }
+            }
+        }
+    ],
+    "properties": {
+        "title": {
+            "type": "text",
+            "fields": {
+                "keyword": {
+                    "type": "keyword"
+                }
+            }
+        },
+        "content": {
+            "type": "text",
+            "fields": {
+                "keyword": {
+                    "type": "keyword"
+                }
+            }
+        }
+    }
+}

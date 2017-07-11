@@ -36,7 +36,10 @@ final class MigrationTargetMapProvisioner implements ProvisionerInterface
             foreach ($adapterConfigs as $adapterName => $adapterConfig) {
                 $migrationAdapter = $injector->make(
                     $adapterConfig['class'],
-                    [':connector' => $connectorMap->get($adapterConfig['connector'])]
+                    [
+                        ':connector' => $connectorMap->get($adapterConfig['connector']),
+                        ':settings' => $adapterConfig['settings'] ?? []
+                    ]
                 );
                 $migrationAdapters[$adapterName] = $migrationAdapter;
             }

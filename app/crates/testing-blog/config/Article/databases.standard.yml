@@ -3,7 +3,6 @@ storage_adapters:
     class: Daikon\Elasticsearch5\Storage\Elasticsearch5StorageAdapter
     connector: testing.blog.projection_store.standard
     settings:
-      index: ${project.prefix}.testing-blog
       type: testing-blog-article-standard
 
 projectors:

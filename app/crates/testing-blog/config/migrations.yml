@@ -3,8 +3,19 @@ migration_adapters:
     class: Daikon\CouchDb\Migration\CouchDbMigrationAdapter
     connector: testing.blog.event_store
 
+  testing.blog.projection_store.standard:
+    class: Daikon\Elasticsearch5\Migration\Elasticsearch5MigrationAdapter
+    connector: testing.blog.projection_store.standard
+    settings:
+      type: testing-blog-migration_list
+
 migration_targets:
   testing.blog.event_store:
     enabled: true
     migration_adapter: testing.blog.event_store
     location: ${app.dir}/crates/testing-blog/migration/couchdb
+
+  testing.blog.projection_store.standard:
+    enabled: true
+    migration_adapter: testing.blog.projection_store.standard
+    location: ${app.dir}/crates/testing-blog/migration/elasticsearch

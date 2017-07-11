@@ -16,3 +16,4 @@ testing.blog.projection_store.standard:
     port: ${secrets.elasticsearch.port}
     user: ${secrets.elasticsearch.user}
     password: ${secrets.elasticsearch.password}
+    index: ${project.prefix}.testing-blog
