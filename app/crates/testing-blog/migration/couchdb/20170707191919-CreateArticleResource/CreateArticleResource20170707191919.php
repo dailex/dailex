@@ -12,8 +12,8 @@ final class CreateArticleResource20170707191919 implements MigrationInterface
     public function getDescription(string $direction = self::MIGRATE_UP): string
     {
         return $direction === self::MIGRATE_UP
-            ? 'Create Article resource views for the Testing\Blog context.'
-            : 'Delete Article resource views for the Testing\Blog context.';
+            ? 'Create Article resource views for the Testing-Blog context.'
+            : 'Delete Article resource views for the Testing-Blog context.';
     }
 
     public function isReversible(): bool
@@ -24,6 +24,7 @@ final class CreateArticleResource20170707191919 implements MigrationInterface
     private function up(): void
     {
         $this->createDesignDoc(
+            $this->getDatabaseName(),
             'testing-blog-article',
             [
                 'commit_stream' => [
@@ -39,7 +40,7 @@ final class CreateArticleResource20170707191919 implements MigrationInterface
 
     private function down(): void
     {
-        $this->deleteDesignDoc('testing-blog-article');
+        $this->deleteDesignDoc($this->getDatabaseName(), 'testing-blog-article');
     }
 
     private function loadFile(string $filename): string

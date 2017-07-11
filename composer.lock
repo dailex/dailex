@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "2b811b86bf04eba36cb4670d47d07187a57427df"
+                "reference": "6a2cd1672c9a46dc82c279b8dee072e658d04015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/2b811b86bf04eba36cb4670d47d07187a57427df",
-                "reference": "2b811b86bf04eba36cb4670d47d07187a57427df",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/6a2cd1672c9a46dc82c279b8dee072e658d04015",
+                "reference": "6a2cd1672c9a46dc82c279b8dee072e658d04015",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-10 12:42:47"
+            "time": "2017-07-11 14:59:21"
         },
         {
             "name": "daikon/data-structure",

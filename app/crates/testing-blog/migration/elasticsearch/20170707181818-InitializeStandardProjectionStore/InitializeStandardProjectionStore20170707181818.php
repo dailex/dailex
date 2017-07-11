@@ -12,8 +12,8 @@ final class InitializeStandardProjectionStore20170707181818 implements Migration
     public function getDescription(string $direction = self::MIGRATE_UP): string
     {
         return $direction === self::MIGRATE_UP
-            ? 'Create the Elasticsearch index for the Testing\Blog context.'
-            : 'Delete the Elasticsearch index for the Testing\Blog context.';
+            ? 'Create the Elasticsearch index for the Testing-Blog context.'
+            : 'Delete the Elasticsearch index for the Testing-Blog context.';
     }
 
     public function isReversible(): bool

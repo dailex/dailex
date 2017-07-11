@@ -12,8 +12,8 @@ final class InitializeEventStore20170707181818 implements MigrationInterface
     public function getDescription(string $direction = self::MIGRATE_UP): string
     {
         return $direction === self::MIGRATE_UP
-            ? 'Create the CouchDb database for the Testing\Blog context.'
-            : 'Delete the CouchDb database for the Testing\Blog context.';
+            ? 'Create the CouchDb database for the Testing-Blog context.'
+            : 'Delete the CouchDb database for the Testing-Blog context.';
     }
 
     public function isReversible(): bool
@@ -21,17 +21,13 @@ final class InitializeEventStore20170707181818 implements MigrationInterface
         return true;
     }
 
-    /*
-     * The database name that is to be migrated is defined in the connectors configuration
-     * file for the "testing.blog" context.
-     */
     private function up(): void
     {
-        $this->createDatabase();
+        $this->createDatabase($this->getDatabaseName());
     }
 
     private function down(): void
     {
-        $this->deleteDatabase();
+        $this->deleteDatabase($this->getDatabaseName());
     }
 }
