@@ -22,16 +22,11 @@ crates:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
     - ${app.config_dir}
   sources:
-    - crate.yml
     - crates.yml
-    - crate.${app.context}.yml
     - crates.${app.context}.yml
-    - crate.${app.env}.yml
     - crates.${app.env}.yml
-    - crate.${app.context}.${app.env}.yml
     - crates.${app.context}.${app.env}.yml
 
 services:

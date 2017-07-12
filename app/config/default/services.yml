@@ -22,6 +22,11 @@ dailex:
             inproc:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
 
+    crate_map:
+      class: Dailex\Crate\CrateMap
+      provisioner:
+        class: Dailex\Service\Provisioner\CrateMapProvisioner
+
     connector_map:
       class: Daikon\Dbal\Connector\ConnectorMap
       provisioner:

@@ -1,4 +1,5 @@
 testing-blog:
+  location: ${app.crates_dir}/testing-blog
   mount: /
   recaptcha:
     enabled: false

@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "281781f31adf2443a99a4a654e69e1300e269d73"
+                "reference": "750155690de255a77e544fa942ecc8ecdc404e1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/281781f31adf2443a99a4a654e69e1300e269d73",
-                "reference": "281781f31adf2443a99a4a654e69e1300e269d73",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/750155690de255a77e544fa942ecc8ecdc404e1f",
+                "reference": "750155690de255a77e544fa942ecc8ecdc404e1f",
                 "shasum": ""
             },
             "require": {
@@ -85,7 +85,9 @@
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
                 "satooshi/php-coveralls": "master@dev",
-                "squizlabs/php_codesniffer": "^3.0"
+                "sebastian/phpcpd": "^3.0",
+                "squizlabs/php_codesniffer": "^3.0",
+                "vimeo/psalm": "^0.3.47"
             },
             "type": "library",
             "autoload": {
@@ -102,7 +104,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-07 14:19:00"
+            "time": "2017-07-12 21:09:55"
         },
         {
             "name": "daikon/couchdb-adapter",
