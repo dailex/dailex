@@ -1,3 +1,22 @@
+migration_loaders:
+  testing.blog.event_store:
+    class: Daikon\Flysystem\Migration\FlysystemMigrationLoader
+    connector: testing.blog.filesystem
+    settings:
+      location: migration://couchdb
+
+  testing.blog.projection_store.standard:
+    class: Daikon\Flysystem\Migration\FlysystemMigrationLoader
+    connector: testing.blog.filesystem
+    settings:
+      location: migration://elasticsearch
+
+  testing.blog.message_queue:
+    class: Daikon\Flysystem\Migration\FlysystemMigrationLoader
+    connector: testing.blog.filesystem
+    settings:
+      location: migration://rabbitmq
+
 migration_adapters:
   testing.blog.event_store:
     class: Daikon\CouchDb\Migration\CouchDbMigrationAdapter
@@ -19,14 +38,14 @@ migration_targets:
   testing.blog.event_store:
     enabled: true
     migration_adapter: testing.blog.event_store
-    location: ${app.dir}/crates/testing-blog/migration/couchdb
+    migration_loader: testing.blog.event_store
 
   testing.blog.message_queue:
     enabled: true
     migration_adapter: testing.blog.message_queue
-    location: ${app.dir}/crates/testing-blog/migration/rabbitmq
+    migration_loader: testing.blog.message_queue
 
   testing.blog.projection_store.standard:
     enabled: true
     migration_adapter: testing.blog.projection_store.standard
-    location: ${app.dir}/crates/testing-blog/migration/elasticsearch
+    migration_loader: testing.blog.projection_store.standard

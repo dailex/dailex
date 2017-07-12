@@ -17,3 +17,11 @@ testing.blog.projection_store.standard:
   connector: dailex.projection_store.standard
   settings:
     index: ${project.prefix}.testing-blog
+
+testing.blog.filesystem:
+  connector: dailex.filesystem
+  settings:
+    mounts:
+      migration:
+        adapter: League\Flysystem\Adapter\Local
+        location: ${app.dir}/crates/testing-blog/migration

@@ -32,3 +32,14 @@ dailex.projection_store.standard:
     port: ${secrets.elasticsearch.port}
     user: ${secrets.elasticsearch.user}
     password: ${secrets.elasticsearch.password}
+
+dailex.filesystem:
+  class: Daikon\Flysystem\Connector\FlysystemConnector
+  settings:
+    mounts:
+      local:
+        adapter: League\Flysystem\Adapter\Local
+        location: ${app.base_dir}/data/files
+      local_tmp:
+        adapter: League\Flysystem\Adapter\Local
+        location: ${app.base_dir}/data/tmp_files
