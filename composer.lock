@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab1a9b202632a7fff18a43ccb7c22400",
+    "content-hash": "7e54786315a0f4e655410fa97e06ff52",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "6a2cd1672c9a46dc82c279b8dee072e658d04015"
+                "reference": "7ef955cf5d121f7b2beed899cc00b59018f6fdc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/6a2cd1672c9a46dc82c279b8dee072e658d04015",
-                "reference": "6a2cd1672c9a46dc82c279b8dee072e658d04015",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/7ef955cf5d121f7b2beed899cc00b59018f6fdc3",
+                "reference": "7ef955cf5d121f7b2beed899cc00b59018f6fdc3",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-11 14:59:21"
+            "time": "2017-07-12 00:30:51"
         },
         {
             "name": "daikon/data-structure",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8"
+                "reference": "288ec3856d0e9e2dc30f0391507c8ddc20f2004c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8",
-                "reference": "06ba11eb9e3c0cf2be846fa4c29dfd5a2d5f2cd8",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/288ec3856d0e9e2dc30f0391507c8ddc20f2004c",
+                "reference": "288ec3856d0e9e2dc30f0391507c8ddc20f2004c",
                 "shasum": ""
             },
             "require": {
@@ -231,7 +231,7 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2017-07-10 12:38:11"
+            "time": "2017-07-12 00:29:21"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
@@ -239,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
-                "reference": "30e27c938cce4a3c62c4a861a261f4d80b811d59"
+                "reference": "074e0d2b17ab569758db55371a62c23bfac2262e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/30e27c938cce4a3c62c4a861a261f4d80b811d59",
-                "reference": "30e27c938cce4a3c62c4a861a261f4d80b811d59",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/074e0d2b17ab569758db55371a62c23bfac2262e",
+                "reference": "074e0d2b17ab569758db55371a62c23bfac2262e",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-11 12:50:12"
+            "time": "2017-07-12 00:31:54"
         },
         {
             "name": "daikon/entity",
@@ -326,12 +326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "33ccda7c527e305a15264d4e6da21756c77e0b24"
+                "reference": "33ccda7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/33ccda7c527e305a15264d4e6da21756c77e0b24",
-                "reference": "33ccda7c527e305a15264d4e6da21756c77e0b24",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/33ccda7",
+                "reference": "33ccda7",
                 "shasum": ""
             },
             "require": {
@@ -405,6 +405,48 @@
                 "messaging"
             ],
             "time": "2017-07-07 15:59:39"
+        },
+        {
+            "name": "daikon/rabbitmq3-adapter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
+                "reference": "eac45739e2eabfff0ec8e346737442227eef3229"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/eac45739e2eabfff0ec8e346737442227eef3229",
+                "reference": "eac45739e2eabfff0ec8e346737442227eef3229",
+                "shasum": ""
+            },
+            "require": {
+                "daikon/dbal": "master@dev",
+                "php": ">=7.1",
+                "php-amqplib/php-amqplib": "^2.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2",
+                "satooshi/php-coveralls": "master@dev",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\RabbitMq3\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "RabbitMQ 3 adapter for Daikon projects.",
+            "homepage": "https://github.com/daikon-cqrs/rabbitmq3-adapter",
+            "keywords": [
+                "adapter",
+                "rabbitmq3"
+            ],
+            "time": "2017-07-12 00:57:55"
         },
         {
             "name": "daikon/read-model",
@@ -949,6 +991,76 @@
                 "random"
             ],
             "time": "2017-03-13T16:27:32+00:00"
+        },
+        {
+            "name": "php-amqplib/php-amqplib",
+            "version": "v2.7.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-amqplib/php-amqplib.git",
+                "reference": "e2a5074a096b3e9b9819964341c561dce5412be2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/e2a5074a096b3e9b9819964341c561dce5412be2",
+                "reference": "e2a5074a096b3e9b9819964341c561dce5412be2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "videlalvaro/php-amqplib": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-sockets": "Use AMQPSocketConnection"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpAmqpLib\\": "PhpAmqpLib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Alvaro Videla",
+                    "role": "Original Maintainer"
+                },
+                {
+                    "name": "John Kelly",
+                    "email": "johnmkelly86@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Raúl Araya",
+                    "email": "nubeiro@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+            "homepage": "https://github.com/php-amqplib/php-amqplib/",
+            "keywords": [
+                "message",
+                "queue",
+                "rabbitmq"
+            ],
+            "time": "2017-05-22T23:56:32+00:00"
         },
         {
             "name": "php-ds/php-ds",
@@ -2912,6 +3024,7 @@
         "daikon/couchdb-adapter": 20,
         "daikon/elasticsearch5-adapter": 20,
         "daikon/event-sourcing": 20,
+        "daikon/rabbitmq3-adapter": 20,
         "daikon/read-model": 20,
         "roave/security-advisories": 20
     },

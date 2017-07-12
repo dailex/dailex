@@ -9,11 +9,22 @@ migration_adapters:
     settings:
       type: testing-blog-migration_list
 
+  testing.blog.message_queue:
+    class: Daikon\RabbitMq3\Migration\RabbitMq3MigrationAdapter
+    connector: testing.blog.message_queue.admin
+    settings:
+      exchange: testing.blog.migration_list
+
 migration_targets:
   testing.blog.event_store:
     enabled: true
     migration_adapter: testing.blog.event_store
     location: ${app.dir}/crates/testing-blog/migration/couchdb
+
+  testing.blog.message_queue:
+    enabled: true
+    migration_adapter: testing.blog.message_queue
+    location: ${app.dir}/crates/testing-blog/migration/rabbitmq
 
   testing.blog.projection_store.standard:
     enabled: true

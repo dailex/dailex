@@ -1,19 +1,19 @@
 testing.blog.event_store:
-  class: Daikon\CouchDb\Connector\CouchDbConnector
+  connector: dailex.event_store
   settings:
-    scheme: ${secrets.couchdb.scheme}
-    host: ${secrets.couchdb.host}
-    port: ${secrets.couchdb.port}
-    user: ${secrets.couchdb.user}
-    password: ${secrets.couchdb.password}
     database: ${project.prefix}%2Btesting-blog
 
-testing.blog.projection_store.standard:
-  class: Daikon\Elasticsearch5\Connector\Elasticsearch5Connector
+testing.blog.message_queue:
+  connector: dailex.message_queue
   settings:
-    scheme: ${secrets.elasticsearch.scheme}
-    host: ${secrets.elasticsearch.host}
-    port: ${secrets.elasticsearch.port}
-    user: ${secrets.elasticsearch.user}
-    password: ${secrets.elasticsearch.password}
+    vhost: /
+
+testing.blog.message_queue.admin:
+  connector: dailex.message_queue.admin
+  settings:
+    vhost: "%2f"
+
+testing.blog.projection_store.standard:
+  connector: dailex.projection_store.standard
+  settings:
     index: ${project.prefix}.testing-blog

@@ -1,0 +1,34 @@
+dailex.event_store:
+  class: Daikon\CouchDb\Connector\CouchDbConnector
+  settings:
+    scheme: ${secrets.couchdb.scheme}
+    host: ${secrets.couchdb.host}
+    port: ${secrets.couchdb.port}
+    user: ${secrets.couchdb.user}
+    password: ${secrets.couchdb.password}
+
+dailex.message_queue:
+  class: Daikon\RabbitMq3\Connector\RabbitMq3Connector
+  settings:
+    host: ${secrets.rabbitmq.host}
+    port: ${secretes.rabbitmq.port}
+    user: ${secrets.rabbitmq.user}
+    password: ${secrets.rabbitmq.password}
+
+dailex.message_queue.admin:
+  class: Daikon\RabbitMq3\Connector\RabbitMq3AdminConnector
+  settings:
+    scheme: ${secrets.rabbitmq-admin.scheme}
+    host: ${secrets.rabbitmq-admin.host}
+    port: ${secrets.rabbitmq-admin.port}
+    user: ${secrets.rabbitmq-admin.user}
+    password: ${secrets.rabbitmq-admin.password}
+
+dailex.projection_store.standard:
+  class: Daikon\Elasticsearch5\Connector\Elasticsearch5Connector
+  settings:
+    scheme: ${secrets.elasticsearch.scheme}
+    host: ${secrets.elasticsearch.host}
+    port: ${secrets.elasticsearch.port}
+    user: ${secrets.elasticsearch.user}
+    password: ${secrets.elasticsearch.password}

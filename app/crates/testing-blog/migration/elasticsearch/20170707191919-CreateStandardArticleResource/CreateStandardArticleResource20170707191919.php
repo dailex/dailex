@@ -12,8 +12,8 @@ final class CreateStandardArticleResource20170707191919 implements MigrationInte
     public function getDescription(string $direction = self::MIGRATE_UP): string
     {
         return $direction === self::MIGRATE_UP
-            ? 'Create Article resource standard projection mapping for the Testing-Blog context.'
-            : 'Delete Article resource standard projection mapping for the Testing-Blog context.';
+            ? 'Create Article resource standard projection Elasticsearch mapping.'
+            : 'Delete Article resource standard projection Elasticsearch mapping.';
     }
 
     public function isReversible(): bool

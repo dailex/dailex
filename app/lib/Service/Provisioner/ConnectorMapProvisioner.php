@@ -23,6 +23,12 @@ final class ConnectorMapProvisioner implements ProvisionerInterface
         $factory = function () use ($injector, $connectorConfigs, $serviceClass) {
             $connectors = [];
             foreach ($connectorConfigs as $connectorName => $connectorConfig) {
+                if (isset($connectorConfig['connector'])) {
+                    $connectorConfig = array_replace_recursive(
+                        $connectorConfigs[$connectorConfig['connector']],
+                        $connectorConfig
+                    );
+                }
                 $connectorClass = $connectorConfig['class'];
                 $connectors[$connectorName] = $injector->make(
                     $connectorClass,

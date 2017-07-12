@@ -61,7 +61,8 @@ final class MigrationTargetMapProvisioner implements ProvisionerInterface
                         ':enabled' => $targetConfig['enabled'],
                         ':migrationAdapter' => $adapterMap->get($targetConfig['migration_adapter']),
                         ':migrationLoader' => $injector->make(
-                            FilesystemLoader::class, [':location' => $targetConfig['location']]
+                            FilesystemLoader::class,
+                            [':location' => $targetConfig['location']]
                         )
                     ]
                 );

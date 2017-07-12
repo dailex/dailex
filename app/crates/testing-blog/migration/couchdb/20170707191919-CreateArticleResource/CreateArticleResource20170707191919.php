@@ -12,8 +12,8 @@ final class CreateArticleResource20170707191919 implements MigrationInterface
     public function getDescription(string $direction = self::MIGRATE_UP): string
     {
         return $direction === self::MIGRATE_UP
-            ? 'Create Article resource views for the Testing-Blog context.'
-            : 'Delete Article resource views for the Testing-Blog context.';
+            ? 'Create CouchDb default views for the Article resource.'
+            : 'Delete CouchDb default views for the Article resource.';
     }
 
     public function isReversible(): bool
