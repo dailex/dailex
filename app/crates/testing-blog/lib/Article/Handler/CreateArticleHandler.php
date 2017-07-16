@@ -9,11 +9,8 @@ use Testing\Blog\Article\Domain\Command\CreateArticle;
 
 final class CreateArticleHandler extends CommandHandler
 {
-    protected function handleCreateArticle(CreateArticle $createArticle, Metadata $metadata): bool
+    protected function handleCreateArticle(CreateArticle $createArticle, Metadata $metadata): array
     {
-        return $this->commit(
-            Article::create($createArticle),
-            $metadata
-        );
+        return [Article::create($createArticle), $metadata];
     }
 }

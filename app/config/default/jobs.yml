@@ -1,0 +1,13 @@
+job_strategies:
+  dailex.no_retry:
+    class: Daikon\AsyncJob\Strategy\JobStrategy
+    retry:
+      class: Daikon\AsyncJob\Strategy\Retry\NoRetry
+    failure:
+      class: Daikon\AsyncJob\Strategy\Retry\NoRetry
+
+jobs:
+  dailex.message.distributor:
+    job_strategy: dailex.no_retry
+    settings:
+      exchange: amq.topic

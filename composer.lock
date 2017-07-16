@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f487beefa5769a07be2adb57517e468",
+    "content-hash": "23c6ff1d454dfd4979a025bbb00f9cca",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -62,17 +62,63 @@
             "time": "2017-05-04T02:00:24+00:00"
         },
         {
+            "name": "daikon/async-job",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/async-job.git",
+                "reference": "7fbfc7b117a9f144e0acfd5128c83460fd7bfb37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/7fbfc7b117a9f144e0acfd5128c83460fd7bfb37",
+                "reference": "7fbfc7b117a9f144e0acfd5128c83460fd7bfb37",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/assert": "^2.7",
+                "daikon/data-structure": "master@dev",
+                "daikon/message-bus": "master@dev",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.2",
+                "satooshi/php-coveralls": "master@dev",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\AsyncJob\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "Asynchronous job components for Daikon projects.",
+            "homepage": "https://github.com/daikon-cqrs/async-job",
+            "keywords": [
+                "asynchronous",
+                "background",
+                "delayed",
+                "job",
+                "worker"
+            ],
+            "time": "2017-07-15 23:57:35"
+        },
+        {
             "name": "daikon/config",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "750155690de255a77e544fa942ecc8ecdc404e1f"
+                "reference": "96e4ec7e9ffaec9c9d561a24629def3ed8456e0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/750155690de255a77e544fa942ecc8ecdc404e1f",
-                "reference": "750155690de255a77e544fa942ecc8ecdc404e1f",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/96e4ec7e9ffaec9c9d561a24629def3ed8456e0f",
+                "reference": "96e4ec7e9ffaec9c9d561a24629def3ed8456e0f",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +150,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-12 21:09:55"
+            "time": "2017-07-13 23:56:55"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -112,12 +158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "7ef955cf5d121f7b2beed899cc00b59018f6fdc3"
+                "reference": "74b11a6e9986f2532720abf2e51baef0d4c7fcca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/7ef955cf5d121f7b2beed899cc00b59018f6fdc3",
-                "reference": "7ef955cf5d121f7b2beed899cc00b59018f6fdc3",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/74b11a6e9986f2532720abf2e51baef0d4c7fcca",
+                "reference": "74b11a6e9986f2532720abf2e51baef0d4c7fcca",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +193,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-12 00:30:51"
+            "time": "2017-07-15 15:22:23"
         },
         {
             "name": "daikon/data-structure",
@@ -155,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "b8aee205226f0458d11b5930741ac1192af24d67"
+                "reference": "5d1456274b9b743230f97ab2a8ab776ff699ef13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/b8aee205226f0458d11b5930741ac1192af24d67",
-                "reference": "b8aee205226f0458d11b5930741ac1192af24d67",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/5d1456274b9b743230f97ab2a8ab776ff699ef13",
+                "reference": "5d1456274b9b743230f97ab2a8ab776ff699ef13",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +236,7 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-10 00:27:14"
+            "time": "2017-07-13 22:58:37"
         },
         {
             "name": "daikon/dbal",
@@ -241,12 +287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
-                "reference": "074e0d2b17ab569758db55371a62c23bfac2262e"
+                "reference": "303a393d15a710c829ef7afae575b80b04ab879c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/074e0d2b17ab569758db55371a62c23bfac2262e",
-                "reference": "074e0d2b17ab569758db55371a62c23bfac2262e",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/303a393d15a710c829ef7afae575b80b04ab879c",
+                "reference": "303a393d15a710c829ef7afae575b80b04ab879c",
                 "shasum": ""
             },
             "require": {
@@ -275,7 +321,7 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-12 00:31:54"
+            "time": "2017-07-15 15:28:56"
         },
         {
             "name": "daikon/entity",
@@ -328,12 +374,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "33ccda7"
+                "reference": "81835c7bf387f0cb0934e8acc59c60bcb38f78da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/33ccda7",
-                "reference": "33ccda7",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/81835c7bf387f0cb0934e8acc59c60bcb38f78da",
+                "reference": "81835c7bf387f0cb0934e8acc59c60bcb38f78da",
                 "shasum": ""
             },
             "require": {
@@ -364,7 +410,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-08 12:36:16"
+            "time": "2017-07-15 00:42:58"
         },
         {
             "name": "daikon/flysystem-adapter",
@@ -372,12 +418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/flysystem-adapter.git",
-                "reference": "68220c91c41c72d145e29455198db2f819098615"
+                "reference": "db7e210179182b8c1d35cced770ee52927491752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/68220c91c41c72d145e29455198db2f819098615",
-                "reference": "68220c91c41c72d145e29455198db2f819098615",
+                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/db7e210179182b8c1d35cced770ee52927491752",
+                "reference": "db7e210179182b8c1d35cced770ee52927491752",
                 "shasum": ""
             },
             "require": {
@@ -406,7 +452,7 @@
                 "Flysystem",
                 "adapter"
             ],
-            "time": "2017-07-12 16:40:48"
+            "time": "2017-07-15 15:30:48"
         },
         {
             "name": "daikon/message-bus",
@@ -414,12 +460,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "328ed19b1b67ddb7fbbd3d1585b94be2d155c69b"
+                "reference": "b6fae7aabc6ca30dc6202175872ed592c102bbfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/328ed19b1b67ddb7fbbd3d1585b94be2d155c69b",
-                "reference": "328ed19b1b67ddb7fbbd3d1585b94be2d155c69b",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b6fae7aabc6ca30dc6202175872ed592c102bbfc",
+                "reference": "b6fae7aabc6ca30dc6202175872ed592c102bbfc",
                 "shasum": ""
             },
             "require": {
@@ -448,7 +494,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-07-07 15:59:39"
+            "time": "2017-07-14 00:11:54"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -456,16 +502,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "eac45739e2eabfff0ec8e346737442227eef3229"
+                "reference": "3ce552694b086d72ac1aedfb483e6cdded821853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/eac45739e2eabfff0ec8e346737442227eef3229",
-                "reference": "eac45739e2eabfff0ec8e346737442227eef3229",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/3ce552694b086d72ac1aedfb483e6cdded821853",
+                "reference": "3ce552694b086d72ac1aedfb483e6cdded821853",
                 "shasum": ""
             },
             "require": {
+                "daikon/async-job": "master@dev",
                 "daikon/dbal": "master@dev",
+                "daikon/message-bus": "master@dev",
                 "php": ">=7.1",
                 "php-amqplib/php-amqplib": "^2.7"
             },
@@ -490,7 +538,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2017-07-12 00:57:55"
+            "time": "2017-07-16 00:01:06"
         },
         {
             "name": "daikon/read-model",
@@ -498,12 +546,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "383de7150be9944084bfa90bab710eda52778c35"
+                "reference": "131719d28e3d469a754cf3a1a58b6003593d1e55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/383de7150be9944084bfa90bab710eda52778c35",
-                "reference": "383de7150be9944084bfa90bab710eda52778c35",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/131719d28e3d469a754cf3a1a58b6003593d1e55",
+                "reference": "131719d28e3d469a754cf3a1a58b6003593d1e55",
                 "shasum": ""
             },
             "require": {
@@ -536,7 +584,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-07 15:21:44"
+            "time": "2017-07-15 23:53:57"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -3148,6 +3196,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "daikon/async-job": 20,
         "daikon/config": 20,
         "daikon/couchdb-adapter": 20,
         "daikon/elasticsearch5-adapter": 20,

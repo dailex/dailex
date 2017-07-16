@@ -40,12 +40,12 @@ migration_targets:
     migration_adapter: testing.blog.event_store
     migration_loader: testing.blog.event_store
 
-  testing.blog.message_queue:
-    enabled: true
-    migration_adapter: testing.blog.message_queue
-    migration_loader: testing.blog.message_queue
-
   testing.blog.projection_store.standard:
     enabled: true
     migration_adapter: testing.blog.projection_store.standard
     migration_loader: testing.blog.projection_store.standard
+
+  testing.blog.message_queue:
+    enabled: true
+    migration_adapter: testing.blog.message_queue
+    migration_loader: testing.blog.message_queue

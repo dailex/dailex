@@ -2,21 +2,24 @@
 
 namespace Testing\Blog\Article\Domain;
 
-use Daikon\EventSourcing\Aggregate\AggregateIdInterface;
-use Daikon\EventSourcing\Aggregate\AggregateRoot;
+use Daikon\EventSourcing\Aggregate\AggregateAlias;
+use Daikon\EventSourcing\Aggregate\AggregateRootInterface;
+use Daikon\EventSourcing\Aggregate\AggregateRootTrait;
 use Testing\Blog\Article\Domain\Command\CreateArticle;
 use Testing\Blog\Article\Domain\Command\UpdateArticle;
 use Testing\Blog\Article\Domain\Entity\ArticleEntityType;
 use Testing\Blog\Article\Domain\Event\ArticleWasCreated;
 use Testing\Blog\Article\Domain\Event\ArticleWasUpdated;
 
-final class Article extends AggregateRoot
+final class Article implements AggregateRootInterface
 {
+    use AggregateRootTrait;
+
     private $articleState;
 
-    public function getIdentifier(): AggregateIdInterface
+    public static function getAlias(): AggregateAlias
     {
-        return $this->articleState->getIdentity();
+        return AggregateAlias::fromNative('testing.blog.article');
     }
 
     public static function create(CreateArticle $createArticle): self
@@ -32,10 +35,11 @@ final class Article extends AggregateRoot
 
     protected function whenArticleWasCreated(ArticleWasCreated $articleWasCreated)
     {
-        $this->articleState = $this->articleState
-            ->withIdentity($articleWasCreated->getAggregateId())
-            ->withTitle($articleWasCreated->getTitle())
-            ->withContent($articleWasCreated->getContent());
+        $this->articleState = (new ArticleEntityType)->makeEntity([
+            'identity' => $articleWasCreated->getAggregateId(),
+            'title' => $articleWasCreated->getTitle(),
+            'content' => $articleWasCreated->getContent()
+        ]);
     }
 
     protected function whenArticleWasUpdated(ArticleWasUpdated $articleWasUpdated)
@@ -43,11 +47,5 @@ final class Article extends AggregateRoot
         $this->articleState = $this->articleState
             ->withTitle($articleWasUpdated->getTitle())
             ->withContent($articleWasUpdated->getContent());
-    }
-
-    protected function __construct(AggregateIdInterface $aggregateId)
-    {
-        parent::__construct($aggregateId);
-        $this->articleState = (new ArticleEntityType)->makeEntity(["identity" => $aggregateId]);
     }
 }

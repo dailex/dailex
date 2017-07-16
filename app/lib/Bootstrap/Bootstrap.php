@@ -32,7 +32,7 @@ abstract class Bootstrap implements BootstrapInterface
                             'sources' => $app['config']
                         ]
                     ],
-                    (new YamlConfigLoader())->load(
+                    (new YamlConfigLoader)->load(
                         [
                             $app['config']['dailex']['config_dir'],
                             $app['config']['config_dir']

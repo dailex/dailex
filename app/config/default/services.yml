@@ -21,6 +21,10 @@ dailex:
           transports:
             inproc:
               class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
+            message_queue:
+              class: Daikon\RabbitMq3\Transport\RabbitMq3Transport
+              dependencies:
+                connector: dailex.message_queue
 
     crate_map:
       class: Dailex\Crate\CrateMap
@@ -60,14 +64,30 @@ dailex:
     projector_service:
       class: Daikon\ReadModel\Projector\ProjectorService
       subscriptions:
-        commit_sub:
+        commits_sub:
           channel: commits
           transport: inproc
+
+    relation_projector_service:
+      class: Daikon\ReadModel\Projector\RelationProjectorService
+      subscriptions:
+        events_sub:
+          channel: events
+          transport: message_queue
+          enrichers:
+            - class: Daikon\AsyncJob\Metadata\JobMetadataEnricher
+              settings:
+                job: dailex.message.distributor
 
     migration_target_map:
       class: Dailex\Infrastructure\Migration\MigrationTargetMap
       provisioner:
         class: Dailex\Service\Provisioner\MigrationTargetMapProvisioner
+
+    job_map:
+      class: Daikon\AsyncJob\Job\JobMap
+      provisioner:
+        class: Dailex\Service\Provisioner\JobMapProvisioner
 
     command_router:
       class: Dailex\Service\CommandRouter

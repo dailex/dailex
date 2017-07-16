@@ -22,7 +22,6 @@ final class MigrationTargetMapProvisioner implements ProvisionerInterface
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
     ): void {
-        $serviceClass = $serviceDefinition->getServiceClass();
         $loaderConfigs = $configProvider->get('migrations.migration_loaders', []);
         $adapterConfigs = $configProvider->get('migrations.migration_adapters', []);
         $targetConfigs = $configProvider->get('migrations.migration_targets', []);

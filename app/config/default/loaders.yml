@@ -67,9 +67,22 @@ databases:
     - databases.${app.env}.yml
     - databases.${app.context}.${app.env}.yml
 
+jobs:
+  loader: Daikon\Config\YamlConfigLoader
+  locations:
+    - ${app.dailex.config_dir}
+    - ${app.crates_dir}/testing-blog/config
+    - ${app.config_dir}
+  sources:
+    - jobs.yml
+    - jobs.${app.context}.yml
+    - jobs.${app.env}.yml
+    - jobs.${app.context}.${app.env}.yml
+
 migrations:
   loader: Daikon\Config\YamlConfigLoader
   locations:
+    - ${app.dailex.config_dir}
     - ${app.crates_dir}/testing-blog/config
     - ${app.config_dir}
   sources:

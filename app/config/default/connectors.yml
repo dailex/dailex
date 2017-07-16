@@ -11,9 +11,10 @@ dailex.message_queue:
   class: Daikon\RabbitMq3\Connector\RabbitMq3Connector
   settings:
     host: ${secrets.rabbitmq.host}
-    port: ${secretes.rabbitmq.port}
+    port: ${secrets.rabbitmq.port}
     user: ${secrets.rabbitmq.user}
     password: ${secrets.rabbitmq.password}
+    vhost: ${secrets.rabbitmq.vhost}
 
 dailex.message_queue.admin:
   class: Daikon\RabbitMq3\Connector\RabbitMq3AdminConnector
@@ -23,6 +24,7 @@ dailex.message_queue.admin:
     port: ${secrets.rabbitmq-admin.port}
     user: ${secrets.rabbitmq-admin.user}
     password: ${secrets.rabbitmq-admin.password}
+    vhost: ${secrets.rabbitmq-admin.vhost}
 
 dailex.projection_store.standard:
   class: Daikon\Elasticsearch5\Connector\Elasticsearch5Connector
@@ -43,3 +45,6 @@ dailex.filesystem:
       local_tmp:
         adapter: League\Flysystem\Adapter\Local
         location: ${app.base_dir}/data/tmp_files
+      migration:
+        adapter: League\Flysystem\Adapter\Local
+        location: ${app.base_dir}/migration

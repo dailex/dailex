@@ -23,10 +23,11 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
+        "daikon/async-job": "master@dev",
         "daikon/config": "master@dev",
         "daikon/couchdb-adapter": "master@dev",
         "daikon/elasticsearch5-adapter": "master@dev",
-        "daikon/event-sourcing": "dev-master#33ccda7",
+        "daikon/event-sourcing": "master@dev",
         "daikon/flysystem-adapter": "master@dev",
         "daikon/rabbitmq3-adapter": "master@dev",
         "daikon/read-model": "master@dev",

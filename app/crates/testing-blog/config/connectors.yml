@@ -5,13 +5,9 @@ testing.blog.event_store:
 
 testing.blog.message_queue:
   connector: dailex.message_queue
-  settings:
-    vhost: /
 
 testing.blog.message_queue.admin:
   connector: dailex.message_queue.admin
-  settings:
-    vhost: "%2f"
 
 testing.blog.projection_store.standard:
   connector: dailex.projection_store.standard

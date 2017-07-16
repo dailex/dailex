@@ -24,8 +24,8 @@ final class RoutingConfigLoader implements ConfigLoaderInterface
         $configProvider = $this->configProvider;
         $loadedConfigs = [];
         foreach ($locations as $location) {
-            if (substr($location, -1) !== "/") {
-                $location .= "/";
+            if (substr($location, -1) !== '/') {
+                $location .= '/';
             }
             foreach ($sources as $source) {
                 $filepath = $location.$source;
@@ -35,17 +35,5 @@ final class RoutingConfigLoader implements ConfigLoaderInterface
             }
         }
         return $loadedConfigs;
-    }
-
-    public function serialize(array $config): string
-    {
-        // not implemented yet
-        return '';
-    }
-
-    public function deserialize(string $serializedConfig): array
-    {
-        // not implemented yet
-        return [];
     }
 }
