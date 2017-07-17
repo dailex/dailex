@@ -8,6 +8,13 @@ job_strategies:
 
 jobs:
   dailex.message.distributor:
+    class: Daikon\AsyncJob\Job\Job
     job_strategy: dailex.no_retry
     settings:
       exchange: amq.topic
+
+job_workers:
+  dailex.message_queue:
+    class: Daikon\RabbitMq3\Job\RabbitMq3Worker
+    dependencies:
+      connector: dailex.message_queue

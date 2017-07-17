@@ -1,12 +1,16 @@
 dailex:
   infrastructure:
     logger:
-      class: Monolog\Logger
+      class: Dailex\Service\LoggingService
       provisioner:
         class: Dailex\Service\Provisioner\MonologServiceProvisioner
         settings:
           location: ${app.log_dir}/dailex.log
           alias: Psr\Log\LoggerInterface
+      subscriptions:
+        logging_sub:
+          channel: logging
+          transport: inproc
 
     controllers:
       class: Silex\ControllerCollection

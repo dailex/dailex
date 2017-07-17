@@ -2,10 +2,10 @@
 
 namespace Dailex\Console\Command\Worker;
 
-use Daikon\RabbitMq3\Worker\RabbitMq3Worker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Daikon\RabbitMq3\Job\RabbitMq3Worker;
 
 class RunWorker extends WorkerCommand
 {
@@ -23,13 +23,7 @@ class RunWorker extends WorkerCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $worker = $this->serviceLocator->make(
-            RabbitMq3Worker::class,
-            [
-                ':connector' => $this->connectorMap->get('dailex.message_queue'),
-                ':settings' => ['queue' => 'testing.blog.article.messages']
-            ]
-        );
-        $worker->run();
+        $worker = $this->workerMap->get('dailex.message_queue');
+        $worker->run(['queue' => 'testing.blog.article.messages']);
     }
 }

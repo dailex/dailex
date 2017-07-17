@@ -71,15 +71,6 @@ final class MessageBusProvisioner implements ProvisionerInterface
                         );
                     }
 
-                    $enrichers = [];
-                    foreach ($subscriptionConfig['enrichers'] ?? [] as $enricherConfig) {
-                        $enricherClass = $enricherConfig['class'];
-                        $enrichers[] = $injector->make(
-                            $enricherClass,
-                            [':settings' => $enricherConfig['settings'] ?? []]
-                        );
-                    }
-
                     $channelSubs[$channelName][] = new LazySubscription(
                         $subscriptionName,
                         function () use ($transportMap, $transportName) {
@@ -89,7 +80,17 @@ final class MessageBusProvisioner implements ProvisionerInterface
                             return new MessageHandlerList([$serviceLocator->get($serviceId)]);
                         },
                         null,
-                        new MetadataEnricherList($enrichers)
+                        function () use ($injector, $subscriptionConfig) {
+                            $enrichers = [];
+                            foreach ($subscriptionConfig['enrichers'] ?? [] as $enricherConfig) {
+                                $enricherClass = $enricherConfig['class'];
+                                $enrichers[] = $injector->make(
+                                    $enricherClass,
+                                    [':settings' => $enricherConfig['settings'] ?? []]
+                                );
+                            }
+                            return new MetadataEnricherList($enrichers);
+                        }
                     );
                 }
             }

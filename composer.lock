@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/async-job.git",
-                "reference": "7fbfc7b117a9f144e0acfd5128c83460fd7bfb37"
+                "reference": "fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/7fbfc7b117a9f144e0acfd5128c83460fd7bfb37",
-                "reference": "7fbfc7b117a9f144e0acfd5128c83460fd7bfb37",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259",
+                "reference": "fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
                 "job",
                 "worker"
             ],
-            "time": "2017-07-15 23:57:35"
+            "time": "2017-07-17 18:19:54"
         },
         {
             "name": "daikon/config",
@@ -201,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "5d1456274b9b743230f97ab2a8ab776ff699ef13"
+                "reference": "723c960d94a21554ca90234da307f1e945531cd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/5d1456274b9b743230f97ab2a8ab776ff699ef13",
-                "reference": "5d1456274b9b743230f97ab2a8ab776ff699ef13",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/723c960d94a21554ca90234da307f1e945531cd4",
+                "reference": "723c960d94a21554ca90234da307f1e945531cd4",
                 "shasum": ""
             },
             "require": {
@@ -215,8 +215,9 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
-                "squizlabs/php_codesniffer": "^3.0"
+                "sebastian/phpcpd": "^3.0",
+                "squizlabs/php_codesniffer": "^3.0",
+                "vimeo/psalm": "^0.3.47"
             },
             "type": "library",
             "autoload": {
@@ -228,6 +229,12 @@
             "license": [
                 "MPL-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/daikon-cqrs/data-structure/graphs/contributors"
+                }
+            ],
             "description": "Immutable data-structure traits based on php/ds.",
             "homepage": "https://github.com/daikon-cqrs/data-structures",
             "keywords": [
@@ -236,7 +243,7 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-13 22:58:37"
+            "time": "2017-07-17 14:05:15"
         },
         {
             "name": "daikon/dbal",
@@ -460,12 +467,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "b6fae7aabc6ca30dc6202175872ed592c102bbfc"
+                "reference": "1f19d7234a5f4db875f9f8708dcbb638bcbc1407"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b6fae7aabc6ca30dc6202175872ed592c102bbfc",
-                "reference": "b6fae7aabc6ca30dc6202175872ed592c102bbfc",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/1f19d7234a5f4db875f9f8708dcbb638bcbc1407",
+                "reference": "1f19d7234a5f4db875f9f8708dcbb638bcbc1407",
                 "shasum": ""
             },
             "require": {
@@ -494,7 +501,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-07-14 00:11:54"
+            "time": "2017-07-17 10:46:40"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -502,12 +509,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "3ce552694b086d72ac1aedfb483e6cdded821853"
+                "reference": "8bffb5ecfab48a6ee1621059561acdff922c6e47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/3ce552694b086d72ac1aedfb483e6cdded821853",
-                "reference": "3ce552694b086d72ac1aedfb483e6cdded821853",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/8bffb5ecfab48a6ee1621059561acdff922c6e47",
+                "reference": "8bffb5ecfab48a6ee1621059561acdff922c6e47",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +545,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2017-07-16 00:01:06"
+            "time": "2017-07-17 18:24:03"
         },
         {
             "name": "daikon/read-model",
@@ -1336,16 +1343,16 @@
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "279b56046fb368deacf77e2f8f3bdcea45cc367a"
+                "reference": "729436408ef52f9845f9b60d60b2563f314bf1a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/279b56046fb368deacf77e2f8f3bdcea45cc367a",
-                "reference": "279b56046fb368deacf77e2f8f3bdcea45cc367a",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/729436408ef52f9845f9b60d60b2563f314bf1a9",
+                "reference": "729436408ef52f9845f9b60d60b2563f314bf1a9",
                 "shasum": ""
             },
             "require": {
@@ -1358,7 +1365,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev"
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -1382,7 +1389,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-03T14:06:46+00:00"
+            "time": "2017-07-17T17:05:21+00:00"
         },
         {
             "name": "psr/container",

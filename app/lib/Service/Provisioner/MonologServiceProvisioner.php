@@ -16,6 +16,7 @@ final class MonologServiceProvisioner implements ProvisionerInterface
         ConfigProviderInterface $configProvider,
         ServiceDefinitionInterface $serviceDefinition
     ): void {
+        $serviceClass = $serviceDefinition->getServiceClass();
         $provisionerSettings = $serviceDefinition->getProvisionerSettings();
 
         $app->register(
@@ -23,8 +24,10 @@ final class MonologServiceProvisioner implements ProvisionerInterface
             ['monolog.logfile' => $provisionerSettings['location']]
         );
 
+        $loggingService = new $serviceClass($app['logger']);
+
         $injector
-            ->share($app['logger'])
-            ->alias($provisionerSettings['alias'], get_class($app['logger']));
+            ->share($loggingService)
+            ->alias($provisionerSettings['alias'], $serviceClass);
     }
 }

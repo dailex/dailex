@@ -2,25 +2,18 @@
 
 namespace Dailex\Console\Command\Worker;
 
+use Daikon\AsyncJob\Worker\WorkerMap;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\Dbal\Connector\ConnectorMap;
 use Dailex\Console\Command\Command;
 use Dailex\Service\ServiceLocatorInterface;
 
 abstract class WorkerCommand extends Command
 {
-    protected $serviceLocator;
+    protected $workerMap;
 
-    protected $connectorMap;
-
-    public function __construct(
-        ConfigProviderInterface $configProvider,
-        ServiceLocatorInterface $serviceLocator,
-        ConnectorMap $connectorMap
-    ) {
+    public function __construct(ConfigProviderInterface $configProvider, WorkerMap $workerMap)
+    {
         parent::__construct($configProvider);
-
-        $this->serviceLocator = $serviceLocator;
-        $this->connectorMap = $connectorMap;
+        $this->workerMap = $workerMap;
     }
 }
