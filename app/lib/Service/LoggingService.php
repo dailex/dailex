@@ -70,7 +70,7 @@ final class LoggingService implements LoggerInterface, MessageHandlerInterface
 
         //@todo improve trace output
         $this->logger->error(
-            'Message failed to be handled with error "'.$metadata->get('_errorMessage').'".',
+            'Message failed to be handled with error "'.$metadata->get('_error_message').'".',
             [
                 'message' => print_r($message->toArray(), true),
                 'metadata' => print_r($envelope->getMetadata()->toArray(), true),

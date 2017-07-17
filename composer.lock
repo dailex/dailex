@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/async-job.git",
-                "reference": "fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259"
+                "reference": "540ba6948303f3bd55d2f910486856cde8688f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259",
-                "reference": "fcd0689d2eb054f3e8bd2b11dc9b6b8cbe2cf259",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/540ba6948303f3bd55d2f910486856cde8688f7e",
+                "reference": "540ba6948303f3bd55d2f910486856cde8688f7e",
                 "shasum": ""
             },
             "require": {
@@ -105,7 +105,7 @@
                 "job",
                 "worker"
             ],
-            "time": "2017-07-17 18:19:54"
+            "time": "2017-07-17 23:42:41"
         },
         {
             "name": "daikon/config",
@@ -509,12 +509,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "8bffb5ecfab48a6ee1621059561acdff922c6e47"
+                "reference": "430d389939be0c8f0697bed96e5e1e7132bed608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/8bffb5ecfab48a6ee1621059561acdff922c6e47",
-                "reference": "8bffb5ecfab48a6ee1621059561acdff922c6e47",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/430d389939be0c8f0697bed96e5e1e7132bed608",
+                "reference": "430d389939be0c8f0697bed96e5e1e7132bed608",
                 "shasum": ""
             },
             "require": {
@@ -545,7 +545,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2017-07-17 18:24:03"
+            "time": "2017-07-17 23:46:29"
         },
         {
             "name": "daikon/read-model",

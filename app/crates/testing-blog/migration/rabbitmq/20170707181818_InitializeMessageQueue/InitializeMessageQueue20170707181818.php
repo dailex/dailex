@@ -25,7 +25,6 @@ final class InitializeMessageQueue20170707181818 implements MigrationInterface
     {
         $this->createMigrationList('testing.blog.migration_list');
         $this->createMessagePipeline('testing.blog.messages');
-        $this->bindExchange('amq.topic', 'testing.blog.messages', 'testing.blog.#');
     }
 
     private function down(): void

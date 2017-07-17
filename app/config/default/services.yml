@@ -77,11 +77,7 @@ dailex:
       subscriptions:
         events_sub:
           channel: events
-          transport: message_queue
-          enrichers:
-            - class: Daikon\AsyncJob\Metadata\JobMetadataEnricher
-              settings:
-                job: dailex.message.distributor
+          transport: inproc
 
     migration_target_map:
       class: Dailex\Infrastructure\Migration\MigrationTargetMap

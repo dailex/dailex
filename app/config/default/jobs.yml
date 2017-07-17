@@ -6,13 +6,6 @@ job_strategies:
     failure:
       class: Daikon\AsyncJob\Strategy\Retry\NoRetry
 
-jobs:
-  dailex.message.distributor:
-    class: Daikon\AsyncJob\Job\Job
-    job_strategy: dailex.no_retry
-    settings:
-      exchange: amq.topic
-
 job_workers:
   dailex.message_queue:
     class: Daikon\RabbitMq3\Job\RabbitMq3Worker
