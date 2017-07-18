@@ -28,7 +28,7 @@ final class ControllerProvisioner implements ProvisionerInterface
             [
                 $appConfigDir,
                 // @todo get crate directories from config provider
-                $configProvider->get('app.crates_dir').'/testing-blog/config'
+                $configProvider->get('app.base_dir').'/vendor/dailex/dlx-testing/config'
             ],
             [
                 'routing.php',

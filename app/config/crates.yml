@@ -1,7 +1,3 @@
-testing-blog:
-  location: ${app.crates_dir}/testing-blog
+dlx-testing:
+  location: ${app.base_dir}/vendor/dailex/dlx-testing/config
   mount: /
-  recaptcha:
-    enabled: false
-    site_key: ${secrets.recaptcha.site_key}
-    secret_key: ${secrets.recaptcha.secret_key}

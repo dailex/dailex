@@ -33,7 +33,7 @@ services:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config
     - ${app.config_dir}
   sources:
     - services.yml
@@ -45,7 +45,7 @@ connectors:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config
     - ${app.config_dir}
   sources:
     - connectors.yml
@@ -57,8 +57,8 @@ databases:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
-    - ${app.crates_dir}/testing-blog/config/Article
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config/Article
     - ${app.config_dir}
   sources:
     - databases.yml
@@ -71,7 +71,7 @@ jobs:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config
     - ${app.config_dir}
   sources:
     - jobs.yml
@@ -83,7 +83,7 @@ migrations:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.crates_dir}/testing-blog/config
+    - ${app.base_dir}/vendor/dailex/dlx-testing/config
     - ${app.config_dir}
   sources:
     - migrations.yml
