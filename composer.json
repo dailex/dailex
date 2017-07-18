@@ -37,7 +37,6 @@
         "daikon/flysystem-adapter": "master@dev",
         "daikon/rabbitmq3-adapter": "master@dev",
         "daikon/read-model": "master@dev",
-        "dailex/dlx-testing": "master@dev",
         "monolog/monolog": "^1.0",
         "psr/container": "^1.0",
         "rdlowrey/auryn": "^1.4.0",
@@ -56,7 +55,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Dailex\\": "app/lib/"
+            "Dailex\\": "app/lib/",
+            "Daikon\\Ethereum\\": "vendor/daikon/ethereum-adapter/src/",
+            "Hash\\Ethereum\\": "app/crates/hash-ethereum/lib/"
         }
     },
     "bin": [

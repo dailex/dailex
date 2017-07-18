@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d3d3f0554bf6adc0bcd940e8fd64745",
+    "content-hash": "d04807406538b48c95b1d8a766d901fa",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -592,47 +592,6 @@
                 "repository"
             ],
             "time": "2017-07-15 23:53:57"
-        },
-        {
-            "name": "dailex/dlx-testing",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "aebdf5fe39e92c8fe8315771c48f6832c01619da"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/aebdf5fe39e92c8fe8315771c48f6832c01619da",
-                "reference": "aebdf5fe39e92c8fe8315771c48f6832c01619da",
-                "shasum": ""
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dlx\\Testing\\": "lib/"
-                }
-            },
-            "scripts": {
-                "code-sniffer": [
-                    "phpcs --extensions=php --standard=psr2 lib"
-                ],
-                "code-sniffer-autofix": [
-                    "phpcbf --standard=psr2 -d tabWidth=4 src"
-                ]
-            },
-            "license": [
-                "MPL-2.0"
-            ],
-            "description": "Testing example crate for Honeylex.",
-            "support": {
-                "source": "https://github.com/dailex/dlx-testing/tree/master",
-                "issues": "https://github.com/dailex/dlx-testing/issues"
-            },
-            "time": "2017-07-18 13:59:39"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -3252,7 +3211,6 @@
         "daikon/flysystem-adapter": 20,
         "daikon/rabbitmq3-adapter": 20,
         "daikon/read-model": 20,
-        "dailex/dlx-testing": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
