@@ -113,12 +113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "758e8f932d77b80f628f4298eeef6f1e22035017"
+                "reference": "736d78eedafc6c383c7cf405e0f6d0fa351a248a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/758e8f932d77b80f628f4298eeef6f1e22035017",
-                "reference": "758e8f932d77b80f628f4298eeef6f1e22035017",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/736d78eedafc6c383c7cf405e0f6d0fa351a248a",
+                "reference": "736d78eedafc6c383c7cf405e0f6d0fa351a248a",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-18 00:05:36"
+            "time": "2017-07-18 22:03:42"
         },
         {
             "name": "daikon/couchdb-adapter",

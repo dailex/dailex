@@ -25,11 +25,10 @@ final class ControllerProvisioner implements ProvisionerInterface
         $app->register(new ControllerResolverServiceProvider);
 
         (new RoutingConfigLoader($app, $configProvider))->load(
-            [
-                $appConfigDir,
-                // @todo get crate directories from config provider
-                $configProvider->get('app.base_dir').'/vendor/dailex/dlx-testing/config'
-            ],
+            array_merge(
+                [$appConfigDir],
+                $configProvider->get('crates.*.config_dir')
+            ),
             [
                 'routing.php',
                 "routing.$appContext.php",

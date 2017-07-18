@@ -14,9 +14,7 @@ secrets:
   locations:
     - ${app.secrets_dir}
   sources:
-    - couchdb.yml
-    - elasticsearch.yml
-    - rabbitmq.yml
+    - "*.yml"
 
 crates:
   loader: Daikon\Config\YamlConfigLoader
@@ -33,7 +31,7 @@ services:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config
+    - ${crates.*.config_dir}
     - ${app.config_dir}
   sources:
     - services.yml
@@ -45,7 +43,7 @@ connectors:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config
+    - ${crates.*.config_dir}
     - ${app.config_dir}
   sources:
     - connectors.yml
@@ -57,12 +55,11 @@ databases:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config/Article
+    - ${crates.*.config_dir}
     - ${app.config_dir}
   sources:
     - databases.yml
-    - databases.standard.yml
+    - databases.*.yml
     - databases.${app.context}.yml
     - databases.${app.env}.yml
     - databases.${app.context}.${app.env}.yml
@@ -71,7 +68,7 @@ jobs:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config
+    - ${crates.*.config_dir}
     - ${app.config_dir}
   sources:
     - jobs.yml
@@ -83,7 +80,7 @@ migrations:
   loader: Daikon\Config\YamlConfigLoader
   locations:
     - ${app.dailex.config_dir}
-    - ${app.base_dir}/vendor/dailex/dlx-testing/config
+    - ${crates.*.config_dir}
     - ${app.config_dir}
   sources:
     - migrations.yml
