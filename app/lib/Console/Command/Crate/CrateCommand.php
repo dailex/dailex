@@ -10,12 +10,9 @@ abstract class CrateCommand extends Command
 {
     protected $crateMap;
 
-    public function __construct(
-        ConfigProviderInterface $configProvider,
-        CrateMap $crateMap
-    ) {
+    public function __construct(ConfigProviderInterface $configProvider, CrateMap $crateMap)
+    {
         parent::__construct($configProvider);
-
         $this->crateMap = $crateMap;
     }
 }

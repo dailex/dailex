@@ -13,7 +13,7 @@ final class Crate implements CrateInterface
 
     public function getLocation(): string
     {
-        return $this->settings['location'];
+        return dirname($this->settings['config_dir']);
     }
 
     public function getSettings(): array
