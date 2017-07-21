@@ -554,12 +554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "131719d28e3d469a754cf3a1a58b6003593d1e55"
+                "reference": "76b5018190f69eb886a8fc5b88c6538b64488c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/131719d28e3d469a754cf3a1a58b6003593d1e55",
-                "reference": "131719d28e3d469a754cf3a1a58b6003593d1e55",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/76b5018190f69eb886a8fc5b88c6538b64488c17",
+                "reference": "76b5018190f69eb886a8fc5b88c6538b64488c17",
                 "shasum": ""
             },
             "require": {
@@ -592,7 +592,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-15 23:53:57"
+            "time": "2017-07-21 00:14:30"
         },
         {
             "name": "dailex/dlx-testing",
@@ -600,12 +600,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "cd26358a09c1217935e16c8dbb96d1c7a17a1a8d"
+                "reference": "001ef52831ed8ef5f6873c2ae0131c9afe9925eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/cd26358a09c1217935e16c8dbb96d1c7a17a1a8d",
-                "reference": "cd26358a09c1217935e16c8dbb96d1c7a17a1a8d",
+                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/001ef52831ed8ef5f6873c2ae0131c9afe9925eb",
+                "reference": "001ef52831ed8ef5f6873c2ae0131c9afe9925eb",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +636,7 @@
                 "source": "https://github.com/dailex/dlx-testing/tree/master",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-20 23:47:34"
+            "time": "2017-07-21 00:13:46"
         },
         {
             "name": "elasticsearch/elasticsearch",
