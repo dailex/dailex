@@ -5,7 +5,7 @@ namespace Dailex\Service;
 use Assert\Assertion;
 use Auryn\Injector;
 use Daikon\EventSourcing\Aggregate\AggregateAlias;
-use Daikon\EventSourcing\Aggregate\CommandInterface;
+use Daikon\EventSourcing\Aggregate\Command\CommandInterface;
 use Daikon\EventSourcing\EventStore\UnitOfWorkMap;
 use Daikon\MessageBus\Channel\Subscription\MessageHandler\MessageHandlerInterface;
 use Daikon\MessageBus\EnvelopeInterface;

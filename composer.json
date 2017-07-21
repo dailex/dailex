@@ -47,8 +47,7 @@
         "symfony/filesystem": "^3.0",
         "symfony/twig-bridge": "^3.0",
         "symfony/yaml": "^3.0",
-        "twig/twig": "^2.0",
-        "dailex/dlx-testing": "master@dev"
+        "twig/twig": "^2.0"
     },
     "require-dev": {
         "silex/web-profiler": "^2.0",
@@ -56,9 +55,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dailex\\": "app/lib/",
-            "Daikon\\Ethereum\\": "vendor/daikon/ethereum-adapter/src/",
-            "Hash\\Ethereum\\": "app/crates/hash-ethereum/lib/"
+            "Dailex\\": "app/lib/"
         }
     },
     "bin": [
