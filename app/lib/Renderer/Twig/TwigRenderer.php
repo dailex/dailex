@@ -2,9 +2,9 @@
 
 namespace Dailex\Renderer\Twig;
 
-use Dailex\Exception\RuntimeException;
 use Dailex\Renderer\TemplateRendererInterface;
 use Dailex\Renderer\Twig\Extension\ToolkitExtension;
+use Dailex\Renderer\Twig\Loader\FilesystemLoader;
 use Symfony\Component\Filesystem\Filesystem;
 use Twig_Environment;
 use Twig_Loader_String;

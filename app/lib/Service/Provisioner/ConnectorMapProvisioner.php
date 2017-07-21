@@ -4,8 +4,6 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\Dbal\Connector\ConnectorMap;
-use Dailex\Exception\RuntimeException;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 

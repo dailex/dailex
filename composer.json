@@ -47,7 +47,8 @@
         "symfony/filesystem": "^3.0",
         "symfony/twig-bridge": "^3.0",
         "symfony/yaml": "^3.0",
-        "twig/twig": "^2.0"
+        "twig/twig": "^2.0",
+        "dailex/dlx-testing": "master@dev"
     },
     "require-dev": {
         "silex/web-profiler": "^2.0",

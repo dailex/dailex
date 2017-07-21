@@ -46,9 +46,9 @@ dailex:
         class: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
 
     stream_store_map:
-      class: Daikon\EventSourcing\EventStore\StreamStoreMap
+      class: Daikon\EventSourcing\EventStore\Storage\StreamStorageMap
       provisioner:
-        class: Dailex\Service\Provisioner\StreamStoreMapProvisioner
+        class: Dailex\Service\Provisioner\StreamStorageMapProvisioner
 
     unit_of_work_map:
       class: Daikon\EventSourcing\EventStore\UnitOfWorkMap

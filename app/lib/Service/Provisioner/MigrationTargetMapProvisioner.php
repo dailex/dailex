@@ -9,9 +9,7 @@ use Daikon\Dbal\Migration\MigrationAdapterMap;
 use Daikon\Dbal\Migration\MigrationLoaderMap;
 use Daikon\Dbal\Migration\MigrationTarget;
 use Daikon\Dbal\Migration\MigrationTargetMap;
-use Dailex\Migration\FilesystemLoader;
 use Dailex\Service\ServiceDefinitionInterface;
-use Dailex\Service\ServiceLocatorInterface;
 use Pimple\Container;
 
 final class MigrationTargetMapProvisioner implements ProvisionerInterface

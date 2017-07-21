@@ -4,10 +4,8 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\Dbal\Connector\ConnectorMap;
-use Daikon\EventSourcing\EventStore\StreamStoreMap;
+use Daikon\EventSourcing\EventStore\Storage\StreamStorageMap;
 use Daikon\EventSourcing\EventStore\UnitOfWork;
-use Daikon\EventSourcing\EventStore\UnitOfWorkMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
@@ -22,12 +20,12 @@ final class UnitOfWorkMapProvisioner implements ProvisionerInterface
         $serviceClass = $serviceDefinition->getServiceClass();
         $uowConfigs = $configProvider->get('databases.units_of_work', []);
 
-        $factory = function (StreamStoreMap $streamStoreMap) use ($uowConfigs, $serviceClass) {
+        $factory = function (StreamStorageMap $streamStorageMap) use ($uowConfigs, $serviceClass) {
             $unitsOfWork = [];
             foreach ($uowConfigs as $uowName => $uowConfig) {
                 $unitsOfWork[$uowName] = new UnitOfWork(
                     $uowConfig['aggregate_root'],
-                    $streamStoreMap->get($uowConfig['stream_store'])
+                    $streamStorageMap->get($uowConfig['stream_store'])
                 );
             }
             return new $serviceClass($unitsOfWork);

@@ -3,7 +3,6 @@
 namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
-use Daikon\AsyncJob\Job\Job;
 use Daikon\AsyncJob\Job\JobMap;
 use Daikon\AsyncJob\Strategy\JobStrategyMap;
 use Daikon\AsyncJob\Worker\WorkerMap;

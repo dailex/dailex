@@ -1,3 +1,6 @@
 #
 # Dailex crate configurations
 #
+dlx-testing:
+  config_dir: ${app.base_dir}/vendor/dailex/dlx-testing/config
+  mount: /

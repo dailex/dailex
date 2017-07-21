@@ -5,8 +5,6 @@ namespace Dailex\Service\Provisioner;
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Dbal\Connector\ConnectorMap;
-use Daikon\Dbal\Storage\StorageAdapterMap;
-use Dailex\Exception\RuntimeException;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 

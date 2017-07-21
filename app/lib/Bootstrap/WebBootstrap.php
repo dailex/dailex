@@ -72,7 +72,9 @@ final class WebBootstrap extends Bootstrap
         $app->error(function (\Exception $e, Request $request, $code) use ($app) {
             $message = $e->getMessage();
             //@todo check exception type before getMessageKey()
-            $message = $message ?: $e->getMessageKey();
+            if (empty($message) && is_callable([ $e, 'getMessageKey' ])) {
+                $message = $e->getMessageKey();
+            }
             $errors = ['errors' => ['code' => $code, 'message' => $message]];
 
             if ($app['debug']) {

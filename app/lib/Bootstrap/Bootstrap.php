@@ -3,12 +3,12 @@
 namespace Dailex\Bootstrap;
 
 use Auryn\Injector;
-use Silex\Application;
 use Daikon\Config\ArrayConfigLoader;
 use Daikon\Config\ConfigProvider;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\Config\ConfigProviderParams;
 use Daikon\Config\YamlConfigLoader;
+use Silex\Application;
 
 abstract class Bootstrap implements BootstrapInterface
 {
