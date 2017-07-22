@@ -96,6 +96,46 @@ dailex:
           channel: commands
           transport: inproc
 
+    # @todo split services into infrastructure and application?
+
+    url_generator:
+      class: Symfony\Component\Routing\Generator\UrlGenerator
+      provisioner:
+        class: Dailex\Service\Provisioner\SilexServiceProvisioner
+        settings:
+          app_key: url_generator
+          alias: Symfony\Component\Routing\Generator\UrlGeneratorInterface
+
+    request_stack:
+      class: Symfony\Component\HttpFoundation\RequestStack
+      provisioner:
+        class: Dailex\Service\Provisioner\SilexServiceProvisioner
+        settings:
+          app_key: request_stack
+
+    validator:
+      class: Symfony\Component\Validator\Validator\Validator
+      provisioner:
+        class: Dailex\Service\Provisioner\SilexServiceProvisioner
+        settings:
+          app_key: validator
+          alias: Symfony\Component\Validator\Validator\ValidatorInterface
+
+    translator:
+      class: Symfony\Component\Translation\Translator
+      provisioner:
+        class: Dailex\Service\Provisioner\TranslationServiceProvisioner
+        settings:
+          alias: Symfony\Component\Translation\TranslatorInterface
+
+    form_factory:
+      class: Symfony\Component\Form\FormFactory
+      provisioner:
+        class: Dailex\Service\Provisioner\SilexServiceProvisioner
+        settings:
+          app_key: form.factory
+          alias: Symfony\Component\Form\FormFactoryInterface
+
     template_renderer:
       class: Dailex\Renderer\Twig\TwigRenderer
       provisioner:
@@ -105,10 +145,15 @@ dailex:
             - Dailex\Renderer\Twig\Extension\ProjectExtension
             - Dailex\Renderer\Twig\Extension\LocaliseRouteExtension
 
-    url_generator:
-      class: Symfony\Component\Routing\Generator\UrlGenerator
+    dispatcher:
+      class: Symfony\Component\EventDispatcher\EventDispatcher
       provisioner:
         class: Dailex\Service\Provisioner\SilexServiceProvisioner
         settings:
-          app_key: url_generator
-          alias: Symfony\Component\Routing\Generator\UrlGeneratorInterface
+          app_key: dispatcher
+          alias: Symfony\Component\EventDispatcher\EventDispatcherInterface
+
+    serializer:
+      class: Symfony\Component\Serializer\Serializer
+      provisioner:
+        class: Dailex\Service\Provisioner\SerializerServiceProvisioner

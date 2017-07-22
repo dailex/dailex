@@ -44,12 +44,6 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         $projectTemplates = $appDir.'/templates';
         $namespacedPaths['dailex'][] = $dailexDir.'/app/templates';
         $namespacedPaths['project'][] = $projectTemplates;
-//         if ($hostPrefix = $configProvider->getHostPrefix()) {
-//             $projectHostTemplates = $projectTemplates.'/'.$hostPrefix;
-//             if (is_readable($projectHostTemplates)) {
-//                 $namespacedPaths['project'][] = $projectHostTemplates;
-//             }
-//         }
 
         $app['twig.form.templates'] = [ 'bootstrap_3_layout.html.twig' ];
         $app['twig.options'] = [ 'cache' => $configProvider->get('app.cache_dir').'/twig' ];
@@ -70,23 +64,15 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         });
     }
 
-    protected function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)
+    private function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)
     {
-        $appDir = $configProvider->get('app.dir').'/templates';
-
         $paths = [];
-//         foreach ($configProvider->getCrateMap() as $crate) {
-//             $cratePrefix = $crate->getPrefix('-');
-//             $projectCratePath = $projectDir.'/'.$cratePrefix;
-//             if (is_readable($projectCratePath)) {
-//                 $paths[$cratePrefix][] = $projectDir.'/'.$cratePrefix;
-//             }
-//             $templatesPath = $crate->getRootDir().'/templates';
-//             if (is_readable($templatesPath)) {
-//                 $paths[$cratePrefix][] = $templatesPath;
-//             }
-//         }
-
+        foreach ($configProvider->get('crates') as $crateName => $crateConfig) {
+            $templatesPath = $crateConfig['template_dir'];
+            if (is_readable($templatesPath)) {
+                $paths[$crateName][] = $templatesPath;
+            }
+        }
         return $paths;
     }
 }

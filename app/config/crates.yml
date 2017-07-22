@@ -1,3 +1,15 @@
 #
 # Dailex crate configurations
 #
+
+dlx.testing:
+  config_dir: /var/www/vendor/dailex/dlx-testing/config
+  template_dir: /var/www/vendor/dailex/dlx-testing/templates
+  mount: /
+
+dlx.security:
+  config_dir: /var/www/vendor/dailex/dlx-security/config
+  template_dir: /var/www/vendor/dailex/dlx-security/templates
+  mount: /
+  voters:
+    - Dlx\Security\Voter\OwnershipVoter
