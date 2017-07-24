@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "38cfde4ec58660dcd9fbc9f46e5a5679",
+    "content-hash": "d3455129ce903b216c79550058756506",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -158,12 +158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "d032ff16440dfadbce622608c4ca1880d1ccb6f8"
+                "reference": "5c688f4665f4be0135bcd9669f122726718e6b8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/d032ff16440dfadbce622608c4ca1880d1ccb6f8",
-                "reference": "d032ff16440dfadbce622608c4ca1880d1ccb6f8",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/5c688f4665f4be0135bcd9669f122726718e6b8f",
+                "reference": "5c688f4665f4be0135bcd9669f122726718e6b8f",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-22 22:17:44"
+            "time": "2017-07-24 00:05:51"
         },
         {
             "name": "daikon/data-structure",
@@ -201,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "daf5c2b2310b11129934bad05be7f274e396b42b"
+                "reference": "4fdc6b0712ca992217b47f7cc6f8058e1f91caa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/daf5c2b2310b11129934bad05be7f274e396b42b",
-                "reference": "daf5c2b2310b11129934bad05be7f274e396b42b",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/4fdc6b0712ca992217b47f7cc6f8058e1f91caa3",
+                "reference": "4fdc6b0712ca992217b47f7cc6f8058e1f91caa3",
                 "shasum": ""
             },
             "require": {
@@ -243,7 +243,7 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-22 22:08:25"
+            "time": "2017-07-23 23:36:51"
         },
         {
             "name": "daikon/dbal",
@@ -251,17 +251,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "3352c618940cba2e6c55e3e886555e87957556fb"
+                "reference": "12011f8431de1a4ec5dc7061b2c374c4e424d52d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/3352c618940cba2e6c55e3e886555e87957556fb",
-                "reference": "3352c618940cba2e6c55e3e886555e87957556fb",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/12011f8431de1a4ec5dc7061b2c374c4e424d52d",
+                "reference": "12011f8431de1a4ec5dc7061b2c374c4e424d52d",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
                 "daikon/data-structure": "master@dev",
+                "daikon/event-sourcing": "master@dev",
+                "daikon/read-model": "master@dev",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -286,7 +288,7 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2017-07-22 22:16:31"
+            "time": "2017-07-24 00:02:50"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
@@ -294,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
-                "reference": "3d8dd2f74ee91cff37febea57999ae68248e8b62"
+                "reference": "e4029db239dbc4cb564d2142d1d0f5fa04a67909"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/3d8dd2f74ee91cff37febea57999ae68248e8b62",
-                "reference": "3d8dd2f74ee91cff37febea57999ae68248e8b62",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/e4029db239dbc4cb564d2142d1d0f5fa04a67909",
+                "reference": "e4029db239dbc4cb564d2142d1d0f5fa04a67909",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +331,7 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-22 22:26:36"
+            "time": "2017-07-24 00:13:02"
         },
         {
             "name": "daikon/entity",
@@ -382,12 +384,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "9526cea65b4e8265cb5c8ba2e988cdf8a0c0e6d7"
+                "reference": "d67b9c316f3a8a3d6229ee8d50c201fee4f82445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/9526cea65b4e8265cb5c8ba2e988cdf8a0c0e6d7",
-                "reference": "9526cea65b4e8265cb5c8ba2e988cdf8a0c0e6d7",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/d67b9c316f3a8a3d6229ee8d50c201fee4f82445",
+                "reference": "d67b9c316f3a8a3d6229ee8d50c201fee4f82445",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +420,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-21 20:30:46"
+            "time": "2017-07-23 23:54:28"
         },
         {
             "name": "daikon/flysystem-adapter",
@@ -554,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "a1f99d549a22abd0780a24b69b71fe14fbaafc1c"
+                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/a1f99d549a22abd0780a24b69b71fe14fbaafc1c",
-                "reference": "a1f99d549a22abd0780a24b69b71fe14fbaafc1c",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/c3ca89b48d7dcfa11f76a107d927000a710b255f",
+                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f",
                 "shasum": ""
             },
             "require": {
@@ -592,7 +594,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-22 22:24:05"
+            "time": "2017-07-23 23:57:41"
         },
         {
             "name": "dailex/dlx-security",
@@ -600,12 +602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dailex-security.git",
-                "reference": "866631b0f42b08b5a243615cb581027135d94ffb"
+                "reference": "6cdc2107fcedfb9e4f90b973e3186bd97802e1c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dailex-security/zipball/866631b0f42b08b5a243615cb581027135d94ffb",
-                "reference": "866631b0f42b08b5a243615cb581027135d94ffb",
+                "url": "https://api.github.com/repos/dailex/dailex-security/zipball/6cdc2107fcedfb9e4f90b973e3186bd97802e1c4",
+                "reference": "6cdc2107fcedfb9e4f90b973e3186bd97802e1c4",
                 "shasum": ""
             },
             "require": {
@@ -635,7 +637,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-07-22 22:34:50"
+            "time": "2017-07-24 00:16:01"
         },
         {
             "name": "dailex/dlx-testing",
@@ -643,18 +645,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "00ba91e91dc8285959daece41f8fb387937bfa08"
+                "reference": "59b9123540d01f9abe8eb1d66215f512ffb36db3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/00ba91e91dc8285959daece41f8fb387937bfa08",
-                "reference": "00ba91e91dc8285959daece41f8fb387937bfa08",
+                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/59b9123540d01f9abe8eb1d66215f512ffb36db3",
+                "reference": "59b9123540d01f9abe8eb1d66215f512ffb36db3",
                 "shasum": ""
             },
             "require": {
-                "daikon/entity": "master@dev",
-                "daikon/event-sourcing": "master@dev",
-                "daikon/message-bus": "master@dev",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -682,7 +681,7 @@
                 "source": "https://github.com/dailex/dlx-testing/tree/master",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-22 22:29:54"
+            "time": "2017-07-24 00:14:23"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -1663,16 +1662,16 @@
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.1.0",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "279b56046fb368deacf77e2f8f3bdcea45cc367a"
+                "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/279b56046fb368deacf77e2f8f3bdcea45cc367a",
-                "reference": "279b56046fb368deacf77e2f8f3bdcea45cc367a",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/4d45fb62d96418396ec58ba76e6f065bca16e10a",
+                "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a",
                 "shasum": ""
             },
             "require": {
@@ -1685,7 +1684,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev"
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -1709,7 +1708,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2017-07-03T14:06:46+00:00"
+            "time": "2017-07-23T07:32:15+00:00"
         },
         {
             "name": "psr/container",
@@ -2230,16 +2229,16 @@
         },
         {
             "name": "silex/silex",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex.git",
-                "reference": "d5a9d9af14a1424ddecc3da481769cf64e7d3b34"
+                "reference": "ec7d5b5334465414952d4b2e935e73bd085dbbbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex/zipball/d5a9d9af14a1424ddecc3da481769cf64e7d3b34",
-                "reference": "d5a9d9af14a1424ddecc3da481769cf64e7d3b34",
+                "url": "https://api.github.com/repos/silexphp/Silex/zipball/ec7d5b5334465414952d4b2e935e73bd085dbbbb",
+                "reference": "ec7d5b5334465414952d4b2e935e73bd085dbbbb",
                 "shasum": ""
             },
             "require": {
@@ -2249,6 +2248,9 @@
                 "symfony/http-foundation": "~2.8|^3.0",
                 "symfony/http-kernel": "~2.8|^3.0",
                 "symfony/routing": "~2.8|^3.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35 || >= 5.0, <5.4.3"
             },
             "replace": {
                 "silex/api": "self.version",
@@ -2285,7 +2287,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "autoload": {
@@ -2312,7 +2314,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2017-05-03T15:21:42+00:00"
+            "time": "2017-07-23T07:40:14+00:00"
         },
         {
             "name": "symfony/asset",

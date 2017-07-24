@@ -23,10 +23,11 @@ final class RepositoryMapProvisioner implements ProvisionerInterface
             $repositories = [];
             foreach ($repositoryConfigs as $repositoryName => $repositoryConfig) {
                 $repositoryClass = $repositoryConfig['class'];
-                $repositories[$repositoryName] = $injector->make(
-                    $repositoryClass,
-                    [':storageAdapter' => $storageAdapterMap->get($repositoryConfig['storage_adapter'])]
-                );
+                $dependencies = [':storageAdapter' => $storageAdapterMap->get($repositoryConfig['storage_adapter'])];
+                if (isset($repositoryConfig['search_adapter'])) {
+                    $dependencies[':searchAdapter'] = $storageAdapterMap->get($repositoryConfig['search_adapter']);
+                }
+                $repositories[$repositoryName] = $injector->make($repositoryClass, $dependencies);
             }
             return new $serviceClass($repositories);
         };
