@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
-                "reference": "e4029db239dbc4cb564d2142d1d0f5fa04a67909"
+                "reference": "92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/e4029db239dbc4cb564d2142d1d0f5fa04a67909",
-                "reference": "e4029db239dbc4cb564d2142d1d0f5fa04a67909",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550",
+                "reference": "92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550",
                 "shasum": ""
             },
             "require": {
@@ -331,7 +331,7 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-24 00:13:02"
+            "time": "2017-07-24 16:05:05"
         },
         {
             "name": "daikon/entity",
@@ -556,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f"
+                "reference": "72a5c832d7a73038041df0c1ef823896360e059d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/c3ca89b48d7dcfa11f76a107d927000a710b255f",
-                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/72a5c832d7a73038041df0c1ef823896360e059d",
+                "reference": "72a5c832d7a73038041df0c1ef823896360e059d",
                 "shasum": ""
             },
             "require": {
@@ -594,20 +594,20 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-23 23:57:41"
+            "time": "2017-07-24 15:53:36"
         },
         {
             "name": "dailex/dlx-security",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dailex/dailex-security.git",
-                "reference": "6cdc2107fcedfb9e4f90b973e3186bd97802e1c4"
+                "url": "https://github.com/dailex/dlx-security.git",
+                "reference": "8a1cfb8fa1ed0b20af21032b42fdb87e3ffb37a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dailex-security/zipball/6cdc2107fcedfb9e4f90b973e3186bd97802e1c4",
-                "reference": "6cdc2107fcedfb9e4f90b973e3186bd97802e1c4",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/8a1cfb8fa1ed0b20af21032b42fdb87e3ffb37a2",
+                "reference": "8a1cfb8fa1ed0b20af21032b42fdb87e3ffb37a2",
                 "shasum": ""
             },
             "require": {
@@ -637,7 +637,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-07-24 00:16:01"
+            "time": "2017-07-24 19:07:12"
         },
         {
             "name": "dailex/dlx-testing",
@@ -645,12 +645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "59b9123540d01f9abe8eb1d66215f512ffb36db3"
+                "reference": "5eb0a2c79f9f9f8132d68566a0c7633f0f529efd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/59b9123540d01f9abe8eb1d66215f512ffb36db3",
-                "reference": "59b9123540d01f9abe8eb1d66215f512ffb36db3",
+                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/5eb0a2c79f9f9f8132d68566a0c7633f0f529efd",
+                "reference": "5eb0a2c79f9f9f8132d68566a0c7633f0f529efd",
                 "shasum": ""
             },
             "require": {
@@ -681,7 +681,7 @@
                 "source": "https://github.com/dailex/dlx-testing/tree/master",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-24 00:14:23"
+            "time": "2017-07-24 19:06:37"
         },
         {
             "name": "elasticsearch/elasticsearch",
