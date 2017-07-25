@@ -12,10 +12,25 @@
             <nav>
                 <ul>
                     <li><a class="navbar-brand" href="{{ path('home') }}">{{ config('project.name') }}</a></li>
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <li><a href="{{ path('dlx.security.logout') }}">Logout {{ app.user.username }}</a></li>
+                        {% else %}
+                        <li><a href="{{ path('dlx.security.login') }}">Login</a> | <a href="{{ path('dlx.security.registration') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </nav>
+            {% block header %}{% endblock %}
         </header>
         <div id="main">
+            {% if errors is defined and errors|length > 0 %}
+            <section id="errors">
+                <ul>
+                    {% for error in errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                <ul>
+            </section>
+            {% endif %}
         {% block content %}{% endblock %}
         </div>
         <footer>

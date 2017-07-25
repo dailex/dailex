@@ -11,5 +11,20 @@ dlx.security:
   config_dir: /var/www/vendor/dailex/dlx-security/config
   template_dir: /var/www/vendor/dailex/dlx-security/templates
   mount: /
+  authenticators:
+    dlx.security.form_login_authenticator: Dlx\Security\Authentication\FormLoginAuthenticator
+  firewalls:
+    default:
+      guard:
+        authenticators:
+          - dlx.security.form_login_authenticator
+      logout:
+        target_url: /
+        logout_path: /logout
+        invalidate_session: true
+        with_csrf: true
+      remember_me:
+        key: sxfMdXfZJrgcTQ
+        lifetime: 1209000
   voters:
     - Dlx\Security\Voter\OwnershipVoter
