@@ -11,6 +11,10 @@ dlx.security:
   config_dir: /var/www/vendor/dailex/dlx-security/config
   template_dir: /var/www/vendor/dailex/dlx-security/templates
   mount: /
+  auto_login:
+    enabled: true
+    firewall: default
+    target_path: home
   authenticators:
     dlx.security.form_login_authenticator: Dlx\Security\Authentication\FormLoginAuthenticator
   voters:

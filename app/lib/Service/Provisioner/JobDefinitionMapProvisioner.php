@@ -3,7 +3,7 @@
 namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
-use Daikon\AsyncJob\Job\JobMap;
+use Daikon\AsyncJob\Job\JobDefinitionMap;
 use Daikon\AsyncJob\Strategy\JobStrategyMap;
 use Daikon\AsyncJob\Worker\WorkerMap;
 use Daikon\Config\ConfigProviderInterface;
@@ -11,7 +11,7 @@ use Daikon\Dbal\Connector\ConnectorMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
-final class JobMapProvisioner implements ProvisionerInterface
+final class JobDefinitionMapProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,
@@ -24,11 +24,11 @@ final class JobMapProvisioner implements ProvisionerInterface
         $jobConfigs = $configProvider->get('jobs.jobs', []);
 
         $this->delegateJobStrategyMap($injector, $strategyConfigs);
-        $this->delegateJobMap($injector, $jobConfigs);
+        $this->delegateJobDefinitionMap($injector, $jobConfigs);
         $this->delegateWorkerMap($injector, $workerConfigs);
     }
 
-    private function delegateJobMap(Injector $injector, array $jobConfigs)
+    private function delegateJobDefinitionMap(Injector $injector, array $jobConfigs)
     {
         $factory = function (JobStrategyMap $strategyMap) use ($injector, $jobConfigs) {
             $jobs = [];
@@ -41,10 +41,10 @@ final class JobMapProvisioner implements ProvisionerInterface
                     ]
                 );
             }
-            return new JobMap($jobs);
+            return new JobDefinitionMap($jobs);
         };
 
-        $injector->share(JobMap::class)->delegate(JobMap::class, $factory);
+        $injector->share(JobDefinitionMap::class)->delegate(JobDefinitionMap::class, $factory);
     }
 
     private function delegateJobStrategyMap(Injector $injector, array $strategyConfigs)
@@ -74,14 +74,20 @@ final class JobMapProvisioner implements ProvisionerInterface
 
     private function delegateWorkerMap(Injector $injector, array $workerConfigs)
     {
-        $factory = function (ConnectorMap $connectorMap, JobMap $jobMap) use ($injector, $workerConfigs) {
+        $factory = function (
+            ConnectorMap $connectorMap,
+            JobDefinitionMap $jobDefinitionMap
+        ) use (
+            $injector,
+            $workerConfigs
+        ) {
             $workers = [];
             foreach ($workerConfigs as $workerName => $workerConfig) {
                 $workers[$workerName] = $injector->make(
                     $workerConfig['class'],
                     [
                         ':connector' => $connectorMap->get($workerConfig['dependencies']['connector']),
-                        ':jobMap' => $jobMap,
+                        ':jobDefinitionMap' => $jobDefinitionMap,
                         ':settings' => $workerConfig['settings'] ?? []
                     ]
                 );

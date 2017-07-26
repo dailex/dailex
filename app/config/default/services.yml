@@ -71,9 +71,9 @@ dailex:
     class: Dailex\Infrastructure\Migration\MigrationTargetMap
     provisioner: Dailex\Service\Provisioner\MigrationTargetMapProvisioner
 
-  job_map:
-    class: Daikon\AsyncJob\Job\JobMap
-    provisioner: Dailex\Service\Provisioner\JobMapProvisioner
+  job_definition_map:
+    class: Daikon\AsyncJob\Job\JobDefinitionMap
+    provisioner: Dailex\Service\Provisioner\JobDefinitionMapProvisioner
 
   command_router:
     class: Dailex\Service\CommandRouter
