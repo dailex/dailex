@@ -87,3 +87,15 @@ migrations:
     - migrations.${app.context}.yml
     - migrations.${app.env}.yml
     - migrations.${app.context}.${app.env}.yml
+
+mailers:
+  loader: Daikon\Config\YamlConfigLoader
+  locations:
+    - ${app.dailex.config_dir}
+    - ${crates.*.config_dir}
+    - ${app.config_dir}
+  sources:
+    - mailers.yml
+    - mailers.${app.context}.yml
+    - mailers.${app.env}.yml
+    - mailers.${app.context}.${app.env}.yml

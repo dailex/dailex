@@ -19,33 +19,18 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-
-        $this->registerTwig($app, $injector, $configProvider);
-
-        $injector
-            ->share($serviceClass)
-            ->alias(TemplateRendererInterface::CLASS, $serviceClass)
-            ->delegate(
-                $serviceClass,
-                function (Filesystem $filesystem) use ($serviceClass, $app) {
-                    return new $serviceClass($app['twig'], $filesystem);
-                }
-            );
-    }
-
-    private function registerTwig(Container $app, Injector $injector, ConfigProviderInterface $configProvider)
-    {
-        $dailexDir = $configProvider->get('app.dailex.dir');
-        $appDir = $configProvider->get('app.dir');
+        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
 
         $app->register(new TwigServiceProvider);
 
+        $dailexDir = $configProvider->get('app.dailex.dir');
+        $appDir = $configProvider->get('app.dir');
         $namespacedPaths = $this->getCrateTemplatesPaths($configProvider);
         $projectTemplates = $appDir.'/templates';
         $namespacedPaths['dailex'][] = $dailexDir.'/app/templates';
         $namespacedPaths['project'][] = $projectTemplates;
 
-        $app['twig.form.templates'] = [ 'bootstrap_3_layout.html.twig' ];
+        $app['twig.form.templates'] = ['bootstrap_3_layout.html.twig'];
         $app['twig.options'] = [ 'cache' => $configProvider->get('app.cache_dir').'/twig' ];
         $app['twig.loader.filesystem'] = function () use ($namespacedPaths, $projectTemplates) {
             $filesystem = new \Twig_Loader_Filesystem($projectTemplates);
@@ -55,13 +40,22 @@ final class TwigRendererProvisioner implements ProvisionerInterface
             return $filesystem;
         };
 
-        $settings = $configProvider->get('services.dailex.infrastructure.template_renderer.provisioner.settings');
-        $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $settings) {
-            foreach ($settings['extensions'] ?? [] as $extension) {
+        $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $provisionerSettings) {
+            foreach ($provisionerSettings['extensions'] ?? [] as $extension) {
                 $twig->addExtension($injector->make($extension));
             }
             return $twig;
         });
+
+        $injector
+            ->share($serviceClass)
+            ->alias(TemplateRendererInterface::class, $serviceClass)
+            ->delegate(
+                $serviceClass,
+                function (Filesystem $filesystem) use ($serviceClass, $app) {
+                    return new $serviceClass($app['twig'], $filesystem);
+                }
+            );
     }
 
     private function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)

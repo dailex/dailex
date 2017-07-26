@@ -19,6 +19,8 @@ final class DefaultProvisioner implements ProvisionerInterface
         $serviceClass = $serviceDefinition->getServiceClass();
         $provisionerSettings = $serviceDefinition->getProvisionerSettings();
 
+        $injector->define($serviceClass, [':settings' => $provisionerSettings]);
+
         // there will only be one instance of the service when the "share" setting is true (default)
         if (!isset($provisionerSettings['share']) || true === $provisionerSettings['share']) {
             $injector->share($serviceClass);

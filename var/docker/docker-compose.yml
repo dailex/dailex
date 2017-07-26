@@ -6,6 +6,8 @@ secrets:
     file: ../secrets/default/elasticsearch.yml
   rabbitmq.yml:
     file: ../secrets/default/rabbitmq.yml
+  swiftmailer.yml:
+    file: ../secrets/default/swiftmailer.yml
 services:
   proxy:
     image: blacklabelops/nginx:latest
@@ -45,6 +47,7 @@ services:
       - couchdb.yml
       - elasticsearch.yml
       - rabbitmq.yml
+      - swiftmailer.yml
     environment:
       - APP_VERSION
       - APP_ENV

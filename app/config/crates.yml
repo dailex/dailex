@@ -13,10 +13,13 @@ dlx.security:
   mount: /
   authenticators:
     dlx.security.form_login_authenticator: Dlx\Security\Authentication\FormLoginAuthenticator
+  voters:
+    - Dlx\Security\Voter\OwnershipVoter
   firewalls:
     default:
       guard:
         authenticators:
+          #@todo can we combine the authenticator config here with support for entry_point?
           - dlx.security.form_login_authenticator
       logout:
         target_url: /
@@ -26,5 +29,3 @@ dlx.security:
       remember_me:
         key: sxfMdXfZJrgcTQ
         lifetime: 1209000
-  voters:
-    - Dlx\Security\Voter\OwnershipVoter

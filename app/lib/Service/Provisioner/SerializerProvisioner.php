@@ -10,7 +10,7 @@ use Pimple\Container;
 use Silex\Provider\SerializerServiceProvider;
 use Symfony\Component\Serializer\SerializerInterface;
 
-final class SerializerServiceProvisioner implements ProvisionerInterface
+final class SerializerProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,

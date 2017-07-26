@@ -25,7 +25,7 @@ final class ProjectExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('config', [ $this, 'getConfig' ])
+            new Twig_SimpleFunction('config', [$this, 'getConfig'])
         ];
     }
 

@@ -14,7 +14,7 @@ use Silex\Provider\LocaleServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-final class TranslationServiceProvisioner implements ProvisionerInterface, EventListenerProviderInterface
+final class TranslatorProvisioner implements ProvisionerInterface, EventListenerProviderInterface
 {
     public function provision(
         Container $app,
@@ -24,7 +24,7 @@ final class TranslationServiceProvisioner implements ProvisionerInterface, Event
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
         $provisionerSettings = $serviceDefinition->getProvisionerSettings();
-        $translationSettings = $configProvider->get('project.translation', []);
+        $translationSettings = $configProvider->get('project.translator', []);
 
         $app->register(new LocaleServiceProvider);
         $app->register(

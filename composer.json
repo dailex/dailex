@@ -45,6 +45,7 @@
         "rdlowrey/auryn": "^1.4.0",
         "roave/security-advisories": "master@dev",
         "silex/silex": "^2.0",
+        "swiftmailer/swiftmailer": "^5.4",
         "symfony/asset": "^3.0",
         "symfony/config": "^3.0",
         "symfony/console": "^3.0",

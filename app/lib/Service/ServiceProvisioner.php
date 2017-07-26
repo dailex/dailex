@@ -60,16 +60,14 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
         $serviceDefinitions = [];
         $serviceConfigs = $this->configProvider->get('services');
         foreach ($serviceConfigs as $namespace => $namespaceDefinitions) {
-            foreach ($namespaceDefinitions as $rootPath => $rootDefinitions) {
-                foreach ($rootDefinitions as $serviceName => $serviceDefinition) {
-                    $serviceKey = sprintf('%s.%s.%s', $namespace, $rootPath, $serviceName);
-                    $serviceDefinitions[$serviceKey] = new ServiceDefinition(
-                        $serviceDefinition['class'],
-                        $serviceDefinition['provisioner']['class'] ?? null,
-                        $serviceDefinition['provisioner']['settings'] ?? [],
-                        $serviceDefinition['subscriptions'] ?? []
-                    );
-                }
+            foreach ($namespaceDefinitions as $serviceName => $serviceDefinition) {
+                $serviceKey = sprintf('%s.%s', $namespace, $serviceName);
+                $serviceDefinitions[$serviceKey] = new ServiceDefinition(
+                    $serviceDefinition['class'],
+                    $serviceDefinition['provisioner']['class'] ?? null,
+                    $serviceDefinition['provisioner']['settings'] ?? [],
+                    $serviceDefinition['subscriptions'] ?? []
+                );
             }
         }
         return new ServiceDefinitionMap($serviceDefinitions);

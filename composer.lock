@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3455129ce903b216c79550058756506",
+    "content-hash": "400292abadd7a1c00d708482454ac53a",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -158,12 +158,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "5c688f4665f4be0135bcd9669f122726718e6b8f"
+                "reference": "19b475682e17b3ecefcc9722722877c3de633e77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/5c688f4665f4be0135bcd9669f122726718e6b8f",
-                "reference": "5c688f4665f4be0135bcd9669f122726718e6b8f",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/19b475682e17b3ecefcc9722722877c3de633e77",
+                "reference": "19b475682e17b3ecefcc9722722877c3de633e77",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-24 00:05:51"
+            "time": "2017-07-26 15:29:12"
         },
         {
             "name": "daikon/data-structure",
@@ -384,12 +384,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "7e01b86a22bea8719c16f50f95da16dc73642720"
+                "reference": "4f62186ff2cb8838f9a223c38c446c7e846f6084"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/7e01b86a22bea8719c16f50f95da16dc73642720",
-                "reference": "7e01b86a22bea8719c16f50f95da16dc73642720",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/4f62186ff2cb8838f9a223c38c446c7e846f6084",
+                "reference": "4f62186ff2cb8838f9a223c38c446c7e846f6084",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-07-25 00:04:18"
+            "time": "2017-07-26 15:22:29"
         },
         {
             "name": "daikon/flysystem-adapter",
@@ -602,12 +602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-security.git",
-                "reference": "422c35bb59fdc5ec64487b2aad6edaaf464380e6"
+                "reference": "2046871dc5fca1277d1ae6d326cef19a34d1ede9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/422c35bb59fdc5ec64487b2aad6edaaf464380e6",
-                "reference": "422c35bb59fdc5ec64487b2aad6edaaf464380e6",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/2046871dc5fca1277d1ae6d326cef19a34d1ede9",
+                "reference": "2046871dc5fca1277d1ae6d326cef19a34d1ede9",
                 "shasum": ""
             },
             "require": {
@@ -637,7 +637,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-07-25 12:59:42"
+            "time": "2017-07-26 16:04:57"
         },
         {
             "name": "dailex/dlx-testing",
@@ -2315,6 +2315,60 @@
                 "microframework"
             ],
             "time": "2017-07-23T07:40:14+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/asset",

@@ -1,0 +1,14 @@
+swiftmailer:
+  transport: \Swift_NullTransport
+  use_spool: false
+  options:
+    host: ${secrets.swiftmailer.host}
+    port: ${secrets.swiftmailer.port}
+    username: ${secrets.swiftmailer.username}
+    password: ${secrets.swiftmailer.password}
+    encryption: ${secrets.swiftmailer.encryption}
+
+default_mailer:
+  send_messages: true # uses null transport by default
+  logging_enabled: true
+  log_messages: true

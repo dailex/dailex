@@ -9,10 +9,10 @@ prefix: dailex
 framework:
   trusted_proxies:
     - 0.0.0.0/0
-email:
+mailer:
   from_email: dailex@dailex.dev
   from_name: Dailex
-translation:
+translator:
   default_locale: en
   locale_fallbacks:
     - en
