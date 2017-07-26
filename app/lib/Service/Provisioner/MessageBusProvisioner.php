@@ -27,9 +27,9 @@ final class MessageBusProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
+        $settings = $serviceDefinition->getSettings();
 
-        if (!isset($provisionerSettings['transports'])) {
+        if (!isset($settings['transports'])) {
             throw new ConfigException('Message bus transports configuration is required.');
         }
 
@@ -38,11 +38,11 @@ final class MessageBusProvisioner implements ProvisionerInterface
             ConnectorMap $connectorMap
         ) use (
             $injector,
-            $provisionerSettings,
+            $settings,
             $serviceClass
         ) {
             $transports = [];
-            foreach ($provisionerSettings['transports'] as $transportName => $transportConfig) {
+            foreach ($settings['transports'] as $transportName => $transportConfig) {
                 $transportClass = $transportConfig['class'];
                 $arguments = [':key' => $transportName];
                 if (isset($transportConfig['dependencies']['connector'])) {

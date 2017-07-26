@@ -8,7 +8,7 @@ interface ServiceDefinitionInterface
 
     public function getProvisionerClass(): string;
 
-    public function getProvisionerSettings(): array;
+    public function getSettings(): array;
 
     public function getSubscriptions(): array;
 }

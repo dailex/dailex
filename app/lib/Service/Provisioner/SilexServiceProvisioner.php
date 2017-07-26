@@ -17,19 +17,19 @@ final class SilexServiceProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
+        $settings = $serviceDefinition->getSettings();
 
-        if (!isset($provisionerSettings['app_key'])) {
-            throw new ConfigException('Provisioner requires "app_key" setting.');
+        if (!isset($settings['_app_key'])) {
+            throw new ConfigException('Provisioner requires "_app_key" setting.');
         }
 
-        $appKey = $provisionerSettings['app_key'];
+        $appKey = $settings['_app_key'];
         $injector->delegate($serviceClass, function () use ($app, $appKey) {
             return $app[$appKey];
         })->share($serviceClass);
 
-        if (isset($provisionerSettings['alias'])) {
-            $alias = $provisionerSettings['alias'];
+        if (isset($settings['_alias'])) {
+            $alias = $settings['_alias'];
             if (!is_string($alias) && !class_exists($alias)) {
                 throw new ConfigException('Alias must be an existing fully qualified class or interface name.');
             }

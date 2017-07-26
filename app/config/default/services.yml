@@ -1,11 +1,9 @@
 dailex:
   logger:
     class: Dailex\Service\LoggingService
-    provisioner:
-      class: Dailex\Service\Provisioner\MonologServiceProvisioner
-      settings:
-        location: ${app.log_dir}/dailex.log
-        alias: Psr\Log\LoggerInterface
+    provisioner: Dailex\Service\Provisioner\MonologServiceProvisioner
+    settings:
+      location: ${app.log_dir}/dailex.log
     subscriptions:
       logging_sub:
         channel: logging
@@ -13,56 +11,47 @@ dailex:
 
   controllers:
     class: Silex\ControllerCollection
-    provisioner:
-      class: Dailex\Service\Provisioner\ControllerProvisioner
+    provisioner: Dailex\Service\Provisioner\ControllerProvisioner
 
   message_bus:
     class: Daikon\MessageBus\MessageBus
-    provisioner:
-      class: Dailex\Service\Provisioner\MessageBusProvisioner
-      settings:
-        transports:
-          inproc:
-            class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
-          message_queue:
-            class: Daikon\RabbitMq3\Transport\RabbitMq3Transport
-            dependencies:
-              connector: dailex.message_queue
+    provisioner: Dailex\Service\Provisioner\MessageBusProvisioner
+    settings:
+      transports:
+        inproc:
+          class: Daikon\MessageBus\Channel\Subscription\Transport\InProcessTransport
+        message_queue:
+          class: Daikon\RabbitMq3\Transport\RabbitMq3Transport
+          dependencies:
+            connector: dailex.message_queue
 
   crate_map:
     class: Dailex\Crate\CrateMap
-    provisioner:
-      class: Dailex\Service\Provisioner\CrateMapProvisioner
+    provisioner: Dailex\Service\Provisioner\CrateMapProvisioner
 
   connector_map:
     class: Daikon\Dbal\Connector\ConnectorMap
-    provisioner:
-      class: Dailex\Service\Provisioner\ConnectorMapProvisioner
+    provisioner: Dailex\Service\Provisioner\ConnectorMapProvisioner
 
   storage_adapter_map:
     class: Daikon\Dbal\Storage\StorageAdapterMap
-    provisioner:
-      class: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
+    provisioner: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
 
   stream_store_map:
     class: Daikon\EventSourcing\EventStore\Storage\StreamStorageMap
-    provisioner:
-      class: Dailex\Service\Provisioner\StreamStorageMapProvisioner
+    provisioner: Dailex\Service\Provisioner\StreamStorageMapProvisioner
 
   unit_of_work_map:
     class: Daikon\EventSourcing\EventStore\UnitOfWorkMap
-    provisioner:
-      class: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
+    provisioner: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
 
   repository_map:
     class: Daikon\ReadModel\Repository\RepositoryMap
-    provisioner:
-      class: Dailex\Service\Provisioner\RepositoryMapProvisioner
+    provisioner: Dailex\Service\Provisioner\RepositoryMapProvisioner
 
   projector_map:
     class: Daikon\ReadModel\Projector\ProjectorMap
-    provisioner:
-      class: Dailex\Service\Provisioner\ProjectorMapProvisioner
+    provisioner: Dailex\Service\Provisioner\ProjectorMapProvisioner
 
   projector_service:
     class: Daikon\ReadModel\Projector\ProjectorService
@@ -80,13 +69,11 @@ dailex:
 
   migration_target_map:
     class: Dailex\Infrastructure\Migration\MigrationTargetMap
-    provisioner:
-      class: Dailex\Service\Provisioner\MigrationTargetMapProvisioner
+    provisioner: Dailex\Service\Provisioner\MigrationTargetMapProvisioner
 
   job_map:
     class: Daikon\AsyncJob\Job\JobMap
-    provisioner:
-      class: Dailex\Service\Provisioner\JobMapProvisioner
+    provisioner: Dailex\Service\Provisioner\JobMapProvisioner
 
   command_router:
     class: Dailex\Service\CommandRouter
@@ -97,65 +84,56 @@ dailex:
 
   mailer:
     class: Dailex\Mailer\SwiftMailer\LoggingSwiftmailer
-    provisioner:
-      class: Dailex\Service\Provisioner\SwiftmailerProvisioner
+    provisioner: Dailex\Service\Provisioner\SwiftmailerProvisioner
 
   url_generator:
     class: Symfony\Component\Routing\Generator\UrlGenerator
-    provisioner:
-      class: Dailex\Service\Provisioner\SilexServiceProvisioner
-      settings:
-        app_key: url_generator
-        alias: Symfony\Component\Routing\Generator\UrlGeneratorInterface
+    provisioner: Dailex\Service\Provisioner\SilexServiceProvisioner
+    settings:
+      _app_key: url_generator
+      _alias: Symfony\Component\Routing\Generator\UrlGeneratorInterface
 
   request_stack:
     class: Symfony\Component\HttpFoundation\RequestStack
-    provisioner:
-      class: Dailex\Service\Provisioner\SilexServiceProvisioner
-      settings:
-        app_key: request_stack
+    provisioner: Dailex\Service\Provisioner\SilexServiceProvisioner
+    settings:
+      _app_key: request_stack
 
   validator:
     class: Symfony\Component\Validator\Validator\Validator
-    provisioner:
-      class: Dailex\Service\Provisioner\SilexServiceProvisioner
-      settings:
-        app_key: validator
-        alias: Symfony\Component\Validator\Validator\ValidatorInterface
+    provisioner: Dailex\Service\Provisioner\SilexServiceProvisioner
+    settings:
+      _app_key: validator
+      _alias: Symfony\Component\Validator\Validator\ValidatorInterface
 
   translator:
     class: Symfony\Component\Translation\Translator
-    provisioner:
-      class: Dailex\Service\Provisioner\TranslatorProvisioner
-      settings:
-        alias: Symfony\Component\Translation\TranslatorInterface
+    provisioner: Dailex\Service\Provisioner\TranslatorProvisioner
+    settings:
+      _alias: Symfony\Component\Translation\TranslatorInterface
 
   form_factory:
     class: Symfony\Component\Form\FormFactory
-    provisioner:
-      class: Dailex\Service\Provisioner\SilexServiceProvisioner
-      settings:
-        app_key: form.factory
-        alias: Symfony\Component\Form\FormFactoryInterface
+    provisioner: Dailex\Service\Provisioner\SilexServiceProvisioner
+    settings:
+      _app_key: form.factory
+      _alias: Symfony\Component\Form\FormFactoryInterface
 
   template_renderer:
     class: Dailex\Renderer\Twig\TwigRenderer
-    provisioner:
-      class: Dailex\Service\Provisioner\TwigRendererProvisioner
-      settings:
-        extensions:
-          - Dailex\Renderer\Twig\Extension\ProjectExtension
-          - Dailex\Renderer\Twig\Extension\LocaliseRouteExtension
+    provisioner: Dailex\Service\Provisioner\TwigRendererProvisioner
+    settings:
+      extensions:
+        - Dailex\Renderer\Twig\Extension\ProjectExtension
+        - Dailex\Renderer\Twig\Extension\LocaliseRouteExtension
 
   dispatcher:
     class: Symfony\Component\EventDispatcher\EventDispatcher
-    provisioner:
-      class: Dailex\Service\Provisioner\SilexServiceProvisioner
-      settings:
-        app_key: dispatcher
-        alias: Symfony\Component\EventDispatcher\EventDispatcherInterface
+    provisioner: Dailex\Service\Provisioner\SilexServiceProvisioner
+    settings:
+      _app_key: dispatcher
+      _alias: Symfony\Component\EventDispatcher\EventDispatcherInterface
 
   serializer:
     class: Symfony\Component\Serializer\Serializer
-    provisioner:
-      class: Dailex\Service\Provisioner\SerializerProvisioner
+    provisioner: Dailex\Service\Provisioner\SerializerProvisioner

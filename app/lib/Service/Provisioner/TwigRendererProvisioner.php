@@ -19,7 +19,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
+        $settings = $serviceDefinition->getSettings();
 
         $app->register(new TwigServiceProvider);
 
@@ -40,22 +40,22 @@ final class TwigRendererProvisioner implements ProvisionerInterface
             return $filesystem;
         };
 
-        $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $provisionerSettings) {
-            foreach ($provisionerSettings['extensions'] ?? [] as $extension) {
+        $app['twig'] = $app->extend('twig', function ($twig, $app) use ($injector, $settings) {
+            foreach ($settings['extensions'] ?? [] as $extension) {
                 $twig->addExtension($injector->make($extension));
             }
             return $twig;
         });
 
         $injector
-            ->share($serviceClass)
-            ->alias(TemplateRendererInterface::class, $serviceClass)
             ->delegate(
                 $serviceClass,
                 function (Filesystem $filesystem) use ($serviceClass, $app) {
                     return new $serviceClass($app['twig'], $filesystem);
                 }
-            );
+            )
+            ->share($serviceClass)
+            ->alias(TemplateRendererInterface::class, $serviceClass);
     }
 
     private function getCrateTemplatesPaths(ConfigProviderInterface $configProvider)

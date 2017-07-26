@@ -19,14 +19,14 @@ final class SerializerProvisioner implements ProvisionerInterface
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
+        $settings = $serviceDefinition->getSettings();
 
         $app->register(new SerializerServiceProvider);
 
         $app->extend(
             'serializer.encoders',
-            function ($encoders, $app) use ($injector, $provisionerSettings) {
-                foreach (array_reverse($provisionerSettings['encoders'] ?? []) as $encoder) {
+            function ($encoders, $app) use ($injector, $settings) {
+                foreach (array_reverse($settings['encoders'] ?? []) as $encoder) {
                     array_unshift($encoders, $injector->make($encoder));
                 }
                 return $encoders;
@@ -35,8 +35,8 @@ final class SerializerProvisioner implements ProvisionerInterface
 
         $app->extend(
             'serializer.normalizers',
-            function ($normalizers, $app) use ($injector, $provisionerSettings) {
-                foreach (array_reverse($provisionerSettings['normalizers'] ?? []) as $normalizer) {
+            function ($normalizers, $app) use ($injector, $settings) {
+                foreach (array_reverse($settings['normalizers'] ?? []) as $normalizer) {
                     array_unshift($normalizers, $injector->make($normalizer));
                 }
                 return $normalizers;

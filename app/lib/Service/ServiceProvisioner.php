@@ -64,8 +64,8 @@ final class ServiceProvisioner implements ServiceProvisionerInterface
                 $serviceKey = sprintf('%s.%s', $namespace, $serviceName);
                 $serviceDefinitions[$serviceKey] = new ServiceDefinition(
                     $serviceDefinition['class'],
-                    $serviceDefinition['provisioner']['class'] ?? null,
-                    $serviceDefinition['provisioner']['settings'] ?? [],
+                    $serviceDefinition['provisioner'] ?? null,
+                    $serviceDefinition['settings'] ?? [],
                     $serviceDefinition['subscriptions'] ?? []
                 );
             }

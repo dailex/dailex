@@ -23,7 +23,7 @@ final class TranslatorProvisioner implements ProvisionerInterface, EventListener
         ServiceDefinitionInterface $serviceDefinition
     ): void {
         $serviceClass = $serviceDefinition->getServiceClass();
-        $provisionerSettings = $serviceDefinition->getProvisionerSettings();
+        $settings = $serviceDefinition->getSettings();
         $translationSettings = $configProvider->get('project.translator', []);
 
         $app->register(new LocaleServiceProvider);
@@ -41,8 +41,8 @@ final class TranslatorProvisioner implements ProvisionerInterface, EventListener
             return $app['translator'];
         })->share($serviceClass);
 
-        if (isset($provisionerSettings['alias'])) {
-            $alias = $provisionerSettings['alias'];
+        if (isset($settings['_alias'])) {
+            $alias = $settings['_alias'];
             if (!is_string($alias) && !class_exists($alias)) {
                 throw new ConfigException('Alias must be an existing fully qualified class or interface name.');
             }
