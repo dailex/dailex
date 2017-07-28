@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "962e9c855e7e4d22ad81d8357ca9d74c",
+    "content-hash": "400292abadd7a1c00d708482454ac53a",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -339,12 +339,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "819f304"
+                "reference": "c3fb18537c95ff19c0bbd025159f8c43cf0db906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/819f304",
-                "reference": "819f304",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/c3fb18537c95ff19c0bbd025159f8c43cf0db906",
+                "reference": "c3fb18537c95ff19c0bbd025159f8c43cf0db906",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
                 "generic",
                 "value-object"
             ],
-            "time": "2017-07-22 22:10:43"
+            "time": "2017-07-27 23:41:03"
         },
         {
             "name": "daikon/event-sourcing",
@@ -634,12 +634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-security.git",
-                "reference": "1306f4c2a7207a9e9e4f6ec82668d6f5cf865831"
+                "reference": "f5731ac98dfbafc57217ea57906f555b87f86ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/1306f4c2a7207a9e9e4f6ec82668d6f5cf865831",
-                "reference": "1306f4c2a7207a9e9e4f6ec82668d6f5cf865831",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/f5731ac98dfbafc57217ea57906f555b87f86ebb",
+                "reference": "f5731ac98dfbafc57217ea57906f555b87f86ebb",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-07-28 12:10:34"
+            "time": "2017-07-28 13:57:05"
         },
         {
             "name": "dailex/dlx-testing",
@@ -677,12 +677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "5eb0a2c79f9f9f8132d68566a0c7633f0f529efd"
+                "reference": "f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/5eb0a2c79f9f9f8132d68566a0c7633f0f529efd",
-                "reference": "5eb0a2c79f9f9f8132d68566a0c7633f0f529efd",
+                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188",
+                "reference": "f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188",
                 "shasum": ""
             },
             "require": {
@@ -713,7 +713,7 @@
                 "source": "https://github.com/dailex/dlx-testing/tree/master",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-24 19:06:37"
+            "time": "2017-07-28 14:02:12"
         },
         {
             "name": "elasticsearch/elasticsearch",

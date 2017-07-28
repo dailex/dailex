@@ -33,7 +33,7 @@
         "daikon/config": "master@dev",
         "daikon/couchdb-adapter": "master@dev",
         "daikon/elasticsearch5-adapter": "master@dev",
-        "daikon/entity": "dev-master#819f304",
+        "daikon/entity": "master@dev",
         "daikon/event-sourcing": "master@dev",
         "daikon/flysystem-adapter": "master@dev",
         "daikon/rabbitmq3-adapter": "master@dev",
