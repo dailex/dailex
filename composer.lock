@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "400292abadd7a1c00d708482454ac53a",
+    "content-hash": "962e9c855e7e4d22ad81d8357ca9d74c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -339,17 +339,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "819f304fbf651ba9d9c624eb8edd218e99fe2ea0"
+                "reference": "819f304"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/819f304fbf651ba9d9c624eb8edd218e99fe2ea0",
-                "reference": "819f304fbf651ba9d9c624eb8edd218e99fe2ea0",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/819f304",
+                "reference": "819f304",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.7",
                 "daikon/data-structure": "dev-master",
+                "daikon/interop": "dev-master",
                 "jms/parser-lib": "~1.0",
                 "php": ">=7.1",
                 "ramsey/uuid": "~3.6"
@@ -463,6 +464,37 @@
                 "adapter"
             ],
             "time": "2017-07-22 22:18:20"
+        },
+        {
+            "name": "daikon/interop",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/interop.git",
+                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/f4581af6d35d2db22a8bbe35bf655c2457da3123",
+                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\Interop\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "Interop interfaces used across daikon components.",
+            "homepage": "https://github.com/daikon-cqrs/interop",
+            "time": "2017-07-25 18:40:38"
         },
         {
             "name": "daikon/message-bus",
@@ -602,12 +634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-security.git",
-                "reference": "5008c45a8f558031f71762d82ffee899dc2fdcc4"
+                "reference": "1306f4c2a7207a9e9e4f6ec82668d6f5cf865831"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/5008c45a8f558031f71762d82ffee899dc2fdcc4",
-                "reference": "5008c45a8f558031f71762d82ffee899dc2fdcc4",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/1306f4c2a7207a9e9e4f6ec82668d6f5cf865831",
+                "reference": "1306f4c2a7207a9e9e4f6ec82668d6f5cf865831",
                 "shasum": ""
             },
             "require": {
@@ -637,7 +669,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-07-26 17:54:49"
+            "time": "2017-07-28 12:10:34"
         },
         {
             "name": "dailex/dlx-testing",
@@ -2051,12 +2083,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "fa53c38b02d1ec883f4ea2b2c05492da0c7611cf"
+                "reference": "626c97bd5b45a08db902a0fb0b13f58f3785b439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fa53c38b02d1ec883f4ea2b2c05492da0c7611cf",
-                "reference": "fa53c38b02d1ec883f4ea2b2c05492da0c7611cf",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/626c97bd5b45a08db902a0fb0b13f58f3785b439",
+                "reference": "626c97bd5b45a08db902a0fb0b13f58f3785b439",
                 "shasum": ""
             },
             "conflict": {
@@ -2102,7 +2134,7 @@
                 "onelogin/php-saml": "<2.10.4",
                 "oro/crm": ">=1.7,<1.7.4",
                 "oro/platform": ">=1.7,<1.7.4",
-                "phpmailer/phpmailer": ">=5,<5.2.22",
+                "phpmailer/phpmailer": ">=5,<5.2.24",
                 "pusher/pusher-php-server": "<2.2.1",
                 "sabre/dav": ">=1.6,<1.6.99|>=1.7,<1.7.11|>=1.8,<1.8.9",
                 "shopware/shopware": "<4.4|>=5,<5.2.16",
@@ -2180,7 +2212,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-07-18T08:09:10+00:00"
+            "time": "2017-07-28T07:54:11+00:00"
         },
         {
             "name": "shrink0r/php-schema",

@@ -15,7 +15,7 @@
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                         <li><a href="{{ path('dlx.security.logout') }}">Logout {{ app.user.username }}</a></li>
                         {% else %}
-                        <li><a href="{{ path('dlx.security.login') }}">Login</a> | <a href="{{ path('dlx.security.registration') }}">Register</a></li>
+                        <li><a href="{{ path('dlx.security.login') }}">Login</a> | <a href="{{ path('dlx.security.register') }}">Register</a></li>
                     {% endif %}
                 </ul>
             </nav>
