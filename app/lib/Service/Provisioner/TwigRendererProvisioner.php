@@ -62,7 +62,7 @@ final class TwigRendererProvisioner implements ProvisionerInterface
     {
         $paths = [];
         foreach ($configProvider->get('crates') as $crateName => $crateConfig) {
-            $templatesPath = $crateConfig['template_dir'];
+            $templatesPath = $crateConfig['template_dir'] ?? null;
             if (is_readable($templatesPath)) {
                 $paths[$crateName][] = $templatesPath;
             }

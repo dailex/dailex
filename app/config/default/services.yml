@@ -137,3 +137,7 @@ dailex:
   serializer:
     class: Symfony\Component\Serializer\Serializer
     provisioner: Dailex\Service\Provisioner\SerializerProvisioner
+    settings:
+      normalizers:
+        - Symfony\Component\Serializer\Normalizer\DateTimeNormalizer
+        - Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer

@@ -2,6 +2,7 @@
 
 namespace Dailex\Console\Command\Migrate;
 
+use Assert\InvalidArgumentException;
 use Daikon\Dbal\Migration\MigrationInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -38,17 +39,21 @@ final class MigrateDown extends MigrateCommand
                 continue;
             }
             $output->writeln(sprintf('Reversing migrations for target <options=bold>%s</>', $targetName));
-            $reversedMigrations = $migrationTarget->migrate(MigrationInterface::MIGRATE_DOWN, $version);
-            if ($reversedMigrations->count() > 0) {
-                foreach ($reversedMigrations as $migration) {
-                    $output->writeln(sprintf(
-                        '  <info>Reversed migration version %d (%s)</info>',
-                        $migration->getVersion(),
-                        $migration->getName()
-                    ));
+            try {
+                $reversedMigrations = $migrationTarget->migrate(MigrationInterface::MIGRATE_DOWN, $version);
+                if ($reversedMigrations->count() > 0) {
+                    foreach ($reversedMigrations as $migration) {
+                        $output->writeln(sprintf(
+                            '  <info>Reversed migration version %d (%s)</info>',
+                            $migration->getVersion(),
+                            $migration->getName()
+                        ));
+                    }
+                } else {
+                    $output->writeln('  <comment>No reversible migrations found</comment>');
                 }
-            } else {
-                $output->writeln('  <comment>No reversible migrations found</comment>');
+            } catch (InvalidArgumentException $exception) {
+                $output->writeln('  <error>'.$exception->getMessage().'</error>');
             }
         }
     }

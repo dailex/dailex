@@ -17,6 +17,7 @@ dlx.security:
     target_path: home
   authenticators:
     dlx.security.form_login_authenticator: Dlx\Security\Authentication\FormLoginAuthenticator
+    dlx.security.user_token_authenticator: Dlx\Security\Authentication\UserTokenAuthenticator
   voters:
     - Dlx\Security\Voter\OwnershipVoter
   firewalls:
@@ -25,6 +26,8 @@ dlx.security:
         authenticators:
           #@todo can we combine the authenticator config here with support for entry_point?
           - dlx.security.form_login_authenticator
+          - dlx.security.user_token_authenticator
+        entry_point: dlx.security.form_login_authenticator
       logout:
         target_url: /
         logout_path: /logout
