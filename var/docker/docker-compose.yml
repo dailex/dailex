@@ -1,4 +1,8 @@
 version: "3.2"
+logging:
+  driver: json-file
+  options:
+    max-size: 50m
 secrets:
   couchdb.yml:
     file: ../secrets/default/couchdb.yml
@@ -11,6 +15,11 @@ secrets:
 services:
   proxy:
     image: blacklabelops/nginx:latest
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "1"
     ports:
       - "80:80"
       - "443:443"
