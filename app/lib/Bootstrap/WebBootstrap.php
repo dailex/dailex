@@ -63,8 +63,7 @@ final class WebBootstrap extends Bootstrap
     private function registerTrustedProxies(Application $app): void
     {
         $trustedProxies = $this->configProvider->get('project.framework.trusted_proxies');
-        Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
-        Request::setTrustedProxies($trustedProxies);
+        Request::setTrustedProxies($trustedProxies, Request::HEADER_X_FORWARDED_ALL);
     }
 
     private function registerErrorHandler(Application $app): void
