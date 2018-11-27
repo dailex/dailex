@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "400292abadd7a1c00d708482454ac53a",
@@ -105,7 +105,7 @@
                 "job",
                 "worker"
             ],
-            "time": "2017-07-26 19:06:09"
+            "time": "2017-07-26T19:06:09+00:00"
         },
         {
             "name": "daikon/config",
@@ -150,7 +150,7 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-18 22:03:42"
+            "time": "2017-07-18T22:03:42+00:00"
         },
         {
             "name": "daikon/couchdb-adapter",
@@ -193,7 +193,7 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-26 15:29:12"
+            "time": "2017-07-26T15:29:12+00:00"
         },
         {
             "name": "daikon/data-structure",
@@ -243,7 +243,7 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-23 23:36:51"
+            "time": "2017-07-23T23:36:51+00:00"
         },
         {
             "name": "daikon/dbal",
@@ -288,7 +288,7 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2017-08-03 23:34:31"
+            "time": "2017-08-03T23:34:31+00:00"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
@@ -331,7 +331,7 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-24 16:05:05"
+            "time": "2017-07-24T16:05:05+00:00"
         },
         {
             "name": "daikon/entity",
@@ -376,7 +376,7 @@
                 "generic",
                 "value-object"
             ],
-            "time": "2017-08-08 13:36:44"
+            "time": "2017-08-08T13:36:44+00:00"
         },
         {
             "name": "daikon/event-sourcing",
@@ -420,7 +420,7 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-08-10 00:53:30"
+            "time": "2017-08-10T00:53:30+00:00"
         },
         {
             "name": "daikon/flysystem-adapter",
@@ -462,7 +462,7 @@
                 "Flysystem",
                 "adapter"
             ],
-            "time": "2017-07-22 22:18:20"
+            "time": "2017-07-22T22:18:20+00:00"
         },
         {
             "name": "daikon/interop",
@@ -493,7 +493,7 @@
             ],
             "description": "Interop interfaces used across daikon components.",
             "homepage": "https://github.com/daikon-cqrs/interop",
-            "time": "2017-07-25 18:40:38"
+            "time": "2017-07-25T18:40:38+00:00"
         },
         {
             "name": "daikon/message-bus",
@@ -535,7 +535,7 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-07-22 22:13:14"
+            "time": "2017-07-22T22:13:14+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -579,7 +579,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2017-07-26 19:08:28"
+            "time": "2017-07-26T19:08:28+00:00"
         },
         {
             "name": "daikon/read-model",
@@ -625,7 +625,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-24 15:53:36"
+            "time": "2017-07-24T15:53:36+00:00"
         },
         {
             "name": "dailex/dlx-security",
@@ -633,12 +633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-security.git",
-                "reference": "37f812672d34184dde619b06028bb2d38819322b"
+                "reference": "80707197923dfe64671567768c8c69ffbc807ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/37f812672d34184dde619b06028bb2d38819322b",
-                "reference": "37f812672d34184dde619b06028bb2d38819322b",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/80707197923dfe64671567768c8c69ffbc807ff1",
+                "reference": "80707197923dfe64671567768c8c69ffbc807ff1",
                 "shasum": ""
             },
             "require": {
@@ -668,7 +668,7 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2017-09-04 13:14:57"
+            "time": "2018-11-27T17:38:44+00:00"
         },
         {
             "name": "dailex/dlx-testing",
@@ -712,7 +712,7 @@
                 "source": "https://github.com/dailex/dlx-testing/tree/master",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-28 14:02:12"
+            "time": "2017-07-28T14:02:12+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -815,7 +815,7 @@
                 "oauth",
                 "silex"
             ],
-            "time": "2016-02-24 16:23:07"
+            "time": "2016-02-24T16:23:07+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -2079,17 +2079,6 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "140175d0d4a71950b045fb87cc7d979340b9f16e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/140175d0d4a71950b045fb87cc7d979340b9f16e",
-                "reference": "140175d0d4a71950b045fb87cc7d979340b9f16e",
-                "shasum": ""
-            },
             "conflict": {
                 "adodb/adodb-php": "<5.20.6",
                 "amphp/artax": ">=2,<2.0.6|<1.0.6",
@@ -2346,6 +2335,7 @@
             "keywords": [
                 "microframework"
             ],
+            "abandoned": "symfony/flex",
             "time": "2017-07-23T07:40:14+00:00"
         },
         {
@@ -4203,6 +4193,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
+            "abandoned": true,
             "time": "2017-04-23T23:11:39+00:00"
         },
         {

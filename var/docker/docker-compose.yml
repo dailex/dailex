@@ -1,8 +1,4 @@
 version: "3.2"
-logging:
-  driver: json-file
-  options:
-    max-size: 50m
 secrets:
   couchdb.yml:
     file: ../secrets/default/couchdb.yml
@@ -14,7 +10,8 @@ secrets:
     file: ../secrets/default/swiftmailer.yml
 services:
   proxy:
-    image: blacklabelops/nginx:latest
+    container_name: proxy
+    image: blacklabelops/nginx:2.2
     logging:
       driver: "json-file"
       options:
@@ -34,6 +31,7 @@ services:
       SERVER1REVERSE_PROXY_HEADER1FIELD3: X-Forwarded-For $$proxy_add_x_forwarded_for
 
   nginx:
+    container_name: nginx
     image: nginx:stable
     command: ["nginx", "-c", "/var/www/var/docker/nginx/conf/nginx.conf", "-g", "daemon off;"]
     ports:
@@ -43,6 +41,7 @@ services:
       - php:php
 
   php:
+    container_name: php
     image: friendsofhoneybee/php:7.1-fpm
     command: ["php-fpm", "-R", "-y", "/var/www/var/docker/php/conf/php-fpm.d/www.conf"]
     working_dir: /var/www
@@ -67,17 +66,20 @@ services:
       - PHP_INI_SCAN_DIR=var/docker/php/conf/conf.d
 
   couchdb:
-    image: klaemo/couchdb:latest
+    container_name: couchdb
+    image: couchdb:2.2
     ports:
       - "5984:5984"
 
   elasticsearch:
+    container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:5.4.2
     ports:
       - "9200:9200"
       - "9300:9300"
 
   rabbitmq:
+    container_name: rabbitmq
     image: friendsofhoneybee/rabbitmq:3.6-management
     ports:
       - "15672:15672"

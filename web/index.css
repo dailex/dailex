@@ -1,0 +1,40 @@
+html, body {
+  font-family: sans-serif;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.control-label {
+  padding-right: 1em;
+  display: inline-block;
+  width: 8em;
+}
+
+button {
+  margin: 1em 0
+}
+
+header {
+  background-color: rgb(29, 200, 0);
+  padding: 0.5em 1em;
+  border: 0;
+}
+
+#main {
+  padding: 1em;
+}
+
+footer {
+  background-color: rgb(228, 228, 228);
+  padding: 0.1em 1em;
+  border: 0;
+}
