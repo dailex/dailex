@@ -182,7 +182,8 @@ final class LoggingSwiftmailer implements MailerServiceInterface
             $mail->setReplyTo($reply_to);
         }
 
-        $return_path = $message_overrides['return_path'] ?? $message->getReturnPath($message_defaults['return_path'] ?? null);
+        $return_path = $message_overrides['return_path']
+            ?? $message->getReturnPath($message_defaults['return_path'] ?? null);
 
         if (!empty($return_path)) {
             // Swift only wants a string as email on the return path (despite the behaviour on other address fields)

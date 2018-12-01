@@ -12,29 +12,27 @@ use Daikon\MessageBus\EnvelopeInterface;
 
 final class CommandRouter implements MessageHandlerInterface
 {
-    private $injector;
+    private $spawnedHandlers;
 
-    private $unitOfWorkMap;
+    private $handlerMap;
 
-    public function __construct(Injector $injector, UnitOfWorkMap $unitOfWorkMap)
+    public function __construct(array $handlerMap)
     {
-        $this->injector = $injector;
-        $this->unitOfWorkMap = $unitOfWorkMap;
+        $this->handlerMap = $handlerMap;
+        $this->spawnedHandlers = [];
     }
 
     public function handle(EnvelopeInterface $envelope): bool
     {
         $command = $envelope->getMessage();
         Assertion::implementsInterface($command, CommandInterface::class);
-
-        $commandHandlerClass = str_replace('\\Domain\\Command', '\\Handler', get_class($command)).'Handler';
-        $fqcn = $command->getAggregateRootClass();
-        $aggregateAlias = $fqcn::getAlias();
-        $unitOfWork = $this->unitOfWorkMap->getByAggregateAlias($aggregateAlias);
-
-        return $this->injector
-            ->share($commandHandlerClass)
-            ->make($commandHandlerClass, [':unitOfWork' => $unitOfWork])
-            ->handle($envelope);
+        $commandFqcn = get_class($command);
+        if (!isset($this->handlerMap[$commandFqcn])) {
+            throw new \RuntimeException("No handler assigned to given command $commandFqcn");
+        }
+        if (!isset($this->spawnedHandlers[$commandFqcn])) {
+            $this->spawnedHandlers[$commandFqcn] = $this->handlerMap[$commandFqcn]();
+        }
+        return $this->spawnedHandlers[$commandFqcn]->handle($envelope);
     }
 }

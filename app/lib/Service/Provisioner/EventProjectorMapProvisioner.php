@@ -5,10 +5,11 @@ namespace Dailex\Service\Provisioner;
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
 use Daikon\ReadModel\Repository\RepositoryMap;
+use Daikon\ReadModel\Projector\EventProjector;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
-final class ProjectorMapProvisioner implements ProvisionerInterface
+final class EventProjectorMapProvisioner implements ProvisionerInterface
 {
     public function provision(
         Container $app,
@@ -23,9 +24,13 @@ final class ProjectorMapProvisioner implements ProvisionerInterface
             $projectors = [];
             foreach ($projectorConfigs as $projectorName => $projectorConfig) {
                 $projectorClass = $projectorConfig['class'];
-                $projectors[$projectorName] = $injector->make(
-                    $projectorClass,
-                    [':repository' => $repositoryMap->get($projectorConfig['repository'])]
+                $projectorEvents = $projectorConfig['events'];
+                $projectors[$projectorName] = new EventProjector(
+                    $projectorEvents,
+                    $injector->make(
+                        $projectorClass,
+                        [ ':repository' => $repositoryMap->get($projectorConfig['repository']) ]
+                    )
                 );
             }
             return new $serviceClass($projectors);

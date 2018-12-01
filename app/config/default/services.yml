@@ -37,34 +37,27 @@ dailex:
     class: Daikon\Dbal\Storage\StorageAdapterMap
     provisioner: Dailex\Service\Provisioner\StorageAdapterMapProvisioner
 
-  stream_store_map:
-    class: Daikon\EventSourcing\EventStore\Storage\StreamStorageMap
+  stream_storage_map:
+    class: Dailex\Infrastructure\StreamStorageMap
     provisioner: Dailex\Service\Provisioner\StreamStorageMapProvisioner
 
   unit_of_work_map:
-    class: Daikon\EventSourcing\EventStore\UnitOfWorkMap
+    class: Dailex\Infrastructure\UnitOfWorkMap
     provisioner: Dailex\Service\Provisioner\UnitOfWorkMapProvisioner
 
   repository_map:
     class: Daikon\ReadModel\Repository\RepositoryMap
     provisioner: Dailex\Service\Provisioner\RepositoryMapProvisioner
 
-  projector_map:
-    class: Daikon\ReadModel\Projector\ProjectorMap
-    provisioner: Dailex\Service\Provisioner\ProjectorMapProvisioner
+  event_projector_map:
+    class: Daikon\ReadModel\Projector\EventProjectorMap
+    provisioner: Dailex\Service\Provisioner\EventProjectorMapProvisioner
 
   projector_service:
     class: Daikon\ReadModel\Projector\ProjectorService
     subscriptions:
       commits_sub:
         channel: commits
-        transport: inproc
-
-  relation_projector_service:
-    class: Daikon\ReadModel\Projector\RelationProjectorService
-    subscriptions:
-      events_sub:
-        channel: events
         transport: inproc
 
   migration_target_map:
@@ -77,6 +70,7 @@ dailex:
 
   command_router:
     class: Dailex\Service\CommandRouter
+    provisioner: Dailex\Service\Provisioner\CommandRouterProvisioner
     subscriptions:
       command_sub:
         channel: commands

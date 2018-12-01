@@ -4,8 +4,8 @@ namespace Dailex\Service\Provisioner;
 
 use Auryn\Injector;
 use Daikon\Config\ConfigProviderInterface;
-use Daikon\EventSourcing\EventStore\Storage\StreamStorageMap;
 use Daikon\EventSourcing\EventStore\UnitOfWork;
+use Dailex\Infrastructure\StreamStorageMap;
 use Dailex\Service\ServiceDefinitionInterface;
 use Pimple\Container;
 
