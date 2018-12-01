@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "400292abadd7a1c00d708482454ac53a",
+    "content-hash": "3b777ff2655840e988b27b05a6eecf6f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -63,27 +63,26 @@
         },
         {
             "name": "daikon/async-job",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/async-job.git",
-                "reference": "2762a5d321ff324f54c3f0b4ae3bd5b368e09cfe"
+                "reference": "890f89acbd3ec421c2ceb7a5e1c911d11c77b892"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/2762a5d321ff324f54c3f0b4ae3bd5b368e09cfe",
-                "reference": "2762a5d321ff324f54c3f0b4ae3bd5b368e09cfe",
+                "url": "https://api.github.com/repos/daikon-cqrs/async-job/zipball/890f89acbd3ec421c2ceb7a5e1c911d11c77b892",
+                "reference": "890f89acbd3ec421c2ceb7a5e1c911d11c77b892",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structure": "master@dev",
-                "daikon/message-bus": "master@dev",
+                "daikon/data-structure": "0.1",
+                "daikon/message-bus": "0.1",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -105,20 +104,20 @@
                 "job",
                 "worker"
             ],
-            "time": "2017-07-26T19:06:09+00:00"
+            "time": "2018-12-01T17:35:17+00:00"
         },
         {
             "name": "daikon/config",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/config.git",
-                "reference": "736d78eedafc6c383c7cf405e0f6d0fa351a248a"
+                "reference": "197c3190d3fc567995a959ec4dd82603bf06d1e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/736d78eedafc6c383c7cf405e0f6d0fa351a248a",
-                "reference": "736d78eedafc6c383c7cf405e0f6d0fa351a248a",
+                "url": "https://api.github.com/repos/daikon-cqrs/config/zipball/197c3190d3fc567995a959ec4dd82603bf06d1e6",
+                "reference": "197c3190d3fc567995a959ec4dd82603bf06d1e6",
                 "shasum": ""
             },
             "require": {
@@ -130,7 +129,6 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "sebastian/phpcpd": "^3.0",
                 "squizlabs/php_codesniffer": "^3.0",
                 "vimeo/psalm": "^0.3.47"
@@ -150,31 +148,30 @@
             "keywords": [
                 "config"
             ],
-            "time": "2017-07-18T22:03:42+00:00"
+            "time": "2018-12-01T16:44:56+00:00"
         },
         {
             "name": "daikon/couchdb-adapter",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/couchdb-adapter.git",
-                "reference": "19b475682e17b3ecefcc9722722877c3de633e77"
+                "reference": "a613159e2914e974eebcb60c5a2b50d5530f671e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/19b475682e17b3ecefcc9722722877c3de633e77",
-                "reference": "19b475682e17b3ecefcc9722722877c3de633e77",
+                "url": "https://api.github.com/repos/daikon-cqrs/couchdb-adapter/zipball/a613159e2914e974eebcb60c5a2b50d5530f671e",
+                "reference": "a613159e2914e974eebcb60c5a2b50d5530f671e",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "master@dev",
-                "daikon/event-sourcing": "master@dev",
+                "daikon/dbal": "0.1",
+                "daikon/event-sourcing": "0.1",
                 "guzzlehttp/guzzle": "^6.2",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -193,20 +190,20 @@
                 "adapter",
                 "couchdb"
             ],
-            "time": "2017-07-26T15:29:12+00:00"
+            "time": "2018-12-01T17:52:49+00:00"
         },
         {
             "name": "daikon/data-structure",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "4fdc6b0712ca992217b47f7cc6f8058e1f91caa3"
+                "reference": "d9e39c0ed05ec68528f309d740c2929b2b553c16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/4fdc6b0712ca992217b47f7cc6f8058e1f91caa3",
-                "reference": "4fdc6b0712ca992217b47f7cc6f8058e1f91caa3",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/d9e39c0ed05ec68528f309d740c2929b2b553c16",
+                "reference": "d9e39c0ed05ec68528f309d740c2929b2b553c16",
                 "shasum": ""
             },
             "require": {
@@ -243,32 +240,31 @@
                 "list",
                 "map"
             ],
-            "time": "2017-07-23T23:36:51+00:00"
+            "time": "2018-12-01T16:58:23+00:00"
         },
         {
             "name": "daikon/dbal",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "c1d482f998f02bac7c702796689104676bd806c9"
+                "reference": "ef24b990f1fc817237faf9f164d9bb2c3accb4a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/c1d482f998f02bac7c702796689104676bd806c9",
-                "reference": "c1d482f998f02bac7c702796689104676bd806c9",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/ef24b990f1fc817237faf9f164d9bb2c3accb4a3",
+                "reference": "ef24b990f1fc817237faf9f164d9bb2c3accb4a3",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structure": "master@dev",
-                "daikon/event-sourcing": "master@dev",
-                "daikon/read-model": "master@dev",
+                "daikon/data-structure": "0.1",
+                "daikon/event-sourcing": "0.1",
+                "daikon/read-model": "0.1",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -288,31 +284,30 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2017-08-03T23:34:31+00:00"
+            "time": "2018-12-01T17:46:43+00:00"
         },
         {
             "name": "daikon/elasticsearch5-adapter",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/elasticsearch5-adapter.git",
-                "reference": "92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550"
+                "reference": "cad15f1aeff8d0105b4dd3848074f98f6595d88c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550",
-                "reference": "92a7db2e6f335bf2f0bfcd7ca401b4dc57d7c550",
+                "url": "https://api.github.com/repos/daikon-cqrs/elasticsearch5-adapter/zipball/cad15f1aeff8d0105b4dd3848074f98f6595d88c",
+                "reference": "cad15f1aeff8d0105b4dd3848074f98f6595d88c",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "master@dev",
-                "daikon/read-model": "master@dev",
+                "daikon/dbal": "0.1",
+                "daikon/read-model": "0.1",
                 "elasticsearch/elasticsearch": "^5.0",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -331,26 +326,26 @@
                 "adapter",
                 "elasticsearch"
             ],
-            "time": "2017-07-24T16:05:05+00:00"
+            "time": "2018-12-01T17:53:45+00:00"
         },
         {
             "name": "daikon/entity",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/entity.git",
-                "reference": "6b257129897606463afa5da8d8929bf14bb72017"
+                "reference": "a5a0dbd49f811f1a00811a8ebcee9c9706f3ced3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/6b257129897606463afa5da8d8929bf14bb72017",
-                "reference": "6b257129897606463afa5da8d8929bf14bb72017",
+                "url": "https://api.github.com/repos/daikon-cqrs/entity/zipball/a5a0dbd49f811f1a00811a8ebcee9c9706f3ced3",
+                "reference": "a5a0dbd49f811f1a00811a8ebcee9c9706f3ced3",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.7",
-                "daikon/data-structure": "dev-master",
-                "daikon/interop": "dev-master",
+                "daikon/data-structure": "0.1",
+                "daikon/interop": "0.1",
                 "jms/parser-lib": "~1.0",
                 "php": ">=7.1",
                 "ramsey/uuid": "~3.6"
@@ -376,31 +371,30 @@
                 "generic",
                 "value-object"
             ],
-            "time": "2017-08-08T13:36:44+00:00"
+            "time": "2018-12-01T17:15:24+00:00"
         },
         {
             "name": "daikon/event-sourcing",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "7cd92a96237264ed9f5c209be2e0769ca93950f6"
+                "reference": "77d14430313b3239e5947572eeafbdd582d73b23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/7cd92a96237264ed9f5c209be2e0769ca93950f6",
-                "reference": "7cd92a96237264ed9f5c209be2e0769ca93950f6",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/77d14430313b3239e5947572eeafbdd582d73b23",
+                "reference": "77d14430313b3239e5947572eeafbdd582d73b23",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structure": "master@dev",
-                "daikon/message-bus": "master@dev",
+                "daikon/data-structure": "0.1",
+                "daikon/message-bus": "0.1",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -420,30 +414,29 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2017-08-10T00:53:30+00:00"
+            "time": "2018-12-01T17:37:55+00:00"
         },
         {
             "name": "daikon/flysystem-adapter",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/flysystem-adapter.git",
-                "reference": "7e46ddff1289b4b096ec3b9752a8a6bf1d97199f"
+                "reference": "547632f31a369d4e2060452385ef6558733adc12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/7e46ddff1289b4b096ec3b9752a8a6bf1d97199f",
-                "reference": "7e46ddff1289b4b096ec3b9752a8a6bf1d97199f",
+                "url": "https://api.github.com/repos/daikon-cqrs/flysystem-adapter/zipball/547632f31a369d4e2060452385ef6558733adc12",
+                "reference": "547632f31a369d4e2060452385ef6558733adc12",
                 "shasum": ""
             },
             "require": {
-                "daikon/dbal": "master@dev",
+                "daikon/dbal": "0.1",
                 "league/flysystem": "^1.0",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -462,20 +455,20 @@
                 "Flysystem",
                 "adapter"
             ],
-            "time": "2017-07-22T22:18:20+00:00"
+            "time": "2018-12-01T17:54:27+00:00"
         },
         {
             "name": "daikon/interop",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/interop.git",
-                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123"
+                "reference": "c48d7ec19008068f81ca22d886ef4863edb8257b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/f4581af6d35d2db22a8bbe35bf655c2457da3123",
-                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/c48d7ec19008068f81ca22d886ef4863edb8257b",
+                "reference": "c48d7ec19008068f81ca22d886ef4863edb8257b",
                 "shasum": ""
             },
             "require": {
@@ -493,30 +486,29 @@
             ],
             "description": "Interop interfaces used across daikon components.",
             "homepage": "https://github.com/daikon-cqrs/interop",
-            "time": "2017-07-25T18:40:38+00:00"
+            "time": "2018-12-01T16:56:52+00:00"
         },
         {
             "name": "daikon/message-bus",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "c00c8346625798324b7edf729bf2382ef76cb7b5"
+                "reference": "b76cc23a8ec2babe74d8aa636cde03e656d9f2ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/c00c8346625798324b7edf729bf2382ef76cb7b5",
-                "reference": "c00c8346625798324b7edf729bf2382ef76cb7b5",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/b76cc23a8ec2babe74d8aa636cde03e656d9f2ce",
+                "reference": "b76cc23a8ec2babe74d8aa636cde03e656d9f2ce",
                 "shasum": ""
             },
             "require": {
-                "daikon/data-structure": "master@dev",
+                "daikon/data-structure": "0.1",
                 "php": ">=7.1",
                 "ramsey/uuid": "^3.6.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -535,32 +527,31 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2017-07-22T22:13:14+00:00"
+            "time": "2018-12-01T17:32:24+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "ab6a379051b54395afa36521a2c81e152c189ca5"
+                "reference": "1b1f6ed024cdd68095ac43722f4ee8ee2312aaf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/ab6a379051b54395afa36521a2c81e152c189ca5",
-                "reference": "ab6a379051b54395afa36521a2c81e152c189ca5",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/1b1f6ed024cdd68095ac43722f4ee8ee2312aaf9",
+                "reference": "1b1f6ed024cdd68095ac43722f4ee8ee2312aaf9",
                 "shasum": ""
             },
             "require": {
-                "daikon/async-job": "master@dev",
-                "daikon/dbal": "master@dev",
-                "daikon/message-bus": "master@dev",
+                "daikon/async-job": "0.1",
+                "daikon/dbal": "0.1",
+                "daikon/message-bus": "0.1",
                 "php": ">=7.1",
                 "php-amqplib/php-amqplib": "^2.7"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -579,32 +570,31 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2017-07-26T19:08:28+00:00"
+            "time": "2018-12-01T17:55:43+00:00"
         },
         {
             "name": "daikon/read-model",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "72a5c832d7a73038041df0c1ef823896360e059d"
+                "reference": "0ad9636c6c2533dd4d1650b3a35d0318ee89a09c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/72a5c832d7a73038041df0c1ef823896360e059d",
-                "reference": "72a5c832d7a73038041df0c1ef823896360e059d",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/0ad9636c6c2533dd4d1650b3a35d0318ee89a09c",
+                "reference": "0ad9636c6c2533dd4d1650b3a35d0318ee89a09c",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^2.7",
-                "daikon/data-structure": "master@dev",
-                "daikon/event-sourcing": "master@dev",
-                "daikon/message-bus": "master@dev",
+                "daikon/data-structure": "0.1",
+                "daikon/event-sourcing": "0.1",
+                "daikon/message-bus": "0.1",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -625,20 +615,20 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-24T15:53:36+00:00"
+            "time": "2018-12-01T17:41:47+00:00"
         },
         {
             "name": "dailex/dlx-security",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-security.git",
-                "reference": "80707197923dfe64671567768c8c69ffbc807ff1"
+                "reference": "c7d3e5a317ccbce249fdac8b932f1269845d6434"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/80707197923dfe64671567768c8c69ffbc807ff1",
-                "reference": "80707197923dfe64671567768c8c69ffbc807ff1",
+                "url": "https://api.github.com/repos/dailex/dlx-security/zipball/c7d3e5a317ccbce249fdac8b932f1269845d6434",
+                "reference": "c7d3e5a317ccbce249fdac8b932f1269845d6434",
                 "shasum": ""
             },
             "require": {
@@ -654,7 +644,6 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2",
-                "satooshi/php-coveralls": "master@dev",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
@@ -668,20 +657,20 @@
                 "MPL-2.0"
             ],
             "description": "Security & user administration crate for Dailex.",
-            "time": "2018-11-27T17:38:44+00:00"
+            "time": "2018-12-01T18:01:56+00:00"
         },
         {
             "name": "dailex/dlx-testing",
-            "version": "dev-master",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dailex/dlx-testing.git",
-                "reference": "f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188"
+                "reference": "7fe058326315c8f3f00b0fcdde4c19dbaa5fc572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188",
-                "reference": "f22a1b52bcc3c3b9c0209aa5d6c1c3ed74cfc188",
+                "url": "https://api.github.com/repos/dailex/dlx-testing/zipball/7fe058326315c8f3f00b0fcdde4c19dbaa5fc572",
+                "reference": "7fe058326315c8f3f00b0fcdde4c19dbaa5fc572",
                 "shasum": ""
             },
             "require": {
@@ -709,10 +698,10 @@
             ],
             "description": "Testing example crate for Dailex.",
             "support": {
-                "source": "https://github.com/dailex/dlx-testing/tree/master",
+                "source": "https://github.com/dailex/dlx-testing/tree/v0.1",
                 "issues": "https://github.com/dailex/dlx-testing/issues"
             },
-            "time": "2017-07-28T14:02:12+00:00"
+            "time": "2018-12-01T18:02:48+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -2082,6 +2071,17 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Roave/SecurityAdvisories.git",
+                "reference": "6acf968142215f1614f5909aa006b2bf1ec45cb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6acf968142215f1614f5909aa006b2bf1ec45cb1",
+                "reference": "6acf968142215f1614f5909aa006b2bf1ec45cb1",
+                "shasum": ""
+            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.12",
@@ -2645,17 +2645,85 @@
             "time": "2018-11-26T12:48:07+00:00"
         },
         {
-            "name": "symfony/debug",
-            "version": "v4.1.8",
+            "name": "symfony/contracts",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/debug.git",
-                "reference": "f9eea0cff99d14f97d69b24b17164098ece3fd32"
+                "url": "https://github.com/symfony/contracts.git",
+                "reference": "4a33574d5771f4b04334cd4f7d43de96a92efb62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/f9eea0cff99d14f97d69b24b17164098ece3fd32",
-                "reference": "f9eea0cff99d14f97d69b24b17164098ece3fd32",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/4a33574d5771f4b04334cd4f7d43de96a92efb62",
+                "reference": "4a33574d5771f4b04334cd4f7d43de96a92efb62",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "psr/cache": "^1.0",
+                "psr/container": "^1.0"
+            },
+            "suggest": {
+                "psr/cache": "When using the Cache contracts",
+                "psr/container": "When using the Service contracts",
+                "symfony/cache-contracts-implementation": "",
+                "symfony/service-contracts-implementation": "",
+                "symfony/translation-contracts-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\": ""
+                },
+                "exclude-from-classmap": [
+                    "**/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A set of abstractions extracted out of the Symfony components",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2018-10-31T08:00:32+00:00"
+        },
+        {
+            "name": "symfony/debug",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "e0a2b92ee0b5b934f973d90c2f58e18af109d276"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/e0a2b92ee0b5b934f973d90c2f58e18af109d276",
+                "reference": "e0a2b92ee0b5b934f973d90c2f58e18af109d276",
                 "shasum": ""
             },
             "require": {
@@ -2671,7 +2739,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -2698,24 +2766,25 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T19:51:29+00:00"
+            "time": "2018-11-28T18:24:18+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "8b93ce06506d58485893e2da366767dcc5390862"
+                "reference": "9b788b5f7cd6be22918f3d18ee3ff0a78e060137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/8b93ce06506d58485893e2da366767dcc5390862",
-                "reference": "8b93ce06506d58485893e2da366767dcc5390862",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/9b788b5f7cd6be22918f3d18ee3ff0a78e060137",
+                "reference": "9b788b5f7cd6be22918f3d18ee3ff0a78e060137",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3"
+                "php": "^7.1.3",
+                "symfony/contracts": "^1.0"
             },
             "conflict": {
                 "symfony/dependency-injection": "<3.4"
@@ -2734,7 +2803,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -2761,7 +2830,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-26T10:26:29+00:00"
+            "time": "2018-11-26T10:55:26+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2945,16 +3014,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "26062b9527b6797fc6239ed698c9c0a3c5e891e0"
+                "reference": "1b31f3017fadd8cb05cf2c8aebdbf3b12a943851"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/26062b9527b6797fc6239ed698c9c0a3c5e891e0",
-                "reference": "26062b9527b6797fc6239ed698c9c0a3c5e891e0",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/1b31f3017fadd8cb05cf2c8aebdbf3b12a943851",
+                "reference": "1b31f3017fadd8cb05cf2c8aebdbf3b12a943851",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +3037,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -2995,7 +3064,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-26T10:26:29+00:00"
+            "time": "2018-11-26T10:55:26+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -3086,16 +3155,16 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
-                "reference": "8da789363973920dd7df6753822810592138e5ba"
+                "reference": "f9a637c0359f74404d44cf0da0a3ce53bae0787e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/inflector/zipball/8da789363973920dd7df6753822810592138e5ba",
-                "reference": "8da789363973920dd7df6753822810592138e5ba",
+                "url": "https://api.github.com/repos/symfony/inflector/zipball/f9a637c0359f74404d44cf0da0a3ce53bae0787e",
+                "reference": "f9a637c0359f74404d44cf0da0a3ce53bae0787e",
                 "shasum": ""
             },
             "require": {
@@ -3105,7 +3174,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -3140,20 +3209,20 @@
                 "symfony",
                 "words"
             ],
-            "time": "2018-11-11T19:51:29+00:00"
+            "time": "2018-11-11T19:52:12+00:00"
         },
         {
             "name": "symfony/intl",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "699087dc23552e74a6b82c28849f660d9ec4cfab"
+                "reference": "1730183319d8b1f74143a3ed16473b229dc94cec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/699087dc23552e74a6b82c28849f660d9ec4cfab",
-                "reference": "699087dc23552e74a6b82c28849f660d9ec4cfab",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/1730183319d8b1f74143a3ed16473b229dc94cec",
+                "reference": "1730183319d8b1f74143a3ed16473b229dc94cec",
                 "shasum": ""
             },
             "require": {
@@ -3169,7 +3238,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -3215,20 +3284,20 @@
                 "l10n",
                 "localization"
             ],
-            "time": "2018-11-11T19:51:29+00:00"
+            "time": "2018-11-11T19:52:12+00:00"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "31e5523373cb06163079ef46d0a2d507d70fe064"
+                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/31e5523373cb06163079ef46d0a2d507d70fe064",
-                "reference": "31e5523373cb06163079ef46d0a2d507d70fe064",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
+                "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
                 "shasum": ""
             },
             "require": {
@@ -3237,7 +3306,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -3269,7 +3338,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2018-11-11T19:51:29+00:00"
+            "time": "2018-11-11T19:52:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -3615,16 +3684,16 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "10edb6c4b6f496a2ed40a788ebbd280b421985ae"
+                "reference": "b6df4e1849f389468edb36e2e59877d4a8170723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/10edb6c4b6f496a2ed40a788ebbd280b421985ae",
-                "reference": "10edb6c4b6f496a2ed40a788ebbd280b421985ae",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/b6df4e1849f389468edb36e2e59877d4a8170723",
+                "reference": "b6df4e1849f389468edb36e2e59877d4a8170723",
                 "shasum": ""
             },
             "require": {
@@ -3640,7 +3709,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -3678,7 +3747,7 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2018-11-26T12:16:25+00:00"
+            "time": "2018-11-29T14:48:32+00:00"
         },
         {
             "name": "symfony/routing",
@@ -4606,16 +4675,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.1.8",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "42a55e4a4a7421124636f6f15845187704be0423"
+                "reference": "db61258540350725f4beb6b84006e32398acd120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/42a55e4a4a7421124636f6f15845187704be0423",
-                "reference": "42a55e4a4a7421124636f6f15845187704be0423",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/db61258540350725f4beb6b84006e32398acd120",
+                "reference": "db61258540350725f4beb6b84006e32398acd120",
                 "shasum": ""
             },
             "require": {
@@ -4643,7 +4712,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -4677,7 +4746,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2018-11-20T16:14:00+00:00"
+            "time": "2018-11-25T12:50:42+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",
@@ -4750,17 +4819,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "daikon/async-job": 20,
-        "daikon/config": 20,
-        "daikon/couchdb-adapter": 20,
-        "daikon/elasticsearch5-adapter": 20,
-        "daikon/entity": 20,
-        "daikon/event-sourcing": 20,
-        "daikon/flysystem-adapter": 20,
-        "daikon/rabbitmq3-adapter": 20,
-        "daikon/read-model": 20,
-        "dailex/dlx-security": 20,
-        "dailex/dlx-testing": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
