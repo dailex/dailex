@@ -42,7 +42,7 @@ services:
 
   php:
     container_name: php
-    image: friendsofhoneybee/php:7.1-fpm
+    image: daikon/php:7.2-fpm
     command: ["php-fpm", "-R", "-y", "/var/www/var/docker/php/conf/php-fpm.d/www.conf"]
     working_dir: /var/www
     ports:
@@ -80,7 +80,7 @@ services:
 
   rabbitmq:
     container_name: rabbitmq
-    image: friendsofhoneybee/rabbitmq:3.6-management
+    image: daikon/rabbitmq:3.7-management
     ports:
       - "15672:15672"
       - "5672:5672"
